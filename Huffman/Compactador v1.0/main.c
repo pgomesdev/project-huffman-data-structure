@@ -4,7 +4,7 @@
 int main()
 {
     /// ENCURTA ENDEREÇO DO ARQUIVO PARA VARIAVEL "url"
-    char url[]="F:\\Dropbox\\2016.1\\Huffman\\Novo Documento de Texto.txt";
+    char url[]="F:\\Dropbox\\2016.1\\Huffman\\arquivos_txt_para_testes\\poema.txt";
 
     /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", E AGORA "arq" APONTA PARA ARQUIVO.
     FILE *arq = abrir_Arquivo(url);

@@ -6,7 +6,7 @@ int main()
     setlocale(LC_ALL,"");
 
     /// ENCURTA ENDEREÇO DO ARQUIVO PARA VARIAVEL "url"
-    char url[]="F:\\Dropbox\\2016.1\\Huffman\\poema.txt";
+    char url[]="F:\\Dropbox\\2016.1\\Huffman\\arquivos_txt_para_testes\\poema.txt";
 
     /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", E AGORA "arq" APONTA PARA ARQUIVO.
     FILE *arq = abrir_Arquivo(url);
