@@ -1,6 +1,5 @@
 #include "f_arvore.h"
 
-
 Node *criar_Node_NULL()
 {
     return NULL;
