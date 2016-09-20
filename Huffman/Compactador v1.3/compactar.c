@@ -13,8 +13,8 @@ void escrever_arquivo(Node *cabeca, unsigned short lixo, unsigned short tamanho_
     /* Escreve os dados no arquivo na ordem: lixo (3 bits), tamanho da árvore(13 bits),
        arvore e texto(compactado) */
     fputs(cabecalho_inicial, novo_arquivo);
-    fputs(print_pre_ordem_arvore(cabeca), novo_arquivo);
-    fputs(escrever_texto, novo_arquivo);
+    /// fputs(print_pre_ordem_arvore(cabeca), novo_arquivo);
+    /// fputs(escrever_texto, novo_arquivo);
 }
 
 /* Desloca o lixo 13 vezes para a esquerda */

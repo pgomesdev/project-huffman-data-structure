@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="compactar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="compactar.h" />
 		<Unit filename="f_arquivo.c">
 			<Option compilerVar="CC" />
 		</Unit>
