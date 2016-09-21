@@ -23,6 +23,12 @@ void escrever_arquivo(Node *cabeca, unsigned short lixo, unsigned short tamanho_
     fclose(novo_arquivo);
 }
 
+unsigned char set_bit(unsigned char c, int i)
+{
+    unsigned char mask = 1 << i;
+    return mask | c;
+}
+
 /* DESLOCA O LIXO 13 VEZES PARA A ESQUERDA */
 unsigned short converter_lixo(unsigned short lixo)
 {
@@ -58,10 +64,4 @@ void escrever_texto(char *array_texto, int tamanho, File *arquivo)
             c = 0;
         }
     }
-}
-
-char set_bit(unsigned char c, int i)
-{
-    unsigned char mask = 1 << i;
-    return mask | c;
 }
