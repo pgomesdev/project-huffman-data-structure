@@ -1,28 +1,5 @@
 #include "f_arvore.h"
 
-/* FUNÇÃO PARA ESCREVER AS INFORMAÇÕES NO ARQUIVO *.huff */
-void escrever_arquivo(Node *cabeca, unsigned short lixo, unsigned short tamanho_arvore, char *array_texto, int tamanho)
-{
-    /* CRIA NOVO ARQUIVO *.HUFF, CASO JÁ EXISTA NÃO É CRIADO */
-    FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
-
-    /* COMO O TAMANHO TOTAL DO LIXO MAIS O TAMANHO DA ÁRVORE É DE 16 BITS, REALIZEI A SOMA
-       DO LIXO DESLOCADO 13 VEZES PARA A ESQUERDA E DO TAMANHO DA ÁRVORE. */
-    unsigned short cabecalho_inicial[1] = {converter_lixo(lixo) + tamanho_arvore;}
-
-    /* ESCREVE OS DADOS NO ARQUIVO NA ORDEM: LIXO (3 BITS), TAMANHO DA ÁVORE(13 BITS),
-       ÁRVORE E TEXTO COMPACTADO */
-    fwrite(cabecalho_inicial, sizeof(short), sizeof(cabecalho_inicial), novo_arquivo);
-
-    /* ESCREVE A ÁRVORE EM PRÉ-ORDEM */
-    escrever_árvore(cabeca, novo_arquivo);
-    /* ESCREVE O TEXTO JÁ COMPACTADO */
-    escrever_texto(array_texto, tamanho, novo_arquivo);
-
-    /* FECHA O ARQUIVO */
-    fclose(novo_arquivo);
-}
-
 unsigned char set_bit(unsigned char c, int i)
 {
     unsigned char mask = 1 << i;
