@@ -2,6 +2,8 @@
 #define TAMANHO_BYTE 8
 #endif // TAMANHO_BYTE
 
+unsigned char set_bit(unsigned char c, int i);
+
 /* FUNÇÃO UTILIZADA PARA SETAR UM DETERMINADO BIT EM UM CHAR
    RETORNA UM CARACTER JÁ COM O BIT SETADO */
 unsigned char set_bit(unsigned char c, int i);

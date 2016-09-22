@@ -42,9 +42,17 @@ int main()
         print_lista(cabeca);
 
         cabeca = criar_arvore_huffman(cabeca);
-        print_pre_ordem_arvore(cabeca);
-
     }
+
+    FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
+
+    unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
+
+    escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
+    escrever_arvore(arvore, tamanho_arvore, novo_arquivo);
+    escrever_texto(texto, tamanho_texto, novo_arquivo);
+    fclose(novo_arquivo);
+
     return 0;
 }
 
