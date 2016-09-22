@@ -103,3 +103,11 @@
 	<stdlib.h>
 	<stdio.h>
 
+1474316712 source:c:\users\datsu\documents\huffman_p2\huffman\compactador v1.3\f_arvore.c
+	"f_arvore.h"
+
+1474314932 c:\users\datsu\documents\huffman_p2\huffman\compactador v1.3\f_arvore.h
+	<stdlib.h>
+	<stdio.h>
+	<locale.h>
+

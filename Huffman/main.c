@@ -1,5 +1,6 @@
 #include "f_arquivo.h"
 #include "f_arvore.h"
+#include "compactar.h"
 
 int main()
 {

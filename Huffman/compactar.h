@@ -10,6 +10,9 @@ unsigned char set_bit(unsigned char c, int i);
    RETORNA OS 3 BITS DE LIXO POSICIONADO NOS TRÊS PRIMEIROS BITS */
 unsigned short converter_lixo(unsigned short lixo);
 
+/* ESCREVE O LIXO E O TAMANHO */
+void escrever_cabecalho_inicio(unsigned short cabecalho_inicial, FILE* arquivo);
+
 /* ESCREVE A ÁRVORE EM PRÉ-ORDEM NO ARQUIVO */
 void escrever_arvore(Node *cabeca, FILE *arquivo);
 
