@@ -64,7 +64,7 @@ void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
     {
         if(array_texto[i] == 1)
         {
-            c = set_bit(c, (i + 7 - 2*i));
+            c = set_bit(c, (i + 7 - 2 * i));
         }
 
         if(i % TAMANHO_BYTE == 7)
