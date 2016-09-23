@@ -7,7 +7,7 @@ int main()
     setlocale(LC_ALL,"");
 
     /// ENCURTA ENDEREÇO DO ARQUIVO PARA VARIAVEL "url"
-    char url[]="C:\Users\Datsu\Documents\Huffman_P2\Huffman\arquivos_txt_para_testes";
+    char url[]="C:\Users\Datsu\Documents\Huffman_P2\arquivos_txt_para_testes";
 
     /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", E AGORA "arq" APONTA PARA ARQUIVO.
     FILE *arq = abrir_Arquivo(url);
