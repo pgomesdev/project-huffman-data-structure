@@ -30,12 +30,12 @@ void escrever_cabecalho_inicio(unsigned short cabecalho_inicial, FILE* arquivo)
 
     for(i = 0; i < TAMANHO_SHORT; i++)
     {
-        if(is_bit_set(cabecalho_inicial, (i + 15 - 2 * i)))
+        if(is_bit_set(cabecalho_inicial, (15 - i)))
         {
-            c = set_bit(c, ((i % TAMANHO_BYTE) + 7 - 2 * (i % TAMANHO_BYTE)));
+            c = set_bit(c, (7 - (i % TAMANHO_BYTE)));
         }
 
-        if(i % 8 == 7)
+        if(i % TAMANHO_BYTE == 7)
         {
             fputc(c, arquivo);
             c = 0;
@@ -64,7 +64,7 @@ void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
     {
         if(array_texto[i] == 1)
         {
-            c = set_bit(c, ((i % TAMANHO_BYTE) + 7 - 2 * (i % TAMANHO_BYTE)));
+            c = set_bit(c, ((7 - (i % TAMANHO_BYTE)));
         }
 
         if(i % TAMANHO_BYTE == 7)

@@ -111,3 +111,18 @@
 	<stdio.h>
 	<locale.h>
 
+1474314932 source:c:\users\datsu\documents\huffman_p2\huffman\f_arquivo.c
+	"f_arquivo.h"
+
+1474314932 c:\users\datsu\documents\huffman_p2\huffman\f_arquivo.h
+	<stdlib.h>
+	<stdio.h>
+
+1474316712 source:c:\users\datsu\documents\huffman_p2\huffman\f_arvore.c
+	"f_arvore.h"
+
+1474314932 c:\users\datsu\documents\huffman_p2\huffman\f_arvore.h
+	<stdlib.h>
+	<stdio.h>
+	<locale.h>
+

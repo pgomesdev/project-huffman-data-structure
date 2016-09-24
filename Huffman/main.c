@@ -49,7 +49,7 @@ int main()
     unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
 
     escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
-    escrever_arvore(arvore, tamanho_arvore, novo_arquivo);
+    escrever_arvore(arvore, novo_arquivo);
     escrever_texto(texto, tamanho_texto, novo_arquivo);
     fclose(novo_arquivo);
 
