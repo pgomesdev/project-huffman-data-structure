@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="compactar.h" />
+		<Unit filename="descompactar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="descompactar.h" />
 		<Unit filename="f_arquivo.c">
 			<Option compilerVar="CC" />
 		</Unit>

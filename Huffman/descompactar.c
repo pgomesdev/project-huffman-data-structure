@@ -1,3 +1,5 @@
+#include "f_arvore.h"
+
 void descompactar_cabecalho(FILE *arquivo)
 {
     unsigned short lixo_tamanho[2];
@@ -57,4 +59,9 @@ void obter_arvore(unsigned char *arvore, FILE *arquivo)
     {
         arvore[i] = fgetc(arquivo);
     }
+}
+
+void escrever_arquivo(Node *arvore, FILE *arquivo)
+{
+
 }
