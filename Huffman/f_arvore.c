@@ -1,15 +1,5 @@
 #include "f_arvore.h"
 
-Node *criar_Node_NULL()
-{
-    return NULL;
-}
-
-int esta_Vazia(Node *cabeca)
-{
-    return (cabeca==NULL);
-}
-
 Node *add_Node_pai_ordenado(Node *cabeca)
 {
     Node *atual = cabeca;
@@ -39,6 +29,7 @@ Node *add_Node_pai_ordenado(Node *cabeca)
         {
             newnode->num = (atual->num + atual->proximo_node->num);
             newnode->letra = '*';
+            newnode->profundidade = 0;
             newnode->filho_esquerda = atual;
             newnode->filho_direita = atual->proximo_node;
 
@@ -80,59 +71,6 @@ Node *add_Node_pai_ordenado(Node *cabeca)
     }
 }
 
-Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num)
-{
-    Node *atual, *anterior;
-    Node *newnode = (Node*)malloc(sizeof(Node));
-
-    if(esta_Vazia(newnode) == 1)
-    {
-        puts("Erro ao alocar memoria!\n");
-        exit(0);
-    }
-
-    newnode->letra = letra;
-    newnode->num = num;
-    newnode->proximo_node = NULL;
-    newnode->filho_esquerda = NULL;
-    newnode->filho_direita = NULL;
-
-    if(esta_Vazia(cabeca) == 1)
-    {
-        return newnode;
-    }
-    else
-    {
-        atual = cabeca;
-        anterior = atual;
-        while(atual != NULL)
-        {
-            if(newnode->num <= atual->num)
-            {
-                newnode->proximo_node = atual;
-
-                if(atual == cabeca)
-                {
-                    return newnode;
-                }
-                else
-                {
-                    anterior->proximo_node = newnode;
-                    return cabeca;
-                }
-            }
-            anterior = atual;
-            atual = atual->proximo_node;
-            if(atual == NULL)
-            {
-                anterior->proximo_node = newnode;
-                return cabeca;
-            }
-        }
-    }
-    return cabeca;
-}
-
 Node *criar_arvore_huffman(Node *cabeca)
 {
     Node *atual = add_Node_pai_ordenado(cabeca);
@@ -153,80 +91,59 @@ void print_pre_ordem_arvore(Node *cabeca)
     {
         if(cabeca->letra == '\n')
         {
-            printf("[\\n]");
+            printf("Letra:[\\n] Freq:[%d] Prof:[%d]\n", cabeca->num,cabeca->profundidade);
         }
         else
         {
-            printf("[%c]", cabeca->letra);
+            printf("Letra:[%c] Freq:[%d] Prof:[%d]\n", cabeca->letra, cabeca->num, cabeca->profundidade);
         }
         print_pre_ordem_arvore(cabeca->filho_esquerda);
         print_pre_ordem_arvore(cabeca->filho_direita);
     }
 }
 
-Node *criar_lista_Frequencia(Node *cabeca, char *txt, int tam)
-{
-    int i, j, num, aux;
-    char letra;
-    Node *atual = cabeca;
-    for(i=0 ; i<tam ; i++)
-    {
-        ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" Й UM BUFFER CONTENDO O TEXTO.
-        letra = txt[i];
-
-        ///CONTAGEM "num" É ZERADA PARA NOVA LETRA ANALIZADA!    OBS.: "num" == NUMERO DE VEZES QUE A LETRA ANALIZADA REPETE NO TEXTO!
-        num = 0;
-        aux = 0;
-        ///ESTE LOOP DECOBRE QUANTAS VEZES A LETRA ANALIZADA FOI REPETIDA NO TEXTO!
-        for(j=0 ; j<tam ; j++)
-        {
-            if(letra == txt[j])
-            {
-                num++;
-            }
-        }
-
-        if(cabeca == NULL)
-        {
-            cabeca = add_Node_meio_ordenado(cabeca, letra, num);
-            atual = cabeca;
-        }
-        else
-        {
-            while(atual != NULL)
-            {
-                if(atual->letra != letra)
-                {
-                        atual = atual->proximo_node;
-                }
-                else
-                {
-                    atual = NULL;
-                    aux++;
-                }
-            }
-            if(aux == 0)
-            {
-                cabeca = add_Node_meio_ordenado(cabeca, letra, num);
-            }
-            atual = cabeca;
-        }
-    }
-    return atual;
-}
-
-void print_lista(Node *cabeca)
+void calcular_profundidade_nodes(Node *cabeca, int profundidade)
 {
     if(cabeca != NULL)
     {
-        if(cabeca->letra == '\n')
+        if(cabeca->letra == '*')
         {
-            printf("[\\n][%d]\n", cabeca->num);
+            cabeca->profundidade = profundidade;
+            calcular_profundidade_nodes(cabeca->filho_esquerda, ++profundidade);
+            calcular_profundidade_nodes(cabeca->filho_direita, profundidade);
         }
         else
         {
-            printf("[%c][%d]\n", cabeca->letra, cabeca->num);
+            cabeca->profundidade = profundidade;
+
         }
-        print_lista(cabeca->proximo_node);
     }
+}
+
+unsigned short calcular_lixo(Node *cabeca, unsigned short lixo)
+{
+    if(cabeca != NULL)
+    {
+        if(cabeca->letra != '*')
+        {
+            lixo = lixo + (cabeca->profundidade * cabeca->num);
+        }
+        else
+        {
+            lixo = calcular_lixo(cabeca->filho_esquerda, lixo);
+            lixo = calcular_lixo(cabeca->filho_direita, lixo);
+        }
+    }
+    return lixo%8;
+}
+
+unsigned short calcular_tam_arvore(Node *cabeca, unsigned short tam)
+{
+    if(cabeca != NULL)
+    {
+        tam++;
+        tam = calcular_tam_arvore(cabeca->filho_esquerda, tam);
+        tam = calcular_tam_arvore(cabeca->filho_direita, tam);
+    }
+    return tam;
 }

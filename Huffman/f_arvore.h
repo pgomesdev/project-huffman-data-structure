@@ -8,23 +8,20 @@ struct Node
 {
     int num;
     char letra;
+    int profundidade;
     Node *proximo_node;
     Node *filho_esquerda;
     Node *filho_direita;
 };
 
-Node *criar_Node_NULL();
-
-int esta_Vazia(Node *cabeca);
-
 Node *add_Node_pai_ordenado(Node *cabeca);
-
-Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num);
 
 Node *criar_arvore_huffman(Node *cabeca);
 
 void print_pre_ordem_arvore(Node *cabeca);
 
-void print_lista(Node *cabeca);
+void calcular_profundidade_nodes(Node *cabeca, int profundidade);
 
-Node *criar_lista_Frequencia(Node *cabeca, char *txt, int tam);
+unsigned short calcular_lixo(Node *cabeca, unsigned short lixo);
+
+unsigned short calcular_tam_arvore(Node *cabeca, unsigned short tam);

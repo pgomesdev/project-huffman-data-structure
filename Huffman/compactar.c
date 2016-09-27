@@ -10,7 +10,7 @@ unsigned char set_bit(unsigned char c, int i)
 }
 
 /* FUNÇÃO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
-int is_bit_set(unsigned short c, int i)
+unsigned short is_bit_set(unsigned short c, int i)
 {
     unsigned short mask = 1 << i;
     return mask & c;
@@ -64,7 +64,7 @@ void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
     {
         if(array_texto[i] == 1)
         {
-            c = set_bit(c, ((7 - (i % TAMANHO_BYTE)));
+            c = set_bit(c, ((7 - (i % TAMANHO_BYTE))));
         }
 
         if(i % TAMANHO_BYTE == 7)

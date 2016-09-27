@@ -30,7 +30,7 @@ unsigned short obter_lixo(FILE *arquivo)
     lixo = fgetc(arquivo);
     lixo = lixo >> 13;
 
-    rewind(fgetc);
+    rewind(arquivo);
 
     return lixo;
 }

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TAMANHO_BYTE
 #define TAMANHO_BYTE 8
 #endif // TAMANHO_BYTE
@@ -6,7 +7,7 @@ unsigned char set_bit(unsigned char c, int i);
 
 /* FUNÇÃO UTILIZADA PARA SETAR UM DETERMINADO BIT EM UM CHAR
    RETORNA UM CARACTER JÁ COM O BIT DESEJADO SETADO */
-unsigned char set_bit(unsigned char c, int i);
+unsigned short is_bit_set(unsigned short c, int i);
 
 /* FAZ O DESLOCAMENTO DOS 3 BITS DE LIXO PARA OS TRÊS PRIMEIROS BITS DO SHORT
    RETORNA OS 3 BITS DE LIXO POSICIONADO NOS TRÊS PRIMEIROS BITS DE UM UNSIGNED SHORT*/

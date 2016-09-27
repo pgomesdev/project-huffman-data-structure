@@ -1,13 +1,16 @@
 #include "f_arquivo.h"
 #include "f_arvore.h"
 #include "compactar.h"
+#include "compactar.h"
+#include "descompactar.h"
+#include "f_lista.h"
 
 int main()
 {
     setlocale(LC_ALL,"");
 
     /// ENCURTA ENDEREÇO DO ARQUIVO PARA VARIAVEL "url"
-    char url[]="C:\Users\Datsu\Documents\Huffman_P2\arquivos_txt_para_testes";
+    char url[]="arquivos_txt_para_testes\\exemplo.txt";
 
     /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", E AGORA "arq" APONTA PARA ARQUIVO.
     FILE *arq = abrir_Arquivo(url);
@@ -37,21 +40,35 @@ int main()
 
         print_txt(txt,tam);
 
-        Node *cabeca = criar_Node_NULL();
-        cabeca = criar_lista_Frequencia(cabeca,txt,tam);
-        print_lista(cabeca);
+        Node *cabeca_lista = criar_Node_NULL();
+        cabeca_lista = criar_lista_Frequencia(cabeca_lista,txt,tam);
+        print_lista_Frequencia(cabeca_lista);
 
-        cabeca = criar_arvore_huffman(cabeca);
+        puts("\n");
+
+        unsigned short lixo = 0;
+        unsigned short tamanho_arvore = 0;
+
+        Node *cabeca_arvore = cabeca_lista;
+        cabeca_arvore = criar_arvore_huffman(cabeca_arvore);
+        calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
+        print_pre_ordem_arvore(cabeca_arvore);
+
+        lixo = calcular_lixo(cabeca_arvore, lixo);
+        lixo = lixo != 0 ? (8 - lixo): 0 ;
+        tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
+
+        printf("LIXO: %d", lixo);
+
+        FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
+
+        unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
+
+        escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
+        escrever_arvore(cabeca_arvore, novo_arquivo);
+        escrever_texto(texto, tamanho_texto, novo_arquivo);
+        fclose(novo_arquivo);
     }
-
-    FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
-
-    unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
-
-    escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
-    escrever_arvore(arvore, novo_arquivo);
-    escrever_texto(texto, tamanho_texto, novo_arquivo);
-    fclose(novo_arquivo);
 
     return 0;
 }

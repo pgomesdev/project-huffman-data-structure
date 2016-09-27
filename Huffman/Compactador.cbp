@@ -47,6 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="f_arvore.h" />
+		<Unit filename="f_lista.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="f_lista.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
