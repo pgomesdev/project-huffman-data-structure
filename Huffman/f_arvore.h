@@ -7,7 +7,7 @@ typedef struct Node Node;
 struct Node
 {
     int num;
-    char letra;
+    unsigned char letra;
     int profundidade;
     Node *proximo_node;
     Node *filho_esquerda;
