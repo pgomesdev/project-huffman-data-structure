@@ -61,7 +61,3 @@ void obter_arvore(unsigned char *arvore, FILE *arquivo)
     }
 }
 
-void escrever_arquivo(Node *arvore, FILE *arquivo)
-{
-
-}
