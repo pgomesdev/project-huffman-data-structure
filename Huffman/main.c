@@ -19,25 +19,21 @@ int main()
     if(arq != 0)
     {
         int tam = contar_tam_texto_char(arq);
-
-        char txt[tam];
+        unsigned char txt[tam];
         char letra;
         int i = 0;
 
         /// OBS.: FOI NECESSARIO ULTILIZAR A FUNÇÃO "rewind()" == "FUNÇÃO QUE REAPONTA "fgetc()" PARA O INICIO DO ARQUIVO."
         /// POIS NA CHAMADA DE "contar_tam_texto_char(arq)" , A FUNÇÃO "fgetc()" ESTAVA APONTANDO PARA O FINAL DO ARQUIVO.
         rewind(arq);
-
         /// FAZENDO COPIA DO CONTEUDO DE "arq" PARA BUFFER "txt[]".
         while((letra = fgetc(arq)) != EOF)
         {
             txt[i] = letra;
             i++;
         }
-
         /// NAO PRECISO MAIS DO ARQUIVO!
         fclose(arq);
-
         print_txt(txt,tam);
 
         Node *cabeca_lista = criar_Node_NULL();
@@ -58,16 +54,20 @@ int main()
         lixo = lixo != 0 ? (8 - lixo): 0 ;
         tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
-        printf("LIXO: %d", lixo);
+        print_lista_Frequencia(cabeca_lista);
+        puts("\n");
+        //lista_de_folhas(cabeca_lista);
 
-        FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
+        //print_lista_Frequencia(cabeca_lista);
+
+        /*FILE *novo_arquivo = fopen("arquivo.huff", "w+x");
 
         unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
 
         escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
         escrever_arvore(cabeca_arvore, novo_arquivo);
         escrever_texto(texto, tamanho_texto, novo_arquivo);
-        fclose(novo_arquivo);
+        fclose(novo_arquivo);*/
     }
 
     return 0;
