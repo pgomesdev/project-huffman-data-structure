@@ -121,7 +121,7 @@ void print_lista_Frequencia(Node *cabeca_lista)
     {
         if(cabeca_lista->letra == '\n')
         {
-            printf("[\\n]\n", cabeca_lista->letra);
+            printf("[\\n]\n");
         }
         else
         {

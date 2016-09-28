@@ -91,7 +91,7 @@ void print_pre_ordem_arvore(Node *cabeca)
     {
         if(cabeca->letra == '\n')
         {
-            printf("Letra:[\\n] Freq:[%d] Prof:[%d]\n", cabeca->letra, cabeca->num,cabeca->profundidade);
+            printf("Letra:[\\n] Freq:[%d] Prof:[%d]\n", cabeca->num,cabeca->profundidade);
         }
         else
         {
