@@ -1,34 +1,6 @@
 #include "f_arquivo.h"
 
-void print_freq_i(int *freq, int tam)
-{
-    int i;
-    for(i = 0; freq[i]!= -1 ; i++)
-    {
-        printf("[%i] ", freq[i]);
-    }
-}
-
-void print_freq_c(char *freq, int tam)
-{
-    int i;
-
-    /// PRINT GERAL DOS RESULTADOS DAS FREQUENCIAS DAS LETRAS!
-    for(i = 0; freq[i] != -1; i++)
-    {
-        ///Condição para imprimir o '\n' caso especial.
-        if(freq[i] == '\n')
-        {
-            printf("[\\n] ");
-        }
-        else
-        {
-            printf("[%c] ", freq[i]);
-        }
-    }
-}
-
-void print_txt(char *txt, int tam)
+void print_txt(unsigned char *txt, int tam)
 {
     /// PRINT DO BUFFER COM O ARQUIVO CONTIDO.
     int i=0;
@@ -64,22 +36,5 @@ FILE *abrir_Arquivo(char *url)
     else
     {
         return arq;
-    }
-}
-
-void limpar_array_i(int *arq, int tam)
-{
-    int i;
-    for(i=0 ; i<tam ; i++)
-    {
-        arq[i] = -1;
-    }
-}
-void limpar_array_c(char *arq, int tam)
-{
-    int i;
-    for(i=0 ; i<tam ; i++)
-    {
-        arq[i] = -1;
     }
 }
