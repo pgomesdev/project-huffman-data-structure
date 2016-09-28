@@ -74,6 +74,6 @@ void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
         }
     }
 
-    if(i % TAMANHO_BYTE != 7)
+    if(i-1 % TAMANHO_BYTE != 7)
         fputc(c, arquivo);
 }
