@@ -5,12 +5,12 @@ Node *criar_Node_NULL()
     return NULL;
 }
 
-int esta_Vazia(Node *cabeca)
+int esta_Vazia(Node *cabeca_lista)
 {
-    return (cabeca==NULL);
+    return (cabeca_lista==NULL);
 }
 
-Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num)
+Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, int num)
 {
     Node *atual, *anterior;
     Node *newnode = (Node*)malloc(sizeof(Node));
@@ -28,13 +28,13 @@ Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num)
     newnode->filho_esquerda = NULL;
     newnode->filho_direita = NULL;
 
-    if(esta_Vazia(cabeca) == 1)
+    if(esta_Vazia(cabeca_lista) == 1)
     {
         return newnode;
     }
     else
     {
-        atual = cabeca;
+        atual = cabeca_lista;
         anterior = atual;
         while(atual != NULL)
         {
@@ -42,14 +42,14 @@ Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num)
             {
                 newnode->proximo_node = atual;
 
-                if(atual == cabeca)
+                if(atual == cabeca_lista)
                 {
                     return newnode;
                 }
                 else
                 {
                     anterior->proximo_node = newnode;
-                    return cabeca;
+                    return cabeca_lista;
                 }
             }
             anterior = atual;
@@ -57,18 +57,18 @@ Node *add_Node_meio_ordenado(Node *cabeca, char letra, int num)
             if(atual == NULL)
             {
                 anterior->proximo_node = newnode;
-                return cabeca;
+                return cabeca_lista;
             }
         }
     }
-    return cabeca;
+    return cabeca_lista;
 }
 
-Node *criar_lista_Frequencia(Node *cabeca, char *txt, int tam)
+Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, int tam)
 {
     int i, j, num, aux;
-    char letra;
-    Node *atual = cabeca;
+    unsigned char letra;
+    Node *atual = cabeca_lista;
     for(i=0 ; i<tam ; i++)
     {
         ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" e´ UM BUFFER CONTENDO O TEXTO.
@@ -86,10 +86,10 @@ Node *criar_lista_Frequencia(Node *cabeca, char *txt, int tam)
             }
         }
 
-        if(cabeca == NULL)
+        if(cabeca_lista == NULL)
         {
-            cabeca = add_Node_meio_ordenado(cabeca, letra, num);
-            atual = cabeca;
+            cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num);
+            atual = cabeca_lista;
         }
         else
         {
@@ -107,34 +107,34 @@ Node *criar_lista_Frequencia(Node *cabeca, char *txt, int tam)
             }
             if(aux == 0)
             {
-                cabeca = add_Node_meio_ordenado(cabeca, letra, num);
+                cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num);
             }
-            atual = cabeca;
+            atual = cabeca_lista;
         }
     }
     return atual;
 }
 
-void print_lista_Frequencia(Node *cabeca)
+void print_lista_Frequencia(Node *cabeca_lista)
 {
-    if(cabeca != NULL)
+    if(cabeca_lista != NULL)
     {
-        if(cabeca->letra == '\n')
+        if(cabeca_lista->letra == '\n')
         {
-            printf("[\\n][%d] %d\n", cabeca->num, cabeca->profundidade);
+            printf("[\\n]\n", cabeca_lista->letra);
         }
         else
         {
-            printf("[%c][%d] %d\n", cabeca->letra, cabeca->num, cabeca->profundidade);
+            printf("[%c]\n", cabeca_lista->letra);
         }
-        print_lista_Frequencia(cabeca->proximo_node);
+        print_lista_Frequencia(cabeca_lista->proximo_node);
     }
 }
 
-int calcular_tam_lista(Node *cabeca)
+int calcular_tam_lista(Node *cabeca_lista)
 {
     int tam = 0;
-    Node *atual = cabeca;
+    Node *atual = cabeca_lista;
     while(atual != NULL)
     {
         tam++;
@@ -142,4 +142,21 @@ int calcular_tam_lista(Node *cabeca)
     }
 
     return tam;
+}
+
+void lista_de_folhas(Node *cabeca_lista)
+{
+    if(cabeca_lista != NULL)
+    {
+        if(cabeca_lista->letra == '*')
+        {
+            cabeca_lista = cabeca_lista->proximo_node;
+            lista_de_folhas(cabeca_lista);
+        }
+        else
+        {
+            Node *current = cabeca_lista;
+            lista_de_folhas(current->proximo_node);
+        }
+    }
 }
