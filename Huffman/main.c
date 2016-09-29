@@ -1,45 +1,59 @@
-#include "f_arquivo.h"
-#include "f_arvore.h"
+#include "f_arquivo.h"// Funções para manipular o arquivo .txt ou seu conteúdo
+#include "f_arvore.h"// TAD da Árvore de Huffman como Arvore
 #include "compactar.h"
 #include "descompactar.h"
-#include "f_lista.h"
+#include "f_lista.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
 
+//Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
 int main()
 {
+    /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     setlocale(LC_ALL,"");
 
-    /// ENCURTA ENDEREÇO DO ARQUIVO PARA VARIAVEL "url"
+    // String url salva a URL do arquivo texto que será lido
     char url[]="arquivos_txt_para_testes\\exemplo.txt";
 
-    /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", E AGORA "arq" APONTA PARA ARQUIVO.
+    /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
     FILE *arq = abrir_Arquivo(url);
+    
+    /// -x- A PARTIR DESSE PONTO, JÁ TEMOS ACESSO AO ARQUIVO .txt -x-
 
     ///  SE "abrir_Arquivo()" RETORNAR DIFERENTE DE ZERO, ARQUIVO ABERTO COM SUCESSO.
     if(arq != 0)
     {
-        int tam = contar_tam_texto_char(arq);
-        unsigned char txt[tam];
-        char letra;
-        int i = 0;
+        int tam = contar_tam_texto_char(arq);//Calculando o tamanho do texto
+        
+        /// LEMBRAR QUE UNSIGNED SERVE PARA UTILIZAR TODOS OS BITS DO CHAR E NÃO PERDER O BIT DE SINAL
+        unsigned char txt[tam];//Declarando o array que possui o mesmo tamanho do texto.
+        
+        char letra;//Variável condicional da repetição
+        int i = 0;//Variável de indice do array txt
 
         /// OBS.: FOI NECESSARIO ULTILIZAR A FUNÇÃO "rewind()" == "FUNÇÃO QUE REAPONTA "fgetc()" PARA O INICIO DO ARQUIVO."
         /// POIS NA CHAMADA DE "contar_tam_texto_char(arq)" , A FUNÇÃO "fgetc()" ESTAVA APONTANDO PARA O FINAL DO ARQUIVO.
         rewind(arq);
-        /// FAZENDO COPIA DO CONTEUDO DE "arq" PARA BUFFER "txt[]".
+        
+        /// REPETIÇÃO FAZ COPIA DO CONTEUDO DE "arq" PARA BUFFER "txt[]".
         while((letra = fgetc(arq)) != EOF)
         {
             txt[i] = letra;
             i++;
         }
-        /// NAO PRECISO MAIS DO ARQUIVO!
+        
+        /// NÃO PRECISO MAIS DO ARQUIVO!
         fclose(arq);
-        print_txt(txt,tam);
+        print_txt(txt,tam);//Verificação do Buffer, deve imprimir o mesmo texto de "url".
+        
+        /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
 
+        // O ponteiro para Nós cabeca_lista é declarado e inicializado con NULL
         Node *cabeca_lista = criar_Node_NULL();
+        
+        /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
         cabeca_lista = criar_lista_Frequencia(cabeca_lista,txt,tam);
-        print_lista_Frequencia(cabeca_lista);
-
-        puts("\n");
+        
+        print_lista_Frequencia(cabeca_lista);//Verificação da Lista de Huffman, deve ter todos os caracteres distintos.
+        puts("\n");//Pula a linha
 
         unsigned short lixo = 0;
         unsigned short tamanho_arvore = 0;
