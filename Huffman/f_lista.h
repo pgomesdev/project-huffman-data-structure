@@ -1,5 +1,7 @@
+/// INSTRUÇÃO PARA O COMPILADOR SÓ IMPORTAR AS BIBLIOTECAS ABAIXO QUE NÃO EXISTIREM
 #pragma once
-#include "f_arvore.h"
+
+#include "f_arvore.h"// Arquivo que possui as definicões iniciais da Árvore de Huffman
 
 Node *criar_Node_NULL();
 
