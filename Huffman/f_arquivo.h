@@ -4,7 +4,7 @@
 #include <stdlib.h>//Biblioteca para abrir arquivos
 #include <stdio.h>//Biblioteca padrão de Entrada e Saida do C
 
-///NESSA BIBLIOTECA ESTÃO REUNIDAS AS FUNÇÕES ARQUIVOS txt OU SEU CONTEUDO
+/// NESSA BIBLIOTECA ESTÃO REUNIDAS AS FUNÇÕES ARQUIVOS txt OU SEU CONTEUDO
 
 //Função que recebe: uma String, tendo o seu primeiro elemento em txt, onde txt != NULL;
 //o tamanho da String recebida, armazenado no inteiro tam, onde tam >= 0;
