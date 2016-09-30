@@ -46,7 +46,7 @@ int main()
         
         /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
 
-        // O ponteiro para Nós cabeca_lista é declarado e inicializado con NULL
+        // O ponteiro para Nós cabeca_lista é declarado e inicializado com NULL
         Node *cabeca_lista = criar_Node_NULL();
         
         /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
@@ -54,21 +54,38 @@ int main()
         
         print_lista_Frequencia(cabeca_lista);//Verificação da Lista de Huffman, deve ter todos os caracteres distintos.
         puts("\n");//Pula a linha
+        
+        /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A LISTA DE HUFFMAN. -x-
 
-        unsigned short lixo = 0;
-        unsigned short tamanho_arvore = 0;
+        /// UTILIZAMOS UNSIGNED PARA NÃO PERDER O BIT DO SINAL.
+        /// JÁ O SHORT, POIS ELE UTILIZA 2 BYTES PARA ARMAZENAR VALORES, EXATAMENTE OS 2 BYTES INICIAIS DO CABEÇALHO
+        unsigned short lixo = 0;// Variável para armazenar quantos bits do último byte não serão significativos.
+        unsigned short tamanho_arvore = 0;// Variável para armazenar quantos nós tem na arvore de Huffman.
 
-        Node *cabeca_arvore = cabeca_lista;
+        Node *cabeca_arvore = cabeca_lista;//Criamos uma váriavel que aponta para o inicio da Lista
+        
+        /// AGORA O PONTEIRO cabeca_arvore RECEBE A ARVORE DE HUFFMAN, GERADA A PARTIR DA LISTA ANTERIOR
         cabeca_arvore = criar_arvore_huffman(cabeca_arvore);
+        
+        /// CALCULA A PROFUNDIDADE DE CADA NÓ DA ARVORE E SALVA NA ESTRUTURA DO NÓ DE HUFFMAN
         calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
-        print_pre_ordem_arvore(cabeca_arvore);
+        
+        print_pre_ordem_arvore(cabeca_arvore);// Verificação da Árvore de Huffman, deve estar todos os nós em Pré-Ordem
 
+        /// A VÁRIAVEL lixo RECEBE QUANTOS BITS DO ULTIMO BYTE SÃO REPRESENTATIVOS (E 0 SE TODOS O SÃO)
         lixo = calcular_lixo(cabeca_arvore, lixo);
+        
+        /// FAZEMOS A OPERAÇÃO TERNARIA, DE MODO A SALVAR 0, SE NÃO POSSUI LIXO NO ULTIMO BYTE; (8-lixo) SE HOUVER LIXO
         lixo = lixo != 0 ? (8 - lixo): 0 ;
+        
+        /// A VÁRIAVEL tamanho_arvore RECEBE A QUANTIDADE DE NÓS NA ARVORE DE HUFFMAN
         tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
-        print_lista_Frequencia(cabeca_lista);
-        puts("\n");
+        print_lista_Frequencia(cabeca_lista);// Verificação da Lista de Huffman, deve provar que a Lista existe.
+        puts("\n");// Pula uma linha
+        
+        /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A ARVORE DE HUFFMAN E AS INFORMAÇÕES DO CABEÇALHO. -x-
+        
         //lista_de_folhas(cabeca_lista);
 
         //print_lista_Frequencia(cabeca_lista);
