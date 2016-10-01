@@ -1,20 +1,24 @@
 #include "f_arvore.h"
 
-Node *add_Node_pai_ordenado(Node *cabeca)
+//Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca
+//e devolve um ponteiro para o primeiro nó da nova lista, onde os dois primeiros nós da lista anterior, se tornaram uma árvore
+Node *add_Node_pai_ordenado(Node *cabeca_arvore);
+
+Node *add_Node_pai_ordenado(Node *cabeca_arvore)
 {
-    Node *atual = cabeca;
+    Node *atual = cabeca_arvore;
     Node *anterior;
     int aux = 0;
 
-    if(cabeca == NULL)
+    if(cabeca_arvore == NULL)
     {
         puts("Erro ao criar PAI, argumento_1 == NULL!\n");
-        return cabeca;
+        return cabeca_arvore;
     }
     else if(atual->proximo_node == NULL)
     {
-        ///"Erro ao criar PAI pois a funзгo tem apenas 1 nу!
-        return cabeca;
+        ///"Erro ao criar PAI pois a lista tem apenas 1 no!
+        return cabeca_arvore;
     }
     else
     {
@@ -32,7 +36,6 @@ Node *add_Node_pai_ordenado(Node *cabeca)
             newnode->profundidade = 0;
             newnode->filho_esquerda = atual;
             newnode->filho_direita = atual->proximo_node;
-
             newnode->proximo_node = newnode->filho_direita->proximo_node;
             atual = newnode->proximo_node;
             anterior = atual;
@@ -71,11 +74,11 @@ Node *add_Node_pai_ordenado(Node *cabeca)
     }
 }
 
-Node *criar_arvore_huffman(Node *cabeca)
+Node *criar_arvore_huffman(Node *cabeca_arvore)
 {
-    Node *atual = add_Node_pai_ordenado(cabeca);
+    Node *atual = add_Node_pai_ordenado(cabeca_arvore);
 
-    if(atual == cabeca)
+    if(atual == cabeca_arvore)
     {
         return atual;
     }
@@ -85,65 +88,88 @@ Node *criar_arvore_huffman(Node *cabeca)
     }
 }
 
-void print_pre_ordem_arvore(Node *cabeca)
+void print_pre_ordem_arvore(Node *cabeca_arvore)
 {
-    if(cabeca != NULL)
+    if(cabeca_arvore != NULL)
     {
-        if(cabeca->letra == '\n')
+        if(cabeca_arvore->letra == '\n')
         {
-            printf("Letra:[\\n] Freq:[%d] Prof:[%d]\n", cabeca->num,cabeca->profundidade);
+            printf("[\\n] ");
         }
         else
         {
-            printf("Letra:[%c] Freq:[%d] Prof:[%d]\n", cabeca->letra, cabeca->num, cabeca->profundidade);
+            printf("[%c] ", cabeca_arvore->letra);
         }
-        print_pre_ordem_arvore(cabeca->filho_esquerda);
-        print_pre_ordem_arvore(cabeca->filho_direita);
+        print_pre_ordem_arvore(cabeca_arvore->filho_esquerda);
+        print_pre_ordem_arvore(cabeca_arvore->filho_direita);
     }
 }
 
-void calcular_profundidade_nodes(Node *cabeca, int profundidade)
+void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
 {
-    if(cabeca != NULL)
+    if(cabeca_arvore != NULL)
     {
-        if(cabeca->letra == '*')
+        if(cabeca_arvore->letra == '*')
         {
-            cabeca->profundidade = profundidade;
-            calcular_profundidade_nodes(cabeca->filho_esquerda, ++profundidade);
-            calcular_profundidade_nodes(cabeca->filho_direita, profundidade);
+            cabeca_arvore->profundidade = profundidade;
+            calcular_profundidade_nodes(cabeca_arvore->filho_esquerda, ++profundidade);
+            calcular_profundidade_nodes(cabeca_arvore->filho_direita, profundidade);
         }
         else
         {
-            cabeca->profundidade = profundidade;
-
+            cabeca_arvore->profundidade = profundidade;
         }
     }
 }
 
-unsigned short calcular_lixo(Node *cabeca, unsigned short lixo)
+unsigned short calcular_lixo(Node *cabeca_arvore, unsigned short lixo)
 {
-    if(cabeca != NULL)
+    if(cabeca_arvore != NULL)
     {
-        if(cabeca->letra != '*')
+        if(cabeca_arvore->letra != '*')
         {
-            lixo = lixo + (cabeca->profundidade * cabeca->num);
+            lixo = lixo + (cabeca_arvore->profundidade * cabeca_arvore->num);
         }
         else
         {
-            lixo = calcular_lixo(cabeca->filho_esquerda, lixo);
-            lixo = calcular_lixo(cabeca->filho_direita, lixo);
+            lixo = calcular_lixo(cabeca_arvore->filho_esquerda, lixo);
+            lixo = calcular_lixo(cabeca_arvore->filho_direita, lixo);
         }
     }
     return lixo%8;
 }
 
-unsigned short calcular_tam_arvore(Node *cabeca, unsigned short tam)
+unsigned short calcular_tam_arvore(Node *cabeca_arvore, unsigned short tam)
 {
-    if(cabeca != NULL)
+    if(cabeca_arvore != NULL)
     {
         tam++;
-        tam = calcular_tam_arvore(cabeca->filho_esquerda, tam);
-        tam = calcular_tam_arvore(cabeca->filho_direita, tam);
+        tam = calcular_tam_arvore(cabeca_arvore->filho_esquerda, tam);
+        tam = calcular_tam_arvore(cabeca_arvore->filho_direita, tam);
     }
     return tam;
+}
+
+Node *remove_arvore(Node *cabeca_arvore)
+{
+    if(cabeca_arvore == NULL)
+    {
+
+        return NULL;
+    }
+    else
+    {
+        cabeca_arvore->filho_esquerda = remove_arvore(cabeca_arvore->filho_esquerda);
+        cabeca_arvore->filho_direita = remove_arvore(cabeca_arvore->filho_direita);
+        if(cabeca_arvore->letra == '\n')
+        {
+            printf("Letra: \\n %d foi apagada!\n", cabeca_arvore->num);
+        }
+        else
+        {
+                printf("Letra: %c %d foi apagada!\n", cabeca_arvore->letra, cabeca_arvore->num);
+        }
+        free(cabeca_arvore);
+        return NULL;
+    }
 }
