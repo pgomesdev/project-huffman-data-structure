@@ -47,6 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="f_arvore.h" />
+		<Unit filename="f_hashtable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="f_hashtable.h" />
 		<Unit filename="f_lista.c">
 			<Option compilerVar="CC" />
 		</Unit>

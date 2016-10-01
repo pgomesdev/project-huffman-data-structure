@@ -2,15 +2,21 @@
 1473779830 source:f:\dropbox\2016.1\huffman\compactador\f_arquivo.c
 	"f_arquivo.h"
 
+1475085109 .h"
+
 1473779527 f:\dropbox\2016.1\huffman\compactador\f_arquivo.h
 	<stdlib.h>
 	<stdio.h>
+
+1475255413 
 
 1473779404 f:\dropbox\2016.1\huffman\compactador\f_arquivo.c
 	"f_arquivo.h"
 
 1473780514 source:f:\dropbox\2016.1\huffman\compactador\f_arvore.c
 	"f_arvore.h"
+
+1475104790 h"
 
 1473780616 f:\dropbox\2016.1\huffman\compactador\f_arvore.h
 	<stdlib.h>
@@ -126,43 +132,103 @@
 	<stdio.h>
 	<locale.h>
 
-1474994431 source:c:\users\'-paulo\desktop\huffman\compactar.c
+1475279626 source:c:\users\'-paulo\desktop\huffman\compactar.c
 	"f_arvore.h"
 	"compactar.h"
 
-1475077584 c:\users\'-paulo\desktop\huffman\f_arvore.h
+1475283820 c:\users\'-paulo\desktop\huffman\f_arvore.h
+	<stdlib.h>
+	<stdio.h>
+
+1475279626 c:\users\'-paulo\desktop\huffman\compactar.h
+
+1475279963 source:c:\users\'-paulo\desktop\huffman\descompactar.c
+	"f_arvore.h"
+
+1475279626 source:c:\users\'-paulo\desktop\huffman\f_arquivo.c
+	"f_arquivo.h"
+
+1475283974 c:\users\'-paulo\desktop\huffman\f_arquivo.h
+	<stdlib.h>
+	<stdio.h>
+
+1475283847 source:c:\users\'-paulo\desktop\huffman\f_arvore.c
+	"f_arvore.h"
+
+1475279626 source:c:\users\'-paulo\desktop\huffman\f_lista.c
+	"f_lista.h"
+
+1475127690 "
+
+1475283557 c:\users\'-paulo\desktop\huffman\f_lista.h
+	"f_arvore.h"
+
+1475283702 source:c:\users\'-paulo\desktop\huffman\main.c
+	<locale.h>
+	"f_arquivo.h"
+	"f_arvore.h"
+	"compactar.h"
+	"descompactar.h"
+	"f_lista.h"
+	"f_hashtable.h"
+
+1475274524 le.h"
+
+1475279626 c:\users\'-paulo\desktop\huffman\descompactar.h
+
+1475279626 source:c:\users\'-paulo\desktop\huffman\f_hashtable.c
+	"f_hashtable.h"
+
+1475279626 c:\users\'-paulo\desktop\huffman\f_hashtable.h
+	"f_arvore.h"
+	<stdio.h>
+	<stdlib.h>
+
+1474994432 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/compactar.c
+	"f_arvore.h"
+	"compactar.h"
+
+1475258198 /home/paulo/Área de Trabalho/Nova pasta/Huffman/f_arvore.h
 	<stdlib.h>
 	<stdio.h>
 	<locale.h>
 
-1474935783 c:\users\'-paulo\desktop\huffman\compactar.h
+1474935784 /home/paulo/Área de Trabalho/Nova pasta/Huffman/compactar.h
 
-1475077801 source:c:\users\'-paulo\desktop\huffman\descompactar.c
+1475279172 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/descompactar.c
 	"f_arvore.h"
 
-1475085109 source:c:\users\'-paulo\desktop\huffman\f_arquivo.c
+1475085110 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/f_arquivo.c
 	"f_arquivo.h"
 
-1475078539 c:\users\'-paulo\desktop\huffman\f_arquivo.h
+1475078540 /home/paulo/Área de Trabalho/Nova pasta/Huffman/f_arquivo.h
 	<stdlib.h>
 	<stdio.h>
 
-1475086238 source:c:\users\'-paulo\desktop\huffman\f_arvore.c
+1475273182 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/f_arvore.c
 	"f_arvore.h"
 
-1475086384 source:c:\users\'-paulo\desktop\huffman\f_lista.c
+1475274526 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/f_hashtable.c
+	"f_hashtable.h"
+
+1475255414 /home/paulo/Área de Trabalho/Nova pasta/Huffman/f_hashtable.h
+	"f_arvore.h"
+	<stdio.h>
+	<stdlib.h>
+
+1475127692 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/f_lista.c
 	"f_lista.h"
 
-1475079153 c:\users\'-paulo\desktop\huffman\f_lista.h
+1475104792 /home/paulo/Área de Trabalho/Nova pasta/Huffman/f_lista.h
 	"f_arvore.h"
 
-1475086512 source:c:\users\'-paulo\desktop\huffman\main.c
+1475279351 source:/home/paulo/Área de Trabalho/Nova pasta/Huffman/main.c
 	"f_arquivo.h"
 	"f_arvore.h"
 	"compactar.h"
-	"compactar.h"
 	"descompactar.h"
 	"f_lista.h"
+	"f_hashtable.h"
 
-1474854458 c:\users\'-paulo\desktop\huffman\descompactar.h
+1474854460 /home/paulo/Área de Trabalho/Nova pasta/Huffman/descompactar.h
 
