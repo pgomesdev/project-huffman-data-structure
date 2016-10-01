@@ -144,19 +144,3 @@ int calcular_tam_lista(Node *cabeca_lista)
     return tam;
 }
 
-void lista_de_folhas(Node *cabeca_lista)
-{
-    if(cabeca_lista != NULL)
-    {
-        if(cabeca_lista->letra == '*')
-        {
-            cabeca_lista = cabeca_lista->proximo_node;
-            lista_de_folhas(cabeca_lista);
-        }
-        else
-        {
-            Node *current = cabeca_lista;
-            lista_de_folhas(current->proximo_node);
-        }
-    }
-}
