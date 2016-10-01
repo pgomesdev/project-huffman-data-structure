@@ -1,55 +1,49 @@
-/// INSTRU√á√ÉO PARA O COMPILADOR S√ì IMPORTAR AS BIBLIOTECAS ABAIXO QUE N√ÉO EXISTIREM
+/// INSTRU«√O PARA O COMPILADOR S” IMPORTAR AS BIBLIOTECAS ABAIXO QUE N√O EXISTIREM
 #pragma once
-
 #include <stdlib.h>// Biblioteca para abrir arquivos
-#include <stdio.h>// Biblioteca padr√£o de Entrada e Saida do C
+#include <stdio.h>// Biblioteca padr„o de Entrada e Saida do C
 
-/// BIBLIOTECA DE REGIONALIZA√á√ÉO DO C (UTILIZADA NO ARQUIVO MAIN)
-#include <locale.h>
+/// NESSA BIBLIOTECA EST¡ A DEFINI«√O DE N” DA ARVORE DE HUFFMAN E AS FUN«’ES PARA A ARVORE
 
-/// NESSA BIBLIOTECA EST√Å A DEFINI√á√ÉO DE N√ì DA ARVORE DE HUFFMAN E AS FUN√á√ïES PARA A ARVORE
+typedef struct Node Node;// Para se referir a estrutura nÛ usar:Node
 
-typedef struct Node Node;// Para se referir a estrutura n√≥ usar:Node
-
-/// DEFINI√á√ÉO DE N√ì DE ACORDO COM OS N√ìS DEFINIDOS POR HUFFMAN NA ARVORE DE HUFFMAN
+/// DEFINI«√O DE N” DE ACORDO COM OS N”S DEFINIDOS POR HUFFMAN NA ARVORE DE HUFFMAN
 struct Node
 {
-    /// FREQU√äNCIA DA variav√©l LETRA NO TEXTO
+    /// FREQU NCIA DA variavÈl LETRA NO TEXTO
     int num;
-    
+
     /// CARACTERE CONTIDO NO TEXTO
     unsigned char letra;
-    
-    /// variav√©l QUE CONT√âM A PROFUNDIDADE DESSE N√ì NA ARVORE DE HUFFMAN
+
+    /// variavÈl QUE CONT…M A PROFUNDIDADE DESSE N” NA ARVORE DE HUFFMAN
     int profundidade;
-    
-    /// PONTEIRO PARA O PROXIMO N√ì NA LISTA DE HUFFMAN
+
+    /// PONTEIRO PARA O PROXIMO N” NA LISTA DE HUFFMAN
     Node *proximo_node;
-    
-    /// PONTEIRO PARA O N√ì √Ä ESQUERDA NA LISTA DE HUFFMAN
+
+    /// PONTEIRO PARA O N” ¿ ESQUERDA NA LISTA DE HUFFMAN
     Node *filho_esquerda;
-    
-    /// PONTEIRO PARA O N√ì √Ä DIREITA NA LISTA DE HUFFMAN
+
+    /// PONTEIRO PARA O N” ¿ DIREITA NA LISTA DE HUFFMAN
     Node *filho_direita;
 };
 
-//Fun√ß√£o que recebe a lista de n√≥s de Huffman, como um ponteiro para n√≥s, apontada por cabeca
-//e devolve um ponteiro para o primeiro n√≥ da nova lista, onde os dois primeiros n√≥s da lista anterior, se tornaram uma √°rvore
-Node *add_Node_pai_ordenado(Node *cabeca);
+//FunÁ„o que recebe a lista de nÛs de Huffman, como um ponteiro para nÛs, apontada por cabeca
+//e devolve um ponteiro para a raiz da Arvore de Huffman, correspondente ‡ lista passada.
+//FUN«√O RECURSIVA
+Node *criar_arvore_huffman(Node *cabeca_arvore);
 
-//Fun√ß√£o que recebe a lista de n√≥s de Huffman, como um ponteiro para n√≥s, apontada por cabeca
-//e devolve um ponteiro para a raiz da Arvore de Huffman, correspondente √† lista passada.
-//FUN√á√ÉO RECURSIVA
-Node *criar_arvore_huffman(Node *cabeca);
+void print_pre_ordem_arvore(Node *cabeca_arvore);
 
-void print_pre_ordem_arvore(Node *cabeca);
+//FunÁ„o que recebe: a ¡rvore de Huffman, como um ponteiro para nÛs, apontada por cabeca;
+//um inteiro profundidade, que DEVE SER INICIALIZADO COM 0, para ser utilizado na funÁ„o;
+//e que n„o possui nenhuma devoluÁ„o. FUN«√O RECURSIVA.
+//Sua aÁ„o È escrever o item profundidade dos nÛs da ¡rvore de Huffman.
+void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade);
 
-//Fun√ß√£o que recebe: a √Årvore de Huffman, como um ponteiro para n√≥s, apontada por cabeca;
-//um inteiro profundidade, que DEVE SER INICIALIZADO COM 0, para ser utilizado na fun√ß√£o;
-//e que n√£o possui nenhuma devolu√ß√£o. FUN√á√ÉO RECURSIVA.
-//Sua a√ß√£o √© escrever o item profundidade dos n√≥s da √Årvore de Huffman.
-void calcular_profundidade_nodes(Node *cabeca, int profundidade);
+unsigned short calcular_lixo(Node *cabeca_arvore, unsigned short lixo);
 
-unsigned short calcular_lixo(Node *cabeca, unsigned short lixo);
+unsigned short calcular_tam_arvore(Node *cabeca_arvore, unsigned short tam);
 
-unsigned short calcular_tam_arvore(Node *cabeca, unsigned short tam);
+Node *remove_arvore(Node *cabeca_arvore);
