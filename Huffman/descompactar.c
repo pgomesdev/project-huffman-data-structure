@@ -14,7 +14,6 @@ void descompactar_cabecalho(FILE *arquivo)
     unsigned short tamanho_arvore = lixo_tamanho[0] + lixo_tamanho[1];
     tamanho_arvore = tamanho_arvore << 3;
     tamanho_arvore = tamanho_arvore >> 3;
-
     int i;
 
     for(i = 0; i < tamanho_arvore; i++)
