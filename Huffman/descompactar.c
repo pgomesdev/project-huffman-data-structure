@@ -22,7 +22,7 @@
     }
 }*/
 
-/* FUN«√O QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
+/* FUN√á√ÉO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
 unsigned short is_bit_set(unsigned short c, int i)
 {
     unsigned short mask = 1 << i;
@@ -36,9 +36,6 @@ unsigned char obter_lixo(FILE *arquivo)
 
     lixo = fgetc(arquivo);
     lixo = lixo >> 5;
-
-    rewind(arquivo);
-
     return lixo;
 }
 
@@ -73,7 +70,7 @@ void obter_arvore(unsigned char *arvore, FILE *arquivo)
 int criar_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
 {
     unsigned char c;
-    /* L  TODO ARQUIVO, INCLUSIVE O QUE H¡ DE LIXO */
+    /* L√ä TODO ARQUIVO, INCLUSIVE O QUE H√Å DE LIXO */
     while((c = fgetc(arquivo)) != EOF)
     {
         int i;
