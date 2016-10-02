@@ -160,7 +160,7 @@ int main()
 
         unsigned char lixo = obter_lixo(novo_arquivo);
         unsigned short int tam_arvore = obter_tamanho_arvore(novo_arquivo);
-        char arvore[tam_arvore];
+        unsigned char arvore[tam_arvore];
         int i;
 
         obter_arvore(arvore,novo_arquivo);
