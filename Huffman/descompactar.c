@@ -60,15 +60,28 @@ void obter_arvore(unsigned char *arvore, FILE *arquivo)
     }
 }
 
-/* PASSA PARA UM ARRAY OS 0S E 1S DO TEXTO COMPACTADO E RETORNA O TAMANHO TOTAL DE BITS */
-int criar_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
+/* CONTAGEM DA QUANTIDADE DE BITS NO TEXTO DO ARQUIVO COMPACTADO */
+int contar_tamanho_texto(FILE *arquivo)
 {
-    unsigned char c;
+    int tam = 1;
+
+    /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
+    while(fgetc(arquivo) != EOF)
+    {
+        tam++;
+    }
+
+    /* RETORNA A QUANTIDADE DE BITS DO TEXTO */
+    return tam * 8;
+}
+
+int escrever_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
+{
     int i, tam = 1;
+
     /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
     while((c = fgetc(arquivo)) != EOF)
     {
-
         for(i = 0; i < TAMANHO_BYTE; i++)
         {
             if(is_bit_set(c, 7 - (i % 8)))
@@ -80,7 +93,7 @@ int criar_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
     }
 
     /* RETORNA A QUANTIDADE DE BITS DO TEXTO */
-    return tam*8;
+    return tam * 8;
 }
 
 //void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo);

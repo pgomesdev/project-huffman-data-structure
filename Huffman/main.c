@@ -142,7 +142,7 @@ int main()
 
             FILE *novo_arquivo = fopen("arquivo.huff", "w");
 
-            unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
+            unsigned short cabecalho_inicial = (converter_lixo(lixo) + tamanho_arvore);
 
             escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
             escrever_arvore(cabeca_arvore, novo_arquivo);
@@ -179,6 +179,7 @@ int main()
     {
         exit(0);
     }
+
 return 1;
 }
 
