@@ -1,5 +1,5 @@
 #include "descompactar.h"
-#include "compactar.h"
+
 /*unsigned *descompactar_cabecalho(FILE *arquivo)
 {
     unsigned short lixo_tamanho[2];
@@ -21,6 +21,13 @@
         arvore[i] = fgetc(arquivo);
     }
 }*/
+
+/* FUNÇÃO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
+unsigned short is_bit_set(unsigned short c, int i)
+{
+    unsigned short mask = 1 << i;
+    return mask & c;
+}
 
 unsigned char obter_lixo(FILE *arquivo)
 {
@@ -96,4 +103,24 @@ int escrever_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
     return tam * 8;
 }
 
-//void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo);
+void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto);
+{
+    int i = 0;
+    Node *auxiliar = cabeca;
+
+    while(i < tamanho_texto)
+    {
+        while(auxiliar->letra == '*')
+        {
+            if(texto_compactado[i] == 0)
+                auxiliar = auxiliar->filho_esquerda;
+            else
+                auxiliar = auxiliar->filho_direita;
+
+            i++;
+        }
+
+        fputc(auxiliar->letra, arquivo);
+        i++;
+    }
+}
