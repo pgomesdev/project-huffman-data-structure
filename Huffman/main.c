@@ -171,7 +171,7 @@ int main()
         {
             if(arvore[i] == '\n')
             {
-                printf("[\\n]",arvore[i]);
+                printf("[\\n]");
             }
             printf("[%c]",arvore[i]);
         }
