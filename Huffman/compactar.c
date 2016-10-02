@@ -1,4 +1,4 @@
-#include "f_arvore.h"
+#include "f_hashtable.h"
 #include "compactar.h"
 #define TAMANHO_SHORT 16
 
@@ -55,7 +55,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 }
 
 /* ESCREVE O TEXTO JÁ COMPACTADO NO ARQUIVO */
-void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
+void escrever_texto(unsigned short int *array_texto, int tamanho, FILE *arquivo)
 {
     int i;
     unsigned char c = 0;
@@ -76,4 +76,42 @@ void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo)
 
     if(i-1 % TAMANHO_BYTE != 7)
         fputc(c, arquivo);
+}
+
+void criar_array_binarios(Hashtable *ht, unsigned char *txt, int tam_txt, unsigned short *array_binario, unsigned int freq_x_profundidade)
+{
+    int i, c;
+    unsigned int j, k = 0;
+    unsigned short valor;
+
+    Element *atual = criar_node_hash_null();
+    for(i = 0 ; i<tam_txt ; i++)
+    {
+        c = txt[i];
+        atual = ht->table[c];
+
+        if(atual != NULL)
+        {
+            for(j = k ; j<freq_x_profundidade ; j++)
+            {
+                if(atual != NULL)
+                {
+                    valor = atual->value;
+                    array_binario[j] = valor;
+                    atual = atual->next_element;
+                }
+                else
+                {
+                    k = j;
+                    break;
+                }
+
+            }
+        }
+        else
+        {
+            puts("ERRO AO ACESSAR HASHTABLE, LETRA APONTANDO PRA NULO\n");
+            return;
+        }
+    }
 }

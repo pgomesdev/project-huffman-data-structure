@@ -1,6 +1,6 @@
 #pragma once
 
-unsigned short obter_lixo(FILE *arquivo);
+unsigned char obter_lixo(FILE *arquivo);
 
 unsigned short obter_tamanho_arvore(FILE *arquivo);
 

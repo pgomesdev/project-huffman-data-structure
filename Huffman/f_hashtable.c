@@ -1,16 +1,5 @@
 #include "f_hashtable.h"
 
-struct element
-{
-    unsigned short value;
-    Element *next_element;
-};
-
-struct hashtable
-{
-    Element *table[MAX_TABLE];
-};
-
 void remove_lista(Element *lista);
 
 Element *remove_ultimo_node(Element *lista);

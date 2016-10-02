@@ -7,6 +7,17 @@
 typedef struct element Element;
 typedef struct hashtable Hashtable;
 
+struct element
+{
+    unsigned short value;
+    Element *next_element;
+};
+
+struct hashtable
+{
+    Element *table[MAX_TABLE];
+};
+
 Hashtable *create_hashtable();
 
 Element *criar_node_hash_null();

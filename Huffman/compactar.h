@@ -2,6 +2,7 @@
 #ifndef TAMANHO_BYTE
 #define TAMANHO_BYTE 8
 #endif // TAMANHO_BYTE
+#include "f_hashtable.h"
 
 unsigned char set_bit(unsigned char c, int i);
 
@@ -20,4 +21,6 @@ void escrever_cabecalho_inicio(unsigned short cabecalho_inicial, FILE* arquivo);
 void escrever_arvore(Node *cabeca, FILE *arquivo);
 
 /* ESCREVE O TEXTO JÁ COMPACTADO NO ARQUIVO */
-void escrever_texto(unsigned char *array_texto, int tamanho, FILE *arquivo);
+void escrever_texto(unsigned short int *array_texto, int tamanho, FILE *arquivo);
+
+void criar_array_binarios(Hashtable *ht, unsigned char *txt, int tam_txt, unsigned short *array_binario, unsigned int freq_x_profundidade);

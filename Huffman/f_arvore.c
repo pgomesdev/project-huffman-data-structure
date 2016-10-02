@@ -136,7 +136,7 @@ unsigned short calcular_lixo(Node *cabeca_arvore, unsigned short lixo)
             lixo = calcular_lixo(cabeca_arvore->filho_direita, lixo);
         }
     }
-    return lixo%8;
+    return lixo;
 }
 
 unsigned short calcular_tam_arvore(Node *cabeca_arvore, unsigned short tam)
