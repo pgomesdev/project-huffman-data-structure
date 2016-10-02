@@ -1,4 +1,4 @@
-#include "f_arvore.h"
+#include "descompactar.h"
 
 /*unsigned *descompactar_cabecalho(FILE *arquivo)
 {
@@ -21,6 +21,13 @@
         arvore[i] = fgetc(arquivo);
     }
 }*/
+
+/* FUNÇÃO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
+unsigned short is_bit_set(unsigned short c, int i)
+{
+    unsigned short mask = 1 << i;
+    return mask & c;
+}
 
 unsigned char obter_lixo(FILE *arquivo)
 {
@@ -62,3 +69,25 @@ void obter_arvore(unsigned char *arvore, FILE *arquivo)
     }
 }
 
+/* PASSA PARA UM ARRAY OS 0S E 1S DO TEXTO COMPACTADO E RETORNA O TAMANHO TOTAL DE BITS */
+int criar_texto_compactado(FILE *arquivo, unsigned short *texto_compactado)
+{
+    unsigned char c;
+    /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
+    while((c = fgetc(arquivo)) != EOF)
+    {
+        int i;
+        for(i = 0; i < TAMANHO_BYTE; i++)
+        {
+            if(is_bit_set(c, 7 - (i % 8)))
+                texto_compactado[i] = 1;
+            else
+                texto_compactado[i] = 0;
+        }
+    }
+
+    /* RETORNA A QUANTIDADE DE BITS DO TEXTO */
+    return i + 1;
+}
+
+void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo);

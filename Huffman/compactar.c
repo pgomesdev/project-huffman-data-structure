@@ -108,6 +108,7 @@ void criar_array_binarios(Hashtable *ht, unsigned char *txt, int tam_txt, unsign
 
             }
         }
+
         else
         {
             puts("ERRO AO ACESSAR HASHTABLE, LETRA APONTANDO PRA NULO\n");
