@@ -92,14 +92,7 @@ void print_pre_ordem_arvore(Node *cabeca_arvore)
 {
     if(cabeca_arvore != NULL)
     {
-        if(cabeca_arvore->letra == '\n')
-        {
-            printf("[\\n] ");
-        }
-        else
-        {
-            printf("[%c] ", cabeca_arvore->letra);
-        }
+        printf("[%c]", cabeca_arvore->letra);
         print_pre_ordem_arvore(cabeca_arvore->filho_esquerda);
         print_pre_ordem_arvore(cabeca_arvore->filho_direita);
     }
