@@ -12,20 +12,21 @@ int main()
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
 
-    int compactador = 0;
-
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
     puts("Digite:\n");
     puts("1 (para compactar)\n\n");
     puts("2 (para descompactar)\n\n");
-    while(compactador != 1 && compactador != 2)
+    puts("0 (para SAIR)\n\n");
+    int compactador = 3;
+    while(compactador != 1 && compactador != 2 && compactador != 0)
     {
         scanf("%d", &compactador);
         puts("Tecla Errada, porfavor repita o processo!\n");
         puts("Digite:\n");
         puts("1 (para compactar)\n\n");
         puts("2 (para descompactar)\n\n");
+        puts("0 (para SAIR)\n\n");
     }
 
     if(compactador == 1)
@@ -112,8 +113,8 @@ int main()
             /// A VÁRIAVEL tamanho_arvore RECEBE A QUANTIDADE DE NÓS NA ARVORE DE HUFFMAN
             tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
-            printf("LIXO: %d \n",lixo);
-            printf("TAM_ARVORE: %d \n",tamanho_arvore);
+            //printf("LIXO: %d \n",lixo);
+            //printf("TAM_ARVORE: %d \n",tamanho_arvore);
 
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A ARVORE DE HUFFMAN E AS INFORMAÇÕES DO CABEÇALHO. -x-
 
@@ -125,7 +126,7 @@ int main()
 
             construir_ht(cabeca_arvore,lista,ht);
 
-            print_ht(ht);// imprime a hash criada baseada na arvore
+            //print_ht(ht);// imprime a hash criada baseada na arvore
 
             ///Se lista == NULL , então a funcao construir_ht foi execultada com sucesso.
             if(lista == NULL)
@@ -150,9 +151,9 @@ int main()
 
             ht = remove_hashtable(ht);//remove_hashtable da um free() em todas as listas da hash e na propia hash
             cabeca_arvore = remove_arvore(cabeca_arvore);//remove_arvore da um free() na arvore inteira.
-        }
 
-        return 0;
+        }
+        main();
     }
     else if(compactador == 2)
     {
@@ -162,21 +163,22 @@ int main()
         unsigned short int tam_arvore = obter_tamanho_arvore(novo_arquivo);
         unsigned char arvore[tam_arvore];
         int i;
-
         obter_arvore(arvore,novo_arquivo);
 
         printf("LIXO: %d \n",lixo);
         printf("TAM_ARVORE: %d \n",tam_arvore);
+
         for(i = 0 ; i<tam_arvore ; i++)
         {
-            if(arvore[i] == '\n')
-            {
-                printf("[\\n]");
-            }
-            printf("[%c]",arvore[i]);
+                printf("[%c]",arvore[i]);
         }
-        return 0;
+
+        main();
     }
-    return 1;
+    else if(compactador == 0)
+    {
+        exit(0);
+    }
+return 1;
 }
 
