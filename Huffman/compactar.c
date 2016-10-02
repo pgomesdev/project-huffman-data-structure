@@ -48,6 +48,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 {
     if(cabeca != NULL)
     {
+        printf("[%c]", cabeca->letra);
         fputc(cabeca->letra, arquivo);
         escrever_arvore(cabeca->filho_esquerda, arquivo);
         escrever_arvore(cabeca->filho_direita, arquivo);
