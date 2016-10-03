@@ -10,6 +10,8 @@ unsigned short obter_tamanho_arvore(FILE *arquivo);
 
 void obter_arvore(unsigned char *arvore, FILE *arquivo);
 
-int criar_tamanho_texto(FILE *arquivo);
+int obter_tamanho_texto(FILE *arquivo);
 
-//void descompactar_texto(unsigned short *texto_compactado, FILE *novo_arquivo);
+void escrever_texto_compactado(FILE *arquivo, int *texto_compactado);
+
+void descompactar_texto(Node *cabeca, int *texto_compactado, FILE *novo_arquivo, int tamanho_texto)

@@ -6,7 +6,6 @@
 #include "f_lista.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
 #include "f_hashtable.h"
 
-//Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
 int main()
 {
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
@@ -19,10 +18,11 @@ int main()
     puts("2 (para descompactar)\n\n");
     puts("0 (para SAIR)\n\n");
     int compactador = 3;
+
     while(compactador != 1 && compactador != 2 && compactador != 0)
     {
         scanf("%d", &compactador);
-        puts("Tecla Errada, porfavor repita o processo!\n");
+        puts("Tecla Errada, por favor repita o processo!\n");
         puts("Digite:\n");
         puts("1 (para compactar)\n\n");
         puts("2 (para descompactar)\n\n");
@@ -155,31 +155,52 @@ int main()
         }
         main();
     }
+
     else if(compactador == 2)
     {
         FILE *novo_arquivo = fopen("arquivo.huff","r");
 
-        unsigned char lixo = obter_lixo(novo_arquivo);
+        unsigned short lixo = obter_lixo(novo_arquivo);
+        rewind(novo_arquivo);
         unsigned short int tam_arvore = obter_tamanho_arvore(novo_arquivo);
         unsigned char arvore[tam_arvore];
         int i;
-        obter_arvore(arvore,novo_arquivo);
+        obter_arvore(arvore, novo_arquivo);
 
-        printf("LIXO: %d \n",lixo);
-        printf("TAM_ARVORE: %d \n",tam_arvore);
+        printf("LIXO: %d \n", lixo);
+        printf("TAM_ARVORE: %d \n", tam_arvore);
 
-        for(i = 0 ; i<tam_arvore ; i++)
+        for(i = 0 ; i < tam_arvore ; i++)
         {
                 printf("[%c]",arvore[i]);
         }
 
+        int tamanho_texto = contar_tamanho_texto(novo_arquivo);
+
+        int texto_compactado[tamanho_texto] = {0};
+
+        //arvore = função para montar árvore
+
+        escrever_texto_compactado(novo_arquivo, texto_compactado);
+
+        fclose(novo_arquivo);
+
+        FILE *arquivo_descompactado = fopen("arquivo_descompactado.txt", "w+");
+
+        int tamanho_bits_texto = tamanho_texto - lixo;
+
+        descompactar_texto(arvore, texto_compactado, arquivo_descompactado, tamanho_bits_texto);
+
+        fclose(arquivo_descompactado);
+
         main();
     }
+
     else if(compactador == 0)
     {
         exit(0);
     }
 
-return 1;
+    return 1;
 }
 
