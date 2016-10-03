@@ -71,6 +71,8 @@ void escrever_texto_compactado(FILE *arquivo, int *texto_compactado)
         {
             if(is_bit_set(c, 7 - (i % TAMANHO_BYTE)))
                 texto_compactado[i] = 1;
+            else
+                texto_compactado[i] = 0;
         }
     }
 }
@@ -93,6 +95,6 @@ void descompactar_texto(Node *cabeca, int *texto_compactado, FILE *novo_arquivo,
             i++;
         }
 
-        fputc(auxiliar->letra, arquivo);
+        fputc(auxiliar->letra, novo_arquivo);
     }
 }

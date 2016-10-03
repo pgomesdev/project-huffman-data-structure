@@ -175,9 +175,18 @@ int main()
                 printf("[%c]",arvore[i]);
         }
 
-        int tamanho_texto = contar_tamanho_texto(novo_arquivo);
+        int tamanho_texto = obter_tamanho_texto(novo_arquivo);
 
-        int texto_compactado[tamanho_texto] = {0};
+        rewind(novo_arquivo);
+
+        int aux;
+
+        for(aux = 0; aux < tamanho_texto + 2; aux++)
+        {
+            fgetc(novo_arquivo);
+        }
+
+        int texto_compactado[tamanho_texto];
 
         //arvore = função para montar árvore
 
@@ -189,7 +198,7 @@ int main()
 
         int tamanho_bits_texto = tamanho_texto - lixo;
 
-        descompactar_texto(arvore, texto_compactado, arquivo_descompactado, tamanho_bits_texto);
+        descompactar_texto(arvore_huff, texto_compactado, arquivo_descompactado, tamanho_bits_texto);
 
         fclose(arquivo_descompactado);
 
