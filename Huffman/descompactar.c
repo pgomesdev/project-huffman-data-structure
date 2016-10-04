@@ -1,5 +1,4 @@
 #include "descompactar.h"
-<<<<<<< HEAD
 /*unsigned *descompactar_cabecalho(FILE *arquivo)
 {
     unsigned short lixo_tamanho[2];
@@ -26,28 +25,22 @@ unsigned char is_bit_set_char(unsigned char c, int i);
 unsigned char is_bit_set_char(unsigned char c, int i)
 {
     unsigned char mask = 1 << i;
-=======
-
-/* FUNÇÃO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
-unsigned short is_bit_set(unsigned char c, int i)
-{
-    unsigned short mask = 1 << i;
->>>>>>> origin/master
     return mask & c;
 }
 
-unsigned short obter_lixo(FILE *arquivo)
+unsigned char obter_lixo(FILE *arquivo)
 {
-    unsigned short lixo;
+    rewind(arquivo);
+    unsigned char lixo;
 
     lixo = fgetc(arquivo);
     lixo = lixo >> 5;
-
     return lixo;
 }
 
 unsigned short obter_tamanho_arvore(FILE *arquivo)
 {
+    rewind(arquivo);
     unsigned short tamanho_arvore;
     unsigned short auxiliar[2];
 
@@ -64,9 +57,9 @@ unsigned short obter_tamanho_arvore(FILE *arquivo)
 
 void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
 {
-    int i;
+    rewind(arquivo);
+    int i = 0;
     int tamanho = obter_tamanho_arvore(arquivo);
-
     for(i = 0; i < tamanho; i++)
     {
         array_arvore[i] = fgetc(arquivo);
@@ -94,7 +87,6 @@ unsigned int contar_tamanho_array_binarios_descompactar(FILE *arquivo, unsigned 
     return tam * 8;
 }
 
-<<<<<<< HEAD
 void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho)
 {
     unsigned char c;
@@ -104,32 +96,10 @@ void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_des
     {
         printf(" %c ",fgetc(arquivo));
     }
-=======
-/* CONTAGEM DA QUANTIDADE DE BITS NO TEXTO DO ARQUIVO COMPACTADO */
-int obter_tamanho_texto(FILE *arquivo)
-{
-    int tam = 0;
-
-    /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
-    while(fgetc(arquivo) != EOF)
-    {
-        tam++;
-    }
-
-    /* RETORNA A QUANTIDADE DE BITS DO TEXTO */
-    return tam * 8;
-}
-
-void escrever_texto_compactado(FILE *arquivo, int *texto_compactado)
-{
-    unsigned char c;
-    int i;
->>>>>>> origin/master
 
     /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
     while(tam < tam_array_b_descompactar)
     {
-<<<<<<< HEAD
 
         c = fgetc(arquivo);
         for(i = 0; i < TAMANHO_BYTE; i++)
@@ -138,12 +108,6 @@ void escrever_texto_compactado(FILE *arquivo, int *texto_compactado)
             {
                 array_binarios_descompactar[tam] = 1;
             }
-=======
-        for(i = 0; i < TAMANHO_BYTE; i++)
-        {
-            if(is_bit_set(c, 7 - (i % TAMANHO_BYTE)))
-                texto_compactado[i] = 1;
->>>>>>> origin/master
             else
             {
                 array_binarios_descompactar[tam] = 0;
@@ -151,7 +115,6 @@ void escrever_texto_compactado(FILE *arquivo, int *texto_compactado)
             tam++;
         }
     }
-<<<<<<< HEAD
 }
 
 void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto)
@@ -216,28 +179,3 @@ Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arv
     return arvore_huffman;
 }
 
-=======
-}
-
-void descompactar_texto(Node *cabeca, int *texto_compactado, FILE *novo_arquivo, int tamanho_texto)
-{
-    int i = 0;
-    Node *auxiliar;
-
-    while(i < tamanho_texto)
-    {
-        auxiliar = cabeca;
-        while(auxiliar->letra == '*')
-        {
-            if(texto_compactado[i] == 0)
-                auxiliar = auxiliar->filho_esquerda;
-            else
-                auxiliar = auxiliar->filho_direita;
-
-            i++;
-        }
-
-        fputc(auxiliar->letra, novo_arquivo);
-    }
-}
->>>>>>> origin/master
