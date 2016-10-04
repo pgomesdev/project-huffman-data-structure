@@ -17,7 +17,7 @@ int esta_Vazia(Node *cabeca_lista);
 //um caractere a ser inserido na lista, armazenado como unsigned char na variável letra;
 //a frequência desse caractere no texto, armazenado no inteiro num;
 //e devolve um ponteiro para Nós como o primeiro nó da nova lista, contendo o novo elemento.
-Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, int num);
+Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num);
 
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
 //e que não possui nenhuma devolução. FUNÇÃO RECURSIVA.
@@ -29,7 +29,7 @@ void print_lista_Frequencia(Node *cabeca_lista);
 //o texto a ser analizado, como uma String, que será apontada por txt;
 //o tamanho do texto recebido, armazenado no inteiro tam, onde tam >= 0;
 //e devolve a lista de nós de Huffman, com elementos ordenados pela frequência do caractere, de acordo com o texto passado.
-Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, int tam);
+Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam);
 
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
 //e devolve a quantidade de elementos na lista no formato inteiro.

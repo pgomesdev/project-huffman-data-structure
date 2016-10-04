@@ -10,7 +10,7 @@ int esta_Vazia(Node *cabeca_lista)
     return (cabeca_lista==NULL);
 }
 
-Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, int num)
+Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num)
 {
     Node *atual, *anterior;
     Node *newnode = (Node*)malloc(sizeof(Node));
@@ -64,9 +64,10 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, int num)
     return cabeca_lista;
 }
 
-Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, int tam)
+Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam)
 {
-    int i, j, num, aux;
+    unsigned long long int i, j;
+    unsigned long long int num, aux;
     unsigned char letra;
     Node *atual = cabeca_lista;
     for(i=0 ; i<tam ; i++)

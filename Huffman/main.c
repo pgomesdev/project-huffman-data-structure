@@ -6,23 +6,26 @@
 #include "f_lista.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
 #include "f_hashtable.h"
 
+//Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
 int main()
 {
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
-
+    puts("\n\n\n");
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
     puts("Digite:\n");
     puts("1 (para compactar)\n\n");
     puts("2 (para descompactar)\n\n");
     puts("0 (para SAIR)\n\n");
-    int compactador = 3;
+    int compactador;
+
+    scanf("%d", &compactador);
 
     while(compactador != 1 && compactador != 2 && compactador != 0)
     {
         scanf("%d", &compactador);
-        puts("Tecla Errada, por favor repita o processo!\n");
+        puts("Tecla Errada, porfavor repita o processo!\n");
         puts("Digite:\n");
         puts("1 (para compactar)\n\n");
         puts("2 (para descompactar)\n\n");
@@ -32,7 +35,7 @@ int main()
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
-        char url[]="arquivos_txt_para_testes//eulaENU.txt";
+        char url[]="arquivos_txt_para_testes//apple.txt";
 
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
         FILE *arq = abrir_Arquivo(url);
@@ -46,12 +49,14 @@ int main()
         ///  SE "abrir_Arquivo()" RETORNAR DIFERENTE DE ZERO, ARQUIVO ABERTO COM SUCESSO.
         if(arq != 0)
         {
-            int tam = contar_tam_texto_char(arq);//Calculando o tamanho do texto
+            unsigned long long int tam = contar_tam_texto_char(arq);//Calculando o tamanho do texto
 
             /// LEMBRAR QUE UNSIGNED SERVE PARA UTILIZAR TODOS OS BITS DO CHAR E NÃO PERDER O BIT DE SINAL
             unsigned char txt[tam];//Declarando o array que possui o mesmo tamanho do texto.
+
+            printf("quantidade de caracteres no texto desocmpactado: [%lld]\n", tam);
             char letra;//Variável condicional da repetição
-            int i = 0;//Variável de indice do array txt
+            unsigned long long int i = 0;//Variável de indice do array txt
 
             /// OBS.: FOI NECESSARIO ULTILIZAR A FUNÇÃO "rewind()" == "FUNÇÃO QUE REAPONTA "fgetc()" PARA O INICIO DO ARQUIVO."
             /// POIS NA CHAMADA DE "contar_tam_texto_char(arq)" , A FUNÇÃO "fgetc()" ESTAVA APONTANDO PARA O FINAL DO ARQUIVO.
@@ -63,6 +68,7 @@ int main()
                 txt[i] = letra;
                 i++;
             }
+            printf("tam do i: [%lld]\n", i);
             /// NAO PRECISO MAIS DO ARQUIVO!
             fclose(arq);
             //print_txt(txt,tam);//Verificação do Buffer, deve imprimir o mesmo texto de "url".
@@ -77,7 +83,7 @@ int main()
             Node *cabeca_lista = criar_Node_NULL();
 
             /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
-            cabeca_lista = criar_lista_Frequencia(cabeca_lista,txt,tam);
+            cabeca_lista = criar_lista_Frequencia(cabeca_lista, txt, tam);
             //print_lista_Frequencia(cabeca_lista);//Verificação da Lista de Huffman, deve ter todos os caracteres distintos.
 
             puts("\n");
@@ -103,7 +109,8 @@ int main()
             print_pre_ordem_arvore(cabeca_arvore);// Verificação da Árvore de Huffman, deve estar todos os nós em Pré-Ordem
             puts("\n");
             ///freq_x_profundidade e' a multiplicacao da frequencia*profundidade == numero de bits do arquivo compactado.
-            unsigned int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
+            unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
+
 
             lixo = freq_x_profundidade % 8;
 
@@ -138,78 +145,86 @@ int main()
                 puts("construir_ht nao concluido\n");
             }
             unsigned short array_binario[freq_x_profundidade];
+
             criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
 
-            FILE *novo_arquivo = fopen("arquivo.huff", "w");
+            printf("freq_x_profundidade: [%lld]\n", freq_x_profundidade);
 
-            unsigned short cabecalho_inicial = (converter_lixo(lixo) + tamanho_arvore);
+            FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
+
+            unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
 
             escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
             escrever_arvore(cabeca_arvore, novo_arquivo);
             escrever_texto(array_binario, freq_x_profundidade, novo_arquivo);
+
             fclose(novo_arquivo);
 
             ht = remove_hashtable(ht);//remove_hashtable da um free() em todas as listas da hash e na propia hash
             cabeca_arvore = remove_arvore(cabeca_arvore);//remove_arvore da um free() na arvore inteira.
 
+            puts("Arquivo compactado com sucesso!\n");
+
         }
         main();
     }
-
     else if(compactador == 2)
     {
-        FILE *novo_arquivo = fopen("arquivo.huff","r");
+        FILE *arquivo_huff = fopen("arquivos_txt_para_testes//arquivo_compactado.huff","r");
 
-        unsigned short lixo = obter_lixo(novo_arquivo);
-        rewind(novo_arquivo);
-        unsigned short int tam_arvore = obter_tamanho_arvore(novo_arquivo);
-        unsigned char arvore[tam_arvore];
-        int i;
-        obter_arvore(arvore, novo_arquivo);
+        unsigned char lixo = obter_lixo(arquivo_huff);
 
-        printf("LIXO: %d \n", lixo);
-        printf("TAM_ARVORE: %d \n", tam_arvore);
+        unsigned short tam_array_arvore = obter_tamanho_arvore(arquivo_huff);
 
-        for(i = 0 ; i < tam_arvore ; i++)
+        unsigned char array_arvore[tam_array_arvore];
+
+        obter_arvore(array_arvore,arquivo_huff);
+
+        printf("LIXO: %d \n",lixo);
+        printf("TAM_ARVORE: %d \n",tam_array_arvore);
+
+        Node *cabeca_arvore = criar_Node_NULL();
+
+        cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
+
+        print_pre_ordem_arvore(cabeca_arvore);
+
+        unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
+
+        unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];
+
+        printf("\ntam_array_binarios_descompactar:[%lld]",tam_array_binarios_descompactar);
+
+        rewind(arquivo_huff);
+        escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
+        //printf("%d",tam_array_binarios_descompactar);
+
+        /* int i;
+
+        for(i = 0; i < tam_array_binarios_descompactar ; i++)
         {
-                printf("[%c]",arvore[i]);
-        }
+            printf("[%d]",array_binarios_descompactar[i]);
+        } */
 
-        int tamanho_texto = obter_tamanho_texto(novo_arquivo);
+        fclose(arquivo_huff);
 
-        rewind(novo_arquivo);
+        FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w+");
 
-        int aux;
+        descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);
 
-        for(aux = 0; aux < tamanho_texto + 2; aux++)
-        {
-            fgetc(novo_arquivo);
-        }
+        fclose(arquivo_txt);
 
-        int texto_compactado[tamanho_texto];
+        cabeca_arvore = remove_arvore(cabeca_arvore);
 
-        //arvore = função para montar árvore
-
-        escrever_texto_compactado(novo_arquivo, texto_compactado);
-
-        fclose(novo_arquivo);
-
-        FILE *arquivo_descompactado = fopen("arquivo_descompactado.txt", "w+");
-
-        int tamanho_bits_texto = tamanho_texto - lixo;
-
-        descompactar_texto(arvore_huff, texto_compactado, arquivo_descompactado, tamanho_bits_texto);
-
-        fclose(arquivo_descompactado);
+        puts("Arquivo descompactado com sucesso!");
 
         main();
     }
-
     else if(compactador == 0)
     {
-        exit(0);
+        return 0;
     }
 
-    return 1;
+    return 0;
 }
 

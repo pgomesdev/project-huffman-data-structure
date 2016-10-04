@@ -115,7 +115,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
     }
 }
 
-unsigned short calcular_lixo(Node *cabeca_arvore, unsigned short lixo)
+unsigned long long calcular_lixo(Node *cabeca_arvore,unsigned long long int lixo)
 {
     if(cabeca_arvore != NULL)
     {
@@ -154,14 +154,6 @@ Node *remove_arvore(Node *cabeca_arvore)
     {
         cabeca_arvore->filho_esquerda = remove_arvore(cabeca_arvore->filho_esquerda);
         cabeca_arvore->filho_direita = remove_arvore(cabeca_arvore->filho_direita);
-        if(cabeca_arvore->letra == '\n')
-        {
-            printf("Letra: \\n %d foi apagada!\n", cabeca_arvore->num);
-        }
-        else
-        {
-                printf("Letra: %c %d foi apagada!\n", cabeca_arvore->letra, cabeca_arvore->num);
-        }
         free(cabeca_arvore);
         return NULL;
     }

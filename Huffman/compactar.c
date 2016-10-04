@@ -56,9 +56,9 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 }
 
 /* ESCREVE O TEXTO JÁ COMPACTADO NO ARQUIVO */
-void escrever_texto(unsigned short int *array_texto, int tamanho, FILE *arquivo)
+void escrever_texto(unsigned short int *array_texto, unsigned long long int tamanho, FILE *arquivo)
 {
-    int i;
+    unsigned long long int i;
     unsigned char c = 0;
 
     for(i = 0; i < tamanho; i++)
@@ -79,10 +79,10 @@ void escrever_texto(unsigned short int *array_texto, int tamanho, FILE *arquivo)
         fputc(c, arquivo);
 }
 
-void criar_array_binarios(Hashtable *ht, unsigned char *txt, int tam_txt, unsigned short *array_binario, unsigned int freq_x_profundidade)
+void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt, unsigned short *array_binario, unsigned long long int freq_x_profundidade)
 {
-    int i, c;
-    unsigned int j, k = 0;
+    int c;
+    unsigned long long int i, j, k = 0;
     unsigned short valor;
 
     Element *atual = criar_node_hash_null();
