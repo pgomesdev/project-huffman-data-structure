@@ -11,7 +11,7 @@ int main()
 {
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
-
+    puts("\n\n\n");
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
     puts("Digite:\n");
@@ -140,6 +140,13 @@ int main()
             unsigned short array_binario[freq_x_profundidade];
             criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
 
+            for(i = 0 ; i<freq_x_profundidade; i++)
+            {
+                printf("[%d]",array_binario[i]);
+            }
+
+
+
             FILE *novo_arquivo = fopen("arquivo.huff", "w");
 
             unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
@@ -147,6 +154,7 @@ int main()
             escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
             escrever_arvore(cabeca_arvore, novo_arquivo);
             escrever_texto(array_binario, freq_x_profundidade, novo_arquivo);
+
             fclose(novo_arquivo);
 
             ht = remove_hashtable(ht);//remove_hashtable da um free() em todas as listas da hash e na propia hash
@@ -157,21 +165,50 @@ int main()
     }
     else if(compactador == 2)
     {
-        FILE *novo_arquivo = fopen("arquivo.huff","r");
+        FILE *arquivo_huff = fopen("arquivo.huff","r");
 
-        unsigned char lixo = obter_lixo(novo_arquivo);
-        unsigned short int tam_arvore = obter_tamanho_arvore(novo_arquivo);
-        unsigned char arvore[tam_arvore];
-        int i;
-        obter_arvore(arvore,novo_arquivo);
+        unsigned char lixo = obter_lixo(arquivo_huff);
+
+        unsigned short int tam_array_arvore = obter_tamanho_arvore(arquivo_huff);
+
+        unsigned char array_arvore[tam_array_arvore];
+
+        obter_arvore(array_arvore,arquivo_huff);
 
         printf("LIXO: %d \n",lixo);
-        printf("TAM_ARVORE: %d \n",tam_arvore);
+        printf("TAM_ARVORE: %d \n",tam_array_arvore);
 
-        for(i = 0 ; i<tam_arvore ; i++)
+        Node *cabeca_arvore = criar_Node_NULL();
+
+        cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
+
+        print_pre_ordem_arvore(cabeca_arvore);
+
+        unsigned int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
+
+        unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];
+
+        printf("\ntam_array_binarios_descompactar:[%d]",tam_array_binarios_descompactar);
+        int i;
+
+        rewind(arquivo_huff);
+        escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
+        printf("%d",tam_array_binarios_descompactar);
+
+        for(i = 0; i<tam_array_binarios_descompactar ; i++)
         {
-                printf("[%c]",arvore[i]);
+            printf("[%d]",array_binarios_descompactar[i]);
         }
+
+        fclose(arquivo_huff);
+
+        FILE *arquivo_txt = fopen("arquivo.txt", "w+");
+
+        descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);
+
+        fclose(arquivo_txt);
+
+        cabeca_arvore = remove_arvore(cabeca_arvore);
 
         main();
     }
@@ -179,6 +216,6 @@ int main()
     {
         exit(0);
     }
-return 1;
+
 }
 

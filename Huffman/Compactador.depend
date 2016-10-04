@@ -365,14 +365,13 @@
 
 1475428960 c:\users\datsu\documents\huffman_p2\huffman\descompactar.h
 
-1475443207 source:/home/paulo/Área de Trabalho/Huffman/descompactar.c
+1475545116 source:/home/paulo/Área de Trabalho/Huffman/descompactar.c
 	"descompactar.h"
-	"compactar.h"
 
-1475439061 /home/paulo/Área de Trabalho/Huffman/descompactar.h
+1475545102 /home/paulo/Área de Trabalho/Huffman/descompactar.h
 	"f_arvore.h"
 
-1475273022 /home/paulo/Área de Trabalho/Huffman/f_arvore.h
+1475467568 /home/paulo/Área de Trabalho/Huffman/f_arvore.h
 	<stdlib.h>
 	<stdio.h>
 
@@ -384,14 +383,14 @@
 	<stdio.h>
 	<stdlib.h>
 
-1475268826 source:/home/paulo/Área de Trabalho/Huffman/f_arquivo.c
+1475544590 source:/home/paulo/Área de Trabalho/Huffman/f_arquivo.c
 	"f_arquivo.h"
 
 1475273176 /home/paulo/Área de Trabalho/Huffman/f_arquivo.h
 	<stdlib.h>
 	<stdio.h>
 
-1475445354 source:/home/paulo/Área de Trabalho/Huffman/f_arvore.c
+1475466277 source:/home/paulo/Área de Trabalho/Huffman/f_arvore.c
 	"f_arvore.h"
 
 1475281522 source:/home/paulo/Área de Trabalho/Huffman/f_hashtable.c
@@ -403,7 +402,7 @@
 1475272758 /home/paulo/Área de Trabalho/Huffman/f_lista.h
 	"f_arvore.h"
 
-1475445423 source:/home/paulo/Área de Trabalho/Huffman/main.c
+1475545114 source:/home/paulo/Área de Trabalho/Huffman/main.c
 	<locale.h>
 	"f_arquivo.h"
 	"f_arvore.h"

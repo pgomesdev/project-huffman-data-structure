@@ -10,23 +10,18 @@ typedef struct Node Node;// Para se referir a estrutura nó usar:Node
 /// DEFINIÇÃO DE NÓ DE ACORDO COM OS NÓS DEFINIDOS POR HUFFMAN NA ARVORE DE HUFFMAN
 struct Node
 {
-    /// FREQUÊNCIA DA variavél LETRA NO TEXTO
-    int num;
 
-    /// CARACTERE CONTIDO NO TEXTO
-    unsigned char letra;
+    int num; /// FREQUÊNCIA DA variavél LETRA NO TEXTO
 
-    /// variavél QUE CONTÉM A PROFUNDIDADE DESSE NÓ NA ARVORE DE HUFFMAN
-    int profundidade;
+    unsigned char letra; /// CARACTERE CONTIDO NO TEXTO
 
-    /// PONTEIRO PARA O PROXIMO NÓ NA LISTA DE HUFFMAN
-    Node *proximo_node;
+    int profundidade; /// variavél QUE CONTÉM A PROFUNDIDADE DESSE NÓ NA ARVORE DE HUFFMAN
 
-    /// PONTEIRO PARA O NÓ À ESQUERDA NA LISTA DE HUFFMAN
-    Node *filho_esquerda;
+    Node *proximo_node; /// PONTEIRO PARA O PROXIMO NÓ NA LISTA DE HUFFMAN
 
-    /// PONTEIRO PARA O NÓ À DIREITA NA LISTA DE HUFFMAN
-    Node *filho_direita;
+    Node *filho_esquerda; /// PONTEIRO PARA O NÓ À ESQUERDA NA LISTA DE HUFFMAN
+
+    Node *filho_direita; /// PONTEIRO PARA O NÓ À DIREITA NA LISTA DE HUFFMAN
 };
 
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca
