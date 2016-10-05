@@ -2,27 +2,27 @@
 #include "compactar.h"
 #define TAMANHO_SHORT 16
 
-/* FUN«√O UTILIZADA PARA SETAR UM DETERMINADO BIT EM UM CHAR */
+/* FUN√á√ÉO UTILIZADA PARA SETAR UM DETERMINADO BIT EM UM CHAR */
 unsigned char set_bit(unsigned char c, int i)
 {
     unsigned char mask = 1 << i;
     return mask | c;
 }
 
-/* FUN«√O QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
+/* FUN√á√ÉO QUE RETORNA 0(FALSO) OU 1(VERDADEIRO) CASO O BIT SELECIONADO ESTEJA SETADO */
 unsigned short is_bit_set(unsigned short c, int i)
 {
     unsigned short mask = 1 << i;
     return mask & c;
 }
 
-/* FAZ O DESLOCAMENTO DOS 3 BITS DE LIXO PARA OS TR S PRIMEIROS BITS DO SHORT */
+/* FAZ O DESLOCAMENTO DOS 3 BITS DE LIXO PARA OS TR√äS PRIMEIROS BITS DO SHORT */
 unsigned short converter_lixo(unsigned short lixo)
 {
     return lixo << 13;
 }
 
-/* ESCREVE O CABE«ALHO(LIXO E TAMANHO DA ¡RVORE) */
+/* ESCREVE O CABE√áALHO(LIXO E TAMANHO DA √ÅRVORE) */
 void escrever_cabecalho_inicio(unsigned short cabecalho_inicial, FILE* arquivo)
 {
     int i;
@@ -43,7 +43,7 @@ void escrever_cabecalho_inicio(unsigned short cabecalho_inicial, FILE* arquivo)
     }
 }
 
-/* ESCREVE A ¡RVORE EM PR…-ORDEM NO ARQUIVO */
+/* ESCREVE A √ÅRVORE EM PR√â-ORDEM NO ARQUIVO */
 void escrever_arvore(Node *cabeca, FILE *arquivo)
 {
     if(cabeca != NULL)
@@ -55,7 +55,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
     }
 }
 
-/* ESCREVE O TEXTO J¡ COMPACTADO NO ARQUIVO */
+/* ESCREVE O TEXTO J√Å COMPACTADO NO ARQUIVO */
 void escrever_texto(unsigned short int *array_texto, unsigned long long int tamanho, FILE *arquivo)
 {
     unsigned long long int i;
@@ -75,7 +75,7 @@ void escrever_texto(unsigned short int *array_texto, unsigned long long int tama
         }
     }
 
-    if(i-1 % TAMANHO_BYTE != 7)
+    if(i % TAMANHO_BYTE != 0)
         fputc(c, arquivo);
 }
 
