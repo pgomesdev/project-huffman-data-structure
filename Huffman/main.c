@@ -55,7 +55,6 @@ int main()
             /// LEMBRAR QUE UNSIGNED SERVE PARA UTILIZAR TODOS OS BITS DO CHAR E NÃO PERDER O BIT DE SINAL
             unsigned char txt[tam];//Declarando o array que possui o mesmo tamanho do texto.
 
-            printf("quantidade de caracteres no texto desocmpactado: [%lld]\n", tam);
             char letra;//Variável condicional da repetição
             unsigned long long int i = 0;//Variável de indice do array txt
 
