@@ -10,7 +10,7 @@ int esta_Vazia(Node *cabeca_lista)
     return (cabeca_lista==NULL);
 }
 
-Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num)
+Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num, Node *progresso)
 {
     Node *atual, *anterior;
     Node *newnode = (Node*)malloc(sizeof(Node));
@@ -38,6 +38,9 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned l
         anterior = atual;
         while(atual != NULL)
         {
+            if(progresso->num > 100 && progresso->num/10 <101)
+                printf("ordenando_lista PROGRESSO: %lld%%\n", progresso->num/10);
+            progresso->num++;
             if(newnode->num <= atual->num)
             {
                 newnode->proximo_node = atual;
@@ -66,16 +69,25 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned l
 
 Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam)
 {
+    ///comandos para progresso:
+    Node *progresso = (Node*)malloc(sizeof(Node));
+    progresso->letra = 0;
+    progresso->num = 0;
+    progresso->profundidade = 0;
+    progresso->proximo_node = NULL;
+    progresso->filho_esquerda = NULL;
+    progresso->filho_direita = NULL;
+    
     unsigned long long int i, j;
     unsigned long long int num, aux;
     unsigned char letra;
     Node *atual = cabeca_lista;
     for(i=0 ; i<tam ; i++)
     {
-        ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" e´ UM BUFFER CONTENDO O TEXTO.
+        ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" eÂ´ UM BUFFER CONTENDO O TEXTO.
         letra = txt[i];
 
-        ///CONTAGEM "num" É ZERADA PARA NOVA LETRA ANALIZADA!    OBS.: "num" == NUMERO DE VEZES QUE A LETRA ANALIZADA REPETE NO TEXTO!
+        ///CONTAGEM "num" Ã‰ ZERADA PARA NOVA LETRA ANALIZADA!    OBS.: "num" == NUMERO DE VEZES QUE A LETRA ANALIZADA REPETE NO TEXTO!
         num = 0;
         aux = 0;
         ///ESTE LOOP DECOBRE QUANTAS VEZES A LETRA ANALIZADA FOI REPETIDA NO TEXTO!
@@ -111,6 +123,11 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned lo
                 cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num);
             }
             atual = cabeca_lista;
+        }
+        if(tam >= 100)
+        {
+            if(i%((((tam/2)/2)/5)/5) == 0)
+                printf("Criando lista_huffman PROGRESSO: [%lld%%]\n",(i*100/tam));
         }
     }
     return atual;
