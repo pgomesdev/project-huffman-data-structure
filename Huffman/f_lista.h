@@ -24,7 +24,6 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned l
 //e que não possui nenhuma devolução. FUNÇÃO RECURSIVA.
 //Sua ação é utilizar o printf para imprimir na tela o conteudo da Lista de Huffman. Se estiver vazia, não excuta ação.
 // Modelo:   [%c]
-void print_lista_Frequencia(Node *cabeca_lista);
 
 //Função que recebe: a lista de nós de Huffman (preferencialmente vazia), como um ponteiro, apontada por cabeca_lista;
 //o texto a ser analizado, como uma String, que será apontada por txt;
@@ -35,5 +34,5 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, FILE *arquivo_texto);
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
 //e devolve a quantidade de elementos na lista no formato inteiro.
 //FUNÇÃO NÃO UTILIZADA
-int calcular_tam_lista(Node *cabeca_lista);
+//int calcular_tam_lista(Node *cabeca_lista);
 

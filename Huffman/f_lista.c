@@ -78,12 +78,22 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, FILE *arquivo_texto)
     progresso->filho_esquerda = NULL;
     progresso->filho_direita = NULL;
 
-    unsigned long long int i, j;
+    unsigned long long int j;
     unsigned long long int num, aux;
     unsigned char letra;
     Node *atual = cabeca_lista;
 
-    for(i=0 ; i<tam ; i++)
+    unsigned long long int frequencia[256] = 0;
+
+    while((letra = fgetc(arquivo_texto)) != EOF)
+    {
+        if(feof(arquivo_texto))
+            break;
+
+        frequencia[letra]++;
+    }
+
+    /* for(i=0 ; i<tam ; i++)
     {
         ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" e´ UM BUFFER CONTENDO O TEXTO.
         letra = txt[i];
@@ -130,27 +140,11 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, FILE *arquivo_texto)
             if(i%((((tam/2)/2)/5)/5) == 0)
                 printf("Criando lista_huffman PROGRESSO: [%lld%%]\n",(i*100/tam));
         }
-    }
+    } */
     return atual;
 }
 
-void print_lista_Frequencia(Node *cabeca_lista)
-{
-    if(cabeca_lista != NULL)
-    {
-        if(cabeca_lista->letra == '\n')
-        {
-            printf("[\\n]\n");
-        }
-        else
-        {
-            printf("[%c]\n", cabeca_lista->letra);
-        }
-        print_lista_Frequencia(cabeca_lista->proximo_node);
-    }
-}
-
-int calcular_tam_lista(Node *cabeca_lista)
+/* int calcular_tam_lista(Node *cabeca_lista)
 {
     int tam = 0;
     Node *atual = cabeca_lista;
@@ -161,5 +155,5 @@ int calcular_tam_lista(Node *cabeca_lista)
     }
 
     return tam;
-}
+}*/
 

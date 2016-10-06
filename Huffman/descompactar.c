@@ -59,11 +59,11 @@ void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_des
 {
     unsigned char c;
     unsigned long long int tam = 0;
+    int i;
 
     /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
     while(tam < tam_array_b_descompactar)
     {
-
         c = fgetc(arquivo);
         for(i = 0; i < TAMANHO_BYTE; i++)
         {

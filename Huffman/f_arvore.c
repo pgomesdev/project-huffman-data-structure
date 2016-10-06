@@ -113,8 +113,8 @@ unsigned long long int calcular_tamanho_texto(Node *cabeca_arvore, unsigned long
         }
         else
         {
-            lixo = calcular_lixo(cabeca_arvore->filho_esquerda, lixo);
-            lixo = calcular_lixo(cabeca_arvore->filho_direita, lixo);
+            lixo = calcular_tamanho_texto(cabeca_arvore->filho_esquerda, lixo);
+            lixo = calcular_tamanho_texto(cabeca_arvore->filho_direita, lixo);
         }
     }
     return lixo;

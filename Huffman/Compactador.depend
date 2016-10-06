@@ -127,7 +127,7 @@
 1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\f_arvore.c
 	"f_arvore.h"
 
-1475428960 c:\users\datsu\documents\huffman_p2\huffman\f_arvore.h
+1475793776 c:\users\datsu\documents\huffman_p2\huffman\f_arvore.h
 	<stdlib.h>
 	<stdio.h>
 
@@ -354,22 +354,22 @@
 
 1475341120 /home/paulo/Área de Trabalho/Huffman2/descompactar.h
 
-1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\compactar.c
+1475793028 source:c:\users\datsu\documents\huffman_p2\huffman\compactar.c
 	"f_hashtable.h"
 	"compactar.h"
 
-1475428960 c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.h
+1475792909 c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.h
 	"f_arvore.h"
 	<stdio.h>
 	<stdlib.h>
 
-1475428960 c:\users\datsu\documents\huffman_p2\huffman\compactar.h
+1475793040 c:\users\datsu\documents\huffman_p2\huffman\compactar.h
 	"f_hashtable.h"
 
-1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\descompactar.c
-	"f_arvore.h"
+1475794722 source:c:\users\datsu\documents\huffman_p2\huffman\descompactar.c
+	"descompactar.h"
 
-1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.c
+1475591178 source:c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.c
 	"f_hashtable.h"
 
 1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\f_lista.c
@@ -387,7 +387,8 @@
 	"f_lista.h"
 	"f_hashtable.h"
 
-1475428960 c:\users\datsu\documents\huffman_p2\huffman\descompactar.h
+1475793189 c:\users\datsu\documents\huffman_p2\huffman\descompactar.h
+	"f_arvore.h"
 
 1475608285 source:/home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Huffman/compactar.c
 	"f_hashtable.h"
