@@ -39,6 +39,15 @@ Element *criar_node_hash_null();
 //FUNÇÃO RECURSIVA
 Hashtable *remove_hashtable(Hashtable *ht);
 
+//Funcao que recebe: a Árvore de Huffman, como um ponteiro para o nó raiz, apontada por cabeca_arvore;
+//um ponteiro para Elements, apontado por lista, que DEVE SER INICIALIZADO COM NULL, para ser utilizado na função;
+//um ponteiro para Hashtable, apontado por ht, que DEVE JÁ ESTAR DECLARADO, para ser utilizado na função;
+//e não possui devoluções. FUNÇÃO RECURSIVA.
+//Sua ação é criar em ht, a lista de conversão para cada caracter, e retonar a lista para NULL
 void construir_ht(Node *cabeca_arvore, Element *lista, Hashtable *ht);
 
+//Funcao que recebe a Hashtable, como um ponteiro para tabelas de dispersão, apontada por ht
+//e não possui devoluções.
+//Sua ação é utilizar o printf para imprimir na tela o conteudo da Tabela de Dispersão. Se estiver vazia, percorre a hash.
+// Modelo:   [%c: %d%d%d%d]
 void print_ht(Hashtable *ht);
