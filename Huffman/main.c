@@ -36,7 +36,7 @@ int main()
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
-        char url[]="arquivos_txt_para_testes//apple.txt";
+        char url[]="arquivos_txt_para_testes//eulaENU.txt";
 
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
         FILE *arq = abrir_Arquivo(url);
