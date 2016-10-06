@@ -7,7 +7,6 @@ unsigned char is_bit_set_char(unsigned char c, int i)
 
 unsigned char obter_lixo(FILE *arquivo)
 {
-    rewind(arquivo);
     unsigned char lixo;
 
     lixo = fgetc(arquivo);
@@ -17,7 +16,6 @@ unsigned char obter_lixo(FILE *arquivo)
 
 unsigned short obter_tamanho_arvore(FILE *arquivo)
 {
-    rewind(arquivo);
     unsigned short tamanho_arvore;
     unsigned short auxiliar[2];
 
@@ -34,7 +32,6 @@ unsigned short obter_tamanho_arvore(FILE *arquivo)
 
 void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
 {
-    rewind(arquivo);
     int i = 0;
     int tamanho = obter_tamanho_arvore(arquivo);
     for(i = 0; i < tamanho; i++)
@@ -44,16 +41,9 @@ void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
 }
 
 /* CONTAGEM DA QUANTIDADE DE BITS NO TEXTO DO ARQUIVO COMPACTADO */
-unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo, unsigned short tam_cabecalho)
+unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo)
 {
-    int i;
     unsigned long long int tam = 0;
-
-    rewind(arquivo);
-    for(i = 0; i<tam_cabecalho ; i++)
-    {
-        fgetc(arquivo);
-    }
 
     /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
     while(fgetc(arquivo) != EOF)
@@ -65,15 +55,10 @@ unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo,
     return tam * 8;
 }
 
-void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho)
+void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, unsigned int tam_array_b_descompactar)
 {
     unsigned char c;
-    unsigned long long int i, tam = 0;
-    rewind(arquivo);
-    for(i = 0; i<tam_cabecalho ; i++)
-    {
-        fgetc(arquivo);
-    }
+    unsigned long long int tam = 0;
 
     /* LÊ TODO ARQUIVO, INCLUSIVE O QUE HÁ DE LIXO */
     while(tam < tam_array_b_descompactar)
@@ -95,7 +80,7 @@ void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_des
     }
 }
 
-void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto)
+void descompactar_texto(FILE *novo_arquivo, Node *cabeca, unsigned short *texto_compactado, int tamanho_texto)
 {
     int i = 0;
     Node *auxiliar = cabeca;

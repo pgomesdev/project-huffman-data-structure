@@ -10,17 +10,11 @@ typedef struct Node Node;// Para se referir a estrutura nó usar:Node
 /// DEFINIÇÃO DE NÓ DE ACORDO COM OS NÓS DEFINIDOS POR HUFFMAN NA ARVORE DE HUFFMAN
 struct Node
 {
-
     unsigned long long int num; /// FREQUÊNCIA DA variavél LETRA NO TEXTO
-
     unsigned char letra; /// CARACTERE CONTIDO NO TEXTO
-
     int profundidade; /// variavél QUE CONTÉM A PROFUNDIDADE DESSE NÓ NA ARVORE DE HUFFMAN
-
     Node *proximo_node; /// PONTEIRO PARA O PROXIMO NÓ NA LISTA DE HUFFMAN
-
     Node *filho_esquerda; /// PONTEIRO PARA O NÓ À ESQUERDA NA LISTA DE HUFFMAN
-
     Node *filho_direita; /// PONTEIRO PARA O NÓ À DIREITA NA LISTA DE HUFFMAN
 };
 
@@ -28,11 +22,6 @@ struct Node
 //e devolve um ponteiro para a raiz da Arvore de Huffman, correspondente à lista passada.
 //FUNÇÃO RECURSIVA
 Node *criar_arvore_huffman(Node *cabeca_arvore);
-
-//Função que recebe a Árvore de Huffman, como um ponteiro para o nó raiz, apontada por cabeca_arvore
-//e que não possui nenhuma devolução. FUNÇÃO RECURSIVA.
-//Sua ação é imprimir na tela a árvore em pré-ordem, utilizando printf.
-void print_pre_ordem_arvore(Node *cabeca_arvore);
 
 //Função que recebe: a Árvore de Huffman, como um ponteiro para nós, apontada por cabeca;
 //um inteiro profundidade, que DEVE SER INICIALIZADO COM 0, para ser utilizado na função;
@@ -44,7 +33,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade);
 //um long long int lixo, que DEVE SER INICIALIZADO COM 0, para ser utilizado na função;
 //e devolve um long long int com o número de bits a serem escritos no arquivo compactado,
 //de acordo com a Compactação utilizando a Árvore de Huffman. FUNÇÃO RECURSIVA.
-unsigned long long int calcular_lixo(Node *cabeca_arvore, unsigned long long int lixo);
+unsigned long long int calcular_tamanho_texto(Node *cabeca_arvore, unsigned long long int lixo);
 
 //Funcao que recebe: a Árvore de Huffman, como um ponteiro para o nó raiz, apontada por cabeca_arvore;
 //um short tam, que DEVE SER INICIALIZADO COM 0, para ser utilizado na função;

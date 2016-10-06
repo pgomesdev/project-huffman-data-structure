@@ -2,8 +2,6 @@
 
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca
 //e devolve um ponteiro para o primeiro nó da nova lista, onde os dois primeiros nós da lista anterior, se tornaram uma árvore
-Node *add_Node_pai_ordenado(Node *cabeca_arvore);
-
 Node *add_Node_pai_ordenado(Node *cabeca_arvore)
 {
     Node *atual = cabeca_arvore;
@@ -88,16 +86,6 @@ Node *criar_arvore_huffman(Node *cabeca_arvore)
     }
 }
 
-void print_pre_ordem_arvore(Node *cabeca_arvore)
-{
-    if(cabeca_arvore != NULL)
-    {
-        printf("[%c]", cabeca_arvore->letra);
-        print_pre_ordem_arvore(cabeca_arvore->filho_esquerda);
-        print_pre_ordem_arvore(cabeca_arvore->filho_direita);
-    }
-}
-
 void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
 {
     if(cabeca_arvore != NULL)
@@ -115,7 +103,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
     }
 }
 
-unsigned long long calcular_lixo(Node *cabeca_arvore,unsigned long long int lixo)
+unsigned long long int calcular_tamanho_texto(Node *cabeca_arvore, unsigned long long int lixo)
 {
     if(cabeca_arvore != NULL)
     {

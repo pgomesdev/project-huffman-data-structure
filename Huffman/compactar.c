@@ -48,7 +48,6 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 {
     if(cabeca != NULL)
     {
-        printf("[%c]", cabeca->letra);
         fputc(cabeca->letra, arquivo);
         escrever_arvore(cabeca->filho_esquerda, arquivo);
         escrever_arvore(cabeca->filho_direita, arquivo);
@@ -56,7 +55,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 }
 
 /* ESCREVE O TEXTO JÁ COMPACTADO NO ARQUIVO */
-void escrever_texto(unsigned short int *array_texto, unsigned long long int tamanho, FILE *arquivo)
+void escrever_texto(FILE *arquivo, unsigned short int *array_texto, unsigned long long int tamanho)
 {
     unsigned long long int i;
     unsigned char c = 0;

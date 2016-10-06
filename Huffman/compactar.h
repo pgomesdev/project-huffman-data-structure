@@ -45,7 +45,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo);
 //um ponteiro para um tipo FILE, representado o arquivo .huff, onde arquivo != NULL;
 //e que não possui nenhuma devolução.
 //Sua ação é imprimir no arquivo, o array_texto, onde cada elemento ocupará um bit.
-void escrever_texto(unsigned short int *array_texto, unsigned long long int tamanho, FILE *arquivo);
+void escrever_texto(FILE *arquivo, unsigned short int *array_texto, unsigned long long int tamanho);
 
 //Função que recebe: uma tabela de dispersão, apontada por ht, representando a codificação de cada caracter;
 //uma String, apontada por txt, representando o texto a ser codificado;
@@ -54,5 +54,5 @@ void escrever_texto(unsigned short int *array_texto, unsigned long long int tama
 //o tamanho que a sequencia deverá ter, salvo em freq_x_profundidade, no formato long long int;
 //e que não possui nenhuma devolução.
 //Sua ação é escrever em array_binario, a String passada, de acordo com a codificação da tabela de dispersão.
-void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt, 
+void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt,
                           unsigned short *array_binario, unsigned long long int freq_x_profundidade);

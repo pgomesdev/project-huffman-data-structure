@@ -30,7 +30,7 @@ void print_lista_Frequencia(Node *cabeca_lista);
 //o texto a ser analizado, como uma String, que será apontada por txt;
 //o tamanho do texto recebido, armazenado no long long int tam, onde tam >= 0;
 //e devolve a lista de nós de Huffman, com elementos ordenados pela frequência do caractere, de acordo com o texto passado.
-Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam);
+Node *criar_lista_Frequencia(Node *cabeca_lista, FILE *arquivo_texto);
 
 //Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
 //e devolve a quantidade de elementos na lista no formato inteiro.

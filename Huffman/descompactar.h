@@ -27,7 +27,7 @@ void obter_arvore(unsigned char *array_arvore, FILE *arquivo);
 //Função que recebe: um ponteiro para um tipo FILE, representado o arquivo .huff, onde arquivo != NULL;
 //um inteiro, sendo tam_cabecalho, a quatidade de caracteres iniciais a serem desconsiderados;
 //e que devolve um long long int, sendo o número de bits até o fim do arquivo.
-unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo, unsigned short tam_cabecalho);
+unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo);
 
 //Função que recebe: um ponteiro para nós, apontada por arvore_huffman;
 //uma String, apontada por array_arvore, tendo os conteudos de cada nó;
@@ -36,8 +36,8 @@ unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo,
 Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arvore, unsigned short tam_array_arvore);
 
 //Função que recebe: um ponteiro para um tipo FILE, representado o arquivo .huff, onde arquivo != NULL;
-void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, 
-                               unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho);
+void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar,
+                               unsigned int tam_array_b_descompactar);
 
-void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto);
+void descompactar_texto(FILE *novo_arquivo, Node *cabeca, unsigned short *texto_compactado, int tamanho_texto);
 

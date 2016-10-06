@@ -67,7 +67,7 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned l
     return cabeca_lista;
 }
 
-Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam)
+Node *criar_lista_Frequencia(Node *cabeca_lista, FILE *arquivo_texto)
 {
     ///comandos para progresso:
     Node *progresso = (Node*)malloc(sizeof(Node));
@@ -77,11 +77,12 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned lo
     progresso->proximo_node = NULL;
     progresso->filho_esquerda = NULL;
     progresso->filho_direita = NULL;
-    
+
     unsigned long long int i, j;
     unsigned long long int num, aux;
     unsigned char letra;
     Node *atual = cabeca_lista;
+
     for(i=0 ; i<tam ; i++)
     {
         ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" e´ UM BUFFER CONTENDO O TEXTO.

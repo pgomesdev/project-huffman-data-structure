@@ -1,5 +1,3 @@
-#include <locale.h>// BIBLIOTECA DE REGIONALIZAÇÃO DO C (UTILIZADA NO ARQUIVO MAIN)
-#include "f_arquivo.h"// Funções para manipular o arquivo .txt ou seu conteúdo
 #include "f_arvore.h"// TAD da Árvore de Huffman como Arvore
 #include "compactar.h"
 #include "descompactar.h"
@@ -9,8 +7,6 @@
 //Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
 int main()
 {
-    /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
-    //setlocale(LC_ALL,"");
     puts("\n\n\n");
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
@@ -40,8 +36,13 @@ int main()
 
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
         FILE *arq = abrir_Arquivo(url);
+        FILE *arq = fopen(url, "r");
 
-
+        if(arq == NULL)
+        {
+            printf("Erro, nao foi possivel abrir o arquivo\n");
+            return 0;
+        }
 
         /// -x- A PARTIR DESSE PONTO, JÁ TEMOS ACESSO AO ARQUIVO .txt -x-
 
@@ -50,43 +51,13 @@ int main()
         ///  SE "abrir_Arquivo()" RETORNAR DIFERENTE DE ZERO, ARQUIVO ABERTO COM SUCESSO.
         if(arq != 0)
         {
-            unsigned long long int tam = contar_tam_texto_char(arq);//Calculando o tamanho do texto
-
-            /// LEMBRAR QUE UNSIGNED SERVE PARA UTILIZAR TODOS OS BITS DO CHAR E NÃO PERDER O BIT DE SINAL
-            unsigned char txt[tam];//Declarando o array que possui o mesmo tamanho do texto.
-
-            char letra;//Variável condicional da repetição
-            unsigned long long int i = 0;//Variável de indice do array txt
-
-            /// OBS.: FOI NECESSARIO ULTILIZAR A FUNÇÃO "rewind()" == "FUNÇÃO QUE REAPONTA "fgetc()" PARA O INICIO DO ARQUIVO."
-            /// POIS NA CHAMADA DE "contar_tam_texto_char(arq)" , A FUNÇÃO "fgetc()" ESTAVA APONTANDO PARA O FINAL DO ARQUIVO.
-            rewind(arq);
-
-            /// REPETIÇÃO FAZ COPIA DO CONTEUDO DE "arq" PARA BUFFER "txt[]".
-            while((letra = fgetc(arq)) != EOF)
-            {
-                txt[i] = letra;
-                i++;
-            }
-            /// NAO PRECISO MAIS DO ARQUIVO!
-            fclose(arq);
-            
-            
-            /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
-
-
-
             // O ponteiro para Nós cabeca_lista é declarado e inicializado com NULL
             Node *cabeca_lista = criar_Node_NULL();
 
             /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
-            cabeca_lista = criar_lista_Frequencia(cabeca_lista, txt, tam);
-
-
+            cabeca_lista = criar_lista_Frequencia(cabeca_lista, arq);
 
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A LISTA DE HUFFMAN. -x-
-
-
 
             /// UTILIZAMOS UNSIGNED PARA NÃO PERDER O BIT DO SINAL.
             /// JÁ O SHORT, POIS ELE UTILIZA 2 BYTES PARA ARMAZENAR VALORES, EXATAMENTE OS 2 BYTES INICIAIS DO CABEÇALHO
@@ -100,7 +71,7 @@ int main()
 
             /// CALCULA A PROFUNDIDADE DE CADA NÓ DA ARVORE E SALVA NA ESTRUTURA DO NÓ DE HUFFMAN
             calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
-            
+
             ///freq_x_profundidade e' a multiplicacao da frequencia*profundidade == numero de bits do arquivo compactado.
             unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
 
@@ -158,6 +129,8 @@ int main()
 
         unsigned char lixo = obter_lixo(arquivo_huff);
 
+        rewind(arquivo_huff);
+
         unsigned short tam_array_arvore = obter_tamanho_arvore(arquivo_huff);
 
         unsigned char array_arvore[tam_array_arvore];
@@ -168,12 +141,18 @@ int main()
 
         cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
 
-        unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
+        unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff);
 
         unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];
 
         rewind(arquivo_huff);
-        escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
+
+        int i;
+
+        for(i = 0; i < tam_array_arvore + 2; i++)
+            fgetc(arquivo_huff);
+
+        escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar);
 
         fclose(arquivo_huff);
 
