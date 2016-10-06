@@ -22,15 +22,16 @@ int main()
 
     scanf("%d", &compactador);
 
-    while(compactador != 1 && compactador != 2 && compactador != 0)
+    while(compactador > 2 || compactador < 0)
     {
-        scanf("%d", &compactador);
-        puts("Tecla Errada, porfavor repita o processo!\n");
+        puts("\n\nTecla Errada, porfavor repita o processo!\n");
         puts("Digite:\n");
         puts("1 (para compactar)\n\n");
         puts("2 (para descompactar)\n\n");
         puts("0 (para SAIR)\n\n");
+        scanf("%d", &compactador);
     }
+
 
     if(compactador == 1)
     {
@@ -68,13 +69,10 @@ int main()
                 txt[i] = letra;
                 i++;
             }
-            printf("tam do i: [%lld]\n", i);
             /// NAO PRECISO MAIS DO ARQUIVO!
             fclose(arq);
-            //print_txt(txt,tam);//Verificação do Buffer, deve imprimir o mesmo texto de "url".
-
-
-
+            
+            
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
 
 
@@ -84,9 +82,6 @@ int main()
 
             /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
             cabeca_lista = criar_lista_Frequencia(cabeca_lista, txt, tam);
-            //print_lista_Frequencia(cabeca_lista);//Verificação da Lista de Huffman, deve ter todos os caracteres distintos.
-
-            puts("\n");
 
 
 
@@ -106,11 +101,9 @@ int main()
 
             /// CALCULA A PROFUNDIDADE DE CADA NÓ DA ARVORE E SALVA NA ESTRUTURA DO NÓ DE HUFFMAN
             calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
-            print_pre_ordem_arvore(cabeca_arvore);// Verificação da Árvore de Huffman, deve estar todos os nós em Pré-Ordem
-            puts("\n");
+            
             ///freq_x_profundidade e' a multiplicacao da frequencia*profundidade == numero de bits do arquivo compactado.
             unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
-
 
             lixo = freq_x_profundidade % 8;
 
@@ -120,20 +113,14 @@ int main()
             /// A VÁRIAVEL tamanho_arvore RECEBE A QUANTIDADE DE NÓS NA ARVORE DE HUFFMAN
             tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
-            //printf("LIXO: %d \n",lixo);
-            //printf("TAM_ARVORE: %d \n",tamanho_arvore);
 
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A ARVORE DE HUFFMAN E AS INFORMAÇÕES DO CABEÇALHO. -x-
 
 
-
-            puts("\n");
             Hashtable *ht = create_hashtable();
             Element *lista = criar_node_hash_null();
 
             construir_ht(cabeca_arvore,lista,ht);
-
-            //print_ht(ht);// imprime a hash criada baseada na arvore
 
             ///Se lista == NULL , então a funcao construir_ht foi execultada com sucesso.
             if(lista == NULL)
@@ -148,8 +135,6 @@ int main()
 
             criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
 
-            printf("freq_x_profundidade: [%lld]\n", freq_x_profundidade);
-
             FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
 
             unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
@@ -163,7 +148,7 @@ int main()
             ht = remove_hashtable(ht);//remove_hashtable da um free() em todas as listas da hash e na propia hash
             cabeca_arvore = remove_arvore(cabeca_arvore);//remove_arvore da um free() na arvore inteira.
 
-            puts("Arquivo compactado com sucesso!\n");
+            puts("\n\nArquivo compactado com sucesso!\n");
 
         }
         main();
@@ -180,31 +165,16 @@ int main()
 
         obter_arvore(array_arvore,arquivo_huff);
 
-        printf("LIXO: %d \n",lixo);
-        printf("TAM_ARVORE: %d \n",tam_array_arvore);
-
         Node *cabeca_arvore = criar_Node_NULL();
 
         cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
-
-        print_pre_ordem_arvore(cabeca_arvore);
 
         unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
 
         unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];
 
-        printf("\ntam_array_binarios_descompactar:[%lld]",tam_array_binarios_descompactar);
-
         rewind(arquivo_huff);
         escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
-        //printf("%d",tam_array_binarios_descompactar);
-
-        /* int i;
-
-        for(i = 0; i < tam_array_binarios_descompactar ; i++)
-        {
-            printf("[%d]",array_binarios_descompactar[i]);
-        } */
 
         fclose(arquivo_huff);
 
@@ -216,7 +186,7 @@ int main()
 
         cabeca_arvore = remove_arvore(cabeca_arvore);
 
-        puts("Arquivo descompactado com sucesso!");
+        puts("\n\nArquivo descompactado com sucesso!");
 
         main();
     }
