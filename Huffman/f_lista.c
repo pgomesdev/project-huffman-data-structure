@@ -101,7 +101,7 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned lo
 
         if(cabeca_lista == NULL)
         {
-            cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num);
+            cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num, progresso);
             atual = cabeca_lista;
         }
         else
@@ -120,7 +120,7 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned lo
             }
             if(aux == 0)
             {
-                cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num);
+                cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num, progresso);
             }
             atual = cabeca_lista;
         }
