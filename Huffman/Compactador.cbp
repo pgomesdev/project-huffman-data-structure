@@ -39,10 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="descompactar.h" />
-		<Unit filename="f_arquivo.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="f_arquivo.h" />
 		<Unit filename="f_arvore.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -51,10 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="f_hashtable.h" />
-		<Unit filename="f_lista.c">
+		<Unit filename="fila_prioridade.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="f_lista.h" />
+		<Unit filename="fila_prioridade.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

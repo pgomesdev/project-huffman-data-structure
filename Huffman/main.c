@@ -1,7 +1,7 @@
 #include "f_arvore.h"// TAD da Árvore de Huffman como Arvore
 #include "compactar.h"
 #include "descompactar.h"
-#include "f_lista.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
+#include "fila_prioridade.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
 #include "f_hashtable.h"
 
 //Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
@@ -28,17 +28,14 @@ int main()
         scanf("%d", &compactador);
     }
 
-
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
         char url[]="arquivos_txt_para_testes//eulaENU.txt";
 
-        /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
-        FILE *arq = abrir_Arquivo(url);
-        FILE *arq = fopen(url, "r");
+        FILE *arquivo_compactar = fopen(url, "r");
 
-        if(arq == NULL)
+        if(arquivo_compactar == NULL)
         {
             printf("Erro, nao foi possivel abrir o arquivo\n");
             return 0;
@@ -46,16 +43,14 @@ int main()
 
         /// -x- A PARTIR DESSE PONTO, JÁ TEMOS ACESSO AO ARQUIVO .txt -x-
 
-
-
         ///  SE "abrir_Arquivo()" RETORNAR DIFERENTE DE ZERO, ARQUIVO ABERTO COM SUCESSO.
-        if(arq != 0)
+        if(arquivo_compactar != 0)
         {
             // O ponteiro para Nós cabeca_lista é declarado e inicializado com NULL
-            Node *cabeca_lista = criar_Node_NULL();
+            Node *cabeca_lista = criar_no_nulo();
 
             /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
-            cabeca_lista = criar_lista_Frequencia(cabeca_lista, arq);
+            cabeca_lista = criar_lista_frequencia(arquivo_compactar);
 
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A LISTA DE HUFFMAN. -x-
 
@@ -73,7 +68,7 @@ int main()
             calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
 
             ///freq_x_profundidade e' a multiplicacao da frequencia*profundidade == numero de bits do arquivo compactado.
-            unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
+            unsigned long long int freq_x_profundidade = calcular_tamanho_texto(cabeca_arvore, lixo);
 
             lixo = freq_x_profundidade % 8;
 
@@ -103,7 +98,7 @@ int main()
             }
             unsigned short array_binario[freq_x_profundidade];
 
-            criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
+            criar_array_binarios(ht, array_binario, freq_x_profundidade);
 
             FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
 
@@ -111,7 +106,7 @@ int main()
 
             escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
             escrever_arvore(cabeca_arvore, novo_arquivo);
-            escrever_texto(array_binario, freq_x_profundidade, novo_arquivo);
+            escrever_texto(novo_arquivo, array_binario, freq_x_profundidade);
 
             fclose(novo_arquivo);
 
@@ -137,7 +132,7 @@ int main()
 
         obter_arvore(array_arvore,arquivo_huff);
 
-        Node *cabeca_arvore = criar_Node_NULL();
+        Node *cabeca_arvore = criar_no_nulo();
 
         cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
 
@@ -158,7 +153,7 @@ int main()
 
         FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w+");
 
-        descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);
+        descompactar_texto(arquivo_txt, cabeca_arvore, array_binarios_descompactar, tam_array_binarios_descompactar-lixo);
 
         fclose(arquivo_txt);
 

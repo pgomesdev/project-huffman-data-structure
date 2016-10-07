@@ -124,7 +124,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\f_arvore.c
+1475794763 source:c:\users\datsu\documents\huffman_p2\huffman\f_arvore.c
 	"f_arvore.h"
 
 1475793776 c:\users\datsu\documents\huffman_p2\huffman\f_arvore.h
@@ -358,7 +358,7 @@
 	"f_hashtable.h"
 	"compactar.h"
 
-1475792909 c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.h
+1475795095 c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.h
 	"f_arvore.h"
 	<stdio.h>
 	<stdlib.h>
@@ -372,10 +372,10 @@
 1475591178 source:c:\users\datsu\documents\huffman_p2\huffman\f_hashtable.c
 	"f_hashtable.h"
 
-1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\f_lista.c
+1475796755 source:c:\users\datsu\documents\huffman_p2\huffman\f_lista.c
 	"f_lista.h"
 
-1475428960 c:\users\datsu\documents\huffman_p2\huffman\f_lista.h
+1475796725 c:\users\datsu\documents\huffman_p2\huffman\f_lista.h
 	"f_arvore.h"
 
 1475428960 source:c:\users\datsu\documents\huffman_p2\huffman\main.c
@@ -439,4 +439,10 @@
 	"descompactar.h"
 	"f_lista.h"
 	"f_hashtable.h"
+
+1475797440 source:c:\users\datsu\documents\huffman_p2\huffman\fila_prioridade.c
+	"fila_prioridade.h"
+
+1475796964 c:\users\datsu\documents\huffman_p2\huffman\fila_prioridade.h
+	"f_arvore.h"
 
