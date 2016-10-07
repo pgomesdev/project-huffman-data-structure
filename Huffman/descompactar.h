@@ -36,8 +36,19 @@ unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo,
 Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arvore, unsigned short tam_array_arvore);
 
 //Função que recebe: um ponteiro para um tipo FILE, representado o arquivo .huff, onde arquivo != NULL;
+//um array de Short, apontado por array_binarios_descompactar, com os elementos declarados;
+//o tamanho do array passado, salvo em tam_array_b_descompactar;
+//um short, sendo tam_cabecalho, a quatidade de caracteres iniciais a serem desconsiderados;
+//e que não possui nenhuma devolução.
+//Sua ação é escrever em array_binarios_descompactar, a sequencia de bits existente após os caracteres iniciais.
 void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, 
                                unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho);
 
+//Função que recebe: um ponteiro para o nó raiz da Arvore, apontado por cabeca;
+//uma sequencia de bits, apontada por texto_compactado;
+//um ponteiro para um tipo FILE, representando o arquivo descompactado, onde o arquivo deve estar declarado;
+//o tamanho da sequencia de bits passada, salvo em tamanho_texto;
+//e que não possui nenhuma devolução.
+//Sua ação é escrever em novo_arquivo, o texto descompactado de acordo com a arvore dada.
 void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto);
 
