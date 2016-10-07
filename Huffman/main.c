@@ -12,7 +12,7 @@ int main()
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
     
-    /// PEDE UMA AÇÃO DO USUÁRIO
+    /// ESPERA UMA AÇÃO DO USUÁRIO.
     
     int compactador;
     
@@ -27,7 +27,7 @@ int main()
 
     scanf("%d", &compactador);
 
-    while(compactador > 2 || compactador < 0)
+    while(compactador > 2 || compactador < 0)//Enquanto o valor digitado não for válido, leia novamente
     {
         puts("\n\nTecla Errada, porfavor repita o processo!\n");
         puts("Digite:\n");
@@ -107,9 +107,10 @@ int main()
             /// CALCULA A PROFUNDIDADE DE CADA NÓ DA ARVORE E SALVA NA ESTRUTURA DO NÓ DE HUFFMAN
             calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
             
-            ///freq_x_profundidade e' a multiplicacao da frequencia*profundidade == numero de bits do arquivo compactado.
+            /// freq_x_profundidade E' O NUMERO DE BITS DO ARQUIVO COMPACTADO.
             unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
 
+            /// LIXO RECEBE A QUANTIDADE DE BITS SIGNIFICATIVOS DO ULTIMO BYTE.
             lixo = freq_x_profundidade % 8;
 
             /// FAZEMOS A OPERAÇÃO TERNARIA, DE MODO A SALVAR 0, SE NÃO POSSUI LIXO NO ULTIMO BYTE; (8-lixo) SE HOUVER LIXO
@@ -130,8 +131,8 @@ int main()
             /// ESCREVE NA TABELA DE DISPERSÃO, NA CHAVE DO CARACTERE, A SEQUÊNCIA DE BITS CORRESPONDENTE A COMPRESSÃO
             construir_ht(cabeca_arvore,lista,ht);
 
-            ///Se lista == NULL , então a funcao construir_ht foi executada com sucesso.
-            if(lista == NULL)
+            /// VERIFICAÇÃO DA FUNÇÃO ANTERIOR
+            if(lista == NULL)// Se lista == NULL , então a funcao construir_ht foi executada com sucesso.
             {
                 puts("construir_ht OK!!");
             }
@@ -139,28 +140,40 @@ int main()
             {
                 puts("construir_ht nao concluido\n");
             }
-            unsigned short array_binario[freq_x_profundidade];
+            
+            unsigned short array_binario[freq_x_profundidade];//Declara o array que receberá os bits compactados.
 
+            /// ESCREVE NO array_binario O TEXTO CODIFICADO DE ACORDO COM A ARVORE PASSADA
             criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
+            
+            
+            
+            ///-x- A PARTIR DESSE PONTO, JÁ TEMOS TODAS AS INFORMAÇÕES DO ARQUIVO .huff . -x-
 
+            
+            
+            /// CRIA UM NOVO ARQUIVO PARA RECEBER A COMPACTAÇÃO
             FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
 
+            /// CRIA OS DOIS PRIMEIROS BYTES, DE ACORDO COM A ESPECIFICAÇÃO DO CABEÇALHO
             unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
 
+            /// ESCREVE OS 2 PRIMEIROS BYTES, A ARVORE E O TEXTO CODIFICADO
             escrever_cabecalho_inicio(cabecalho_inicial, novo_arquivo);
             escrever_arvore(cabeca_arvore, novo_arquivo);
             escrever_texto(array_binario, freq_x_profundidade, novo_arquivo);
 
-            fclose(novo_arquivo);
+            fclose(novo_arquivo);//Fecha o arquivo
 
-            ht = remove_hashtable(ht);//remove_hashtable da um free() em todas as listas da hash e na propia hash
-            cabeca_arvore = remove_arvore(cabeca_arvore);//remove_arvore da um free() na arvore inteira.
+            ht = remove_hashtable(ht);// Desaloca o espaço utilizado para Tabela de Dispersão.
+            cabeca_arvore = remove_arvore(cabeca_arvore);// Desaloca o espaço utilizado para Arvore de Huffman.
 
-            puts("\n\nArquivo compactado com sucesso!\n");
+            puts("\n\nArquivo compactado com sucesso!\n");//Mensagem de Finalização
 
         }
-        main();
+        main();// Retorna para o inicio da função, como uma função recursiva!
     }
+    //Se o usuário digitar 2, escolhendo a descompressão:
     else if(compactador == 2)
     {
         FILE *arquivo_huff = fopen("arquivos_txt_para_testes//arquivo_compactado.huff","r");
@@ -198,6 +211,7 @@ int main()
 
         main();
     }
+    //Se o usuário digitar 0, escolhendo sair do programa:
     else if(compactador == 0)
     {
         return 0;
