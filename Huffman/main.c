@@ -11,6 +11,11 @@ int main()
 {
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
+    
+    /// PEDE UMA AÇÃO DO USUÁRIO
+    
+    int compactador;
+    
     puts("\n\n\n");
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
@@ -18,7 +23,7 @@ int main()
     puts("1 (para compactar)\n\n");
     puts("2 (para descompactar)\n\n");
     puts("0 (para SAIR)\n\n");
-    int compactador;
+    
 
     scanf("%d", &compactador);
 
@@ -32,7 +37,7 @@ int main()
         scanf("%d", &compactador);
     }
 
-
+    //Se o usuário digitar 1, escolhendo a compressão:
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
@@ -70,6 +75,7 @@ int main()
             }
             /// NAO PRECISO MAIS DO ARQUIVO!
             fclose(arq);
+            
             
             
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
@@ -113,15 +119,18 @@ int main()
             tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
 
+            
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A ARVORE DE HUFFMAN E AS INFORMAÇÕES DO CABEÇALHO. -x-
 
+            
 
-            Hashtable *ht = create_hashtable();
-            Element *lista = criar_node_hash_null();
+            Hashtable *ht = create_hashtable();//Cria a Tabela com a codificação, onde cada chave é inicializada com NULL
+            Element *lista = criar_node_hash_null();//Cria um ponteiro para Element, inicializando com NULL.
 
+            /// ESCREVE NA TABELA DE DISPERSÃO, NA CHAVE DO CARACTERE, A SEQUÊNCIA DE BITS CORRESPONDENTE A COMPRESSÃO
             construir_ht(cabeca_arvore,lista,ht);
 
-            ///Se lista == NULL , então a funcao construir_ht foi execultada com sucesso.
+            ///Se lista == NULL , então a funcao construir_ht foi executada com sucesso.
             if(lista == NULL)
             {
                 puts("construir_ht OK!!");
