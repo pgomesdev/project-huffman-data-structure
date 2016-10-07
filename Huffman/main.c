@@ -1,10 +1,10 @@
 #include <locale.h>// BIBLIOTECA DE REGIONALIZAÇÃO DO C (UTILIZADA NO ARQUIVO MAIN)
 #include "f_arquivo.h"// Funções para manipular o arquivo .txt ou seu conteúdo
 #include "f_arvore.h"// TAD da Árvore de Huffman como Arvore
-#include "compactar.h"
-#include "descompactar.h"
+#include "compactar.h"// Funções diversas para a compactação
+#include "descompactar.h"// Funções diversas para a compactação
 #include "f_lista.h"// Funções para utilizar a Árvore de Huffman na estrutura de Lista
-#include "f_hashtable.h"
+#include "f_hashtable.h"// TAD de Tabela de Dispersão
 
 //Não recebe parametros, devolve 0 se chegar ao fim do programa e aqui começa a execução do (Des)Compactador
 int main()
