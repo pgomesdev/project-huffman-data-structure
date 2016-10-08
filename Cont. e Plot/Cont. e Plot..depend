@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1475888625 source:c:\users\'-paulo\desktop\cont. e plot\main.c
+	<time.h>
+	"f_lista.h"
+	"f_arvore_binaria.h"
+
+1475891042 source:c:\users\'-paulo\desktop\cont. e plot\f_lista.c
+	"f_lista.h"
+
+1475888783 source:c:\users\'-paulo\desktop\cont. e plot\f_arvore_binaria.c
+	"f_arvore_binaria.h"
+
+1475888837 c:\users\'-paulo\desktop\cont. e plot\f_arvore_binaria.h
+	<stdio.h>
+	<stdlib.h>
+
+1475889412 c:\users\'-paulo\desktop\cont. e plot\f_lista.h
+	<stdio.h>
+	<stdlib.h>
+	"f_arvore_binaria.h"
+
