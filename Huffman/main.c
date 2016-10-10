@@ -176,40 +176,52 @@ int main()
     //Se o usuário digitar 2, escolhendo a descompressão:
     else if(compactador == 2)
     {
+        /// ABRE O ARQUIVO .huff NA MESMA PASTA
         FILE *arquivo_huff = fopen("arquivos_txt_para_testes//arquivo_compactado.huff","r");
 
+        /// SALVA EM lixo QUANTOS BITS DO ULTIMO BYTE NÃO SÃO SIGNIFICATIVOS
         unsigned char lixo = obter_lixo(arquivo_huff);
-
+        
+        /// SALVA EM tam_array_arvore QUANTOS ELEMENTOS ESTÃO NA ARVORE DE HUFFMAN
         unsigned short tam_array_arvore = obter_tamanho_arvore(arquivo_huff);
 
-        unsigned char array_arvore[tam_array_arvore];
+        unsigned char array_arvore[tam_array_arvore];//Declara um array para receber os caracteres da arvore
 
+        /// ESCREVE NO array_arvore OS CARACTERES DA ARVORE DE HUFFMAN
         obter_arvore(array_arvore,arquivo_huff);
 
-        Node *cabeca_arvore = criar_Node_NULL();
+        Node *cabeca_arvore = criar_Node_NULL();// Cria um ponteiro inicializado com NULL
 
+        /// cabeca_arvore APONTA PARA RAIZ DA ARVORE DE HUFFMAN NOVA
         cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
 
+        /// CALCULA A QUANTIDADE DE BITS DO ARQUIVO TIRANDO O CABEÇALHO
         unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
 
-        unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];
+        unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];//Declara o array de bits compactados
 
-        rewind(arquivo_huff);
+        rewind(arquivo_huff);//Retorna ao começo do arquivo_huff
+        
+        /// O array_binarios_descompactar RECEBE EM CADA POSIÇÃO, UM BIT DO TEXTO COMPACTADO
         escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
 
+        /// NÃO PRECISO MAIS DO ARQUIVO
         fclose(arquivo_huff);
 
+        /// CRIA UM ARQUIVO .txt
         FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w+");
 
+        /// ESCREVE O TEXTO CORRESPONDENTE AO ARQUIVO COMPACTADO
         descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);
 
+        /// O ARQUIVO ESTÁ COMPLETO.
         fclose(arquivo_txt);
 
-        cabeca_arvore = remove_arvore(cabeca_arvore);
+        cabeca_arvore = remove_arvore(cabeca_arvore);// Desaloca a memória utilizada para Arvore
 
-        puts("\n\nArquivo descompactado com sucesso!");
+        puts("\n\nArquivo descompactado com sucesso!");// Mensagem de Finalização
 
-        main();
+        main();// Retorna para o inicio da função, como uma função recursiva!
     }
     //Se o usuário digitar 0, escolhendo sair do programa:
     else if(compactador == 0)
