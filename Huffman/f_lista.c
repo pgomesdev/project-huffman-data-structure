@@ -1,15 +1,25 @@
 #include "f_lista.h"
 
+//Função que não recebe variáveis;
+//e devolve um ponteiro para Nós, inicializado com NULL
 Node *criar_Node_NULL()
 {
     return NULL;
 }
 
+//Função que recebe: a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
+//e devolve 0, se a lista passada conter algum elemento,
+//ou devolve um inteiro, se a lista estiver vazia.
 int esta_Vazia(Node *cabeca_lista)
 {
     return (cabeca_lista==NULL);
 }
 
+//Função que recebe: a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista;
+//um caractere a ser inserido na lista, armazenado como unsigned char na variável letra;
+//a frequência desse caractere no texto, armazenado no long long int num;
+//o Nó progresso é apenas para print do loading, em progresso->num temos o progresso atual.
+//e devolve um ponteiro para Nós como o primeiro nó da nova lista, contendo o novo elemento.
 Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num, Node *progresso)
 {
     Node *atual, *anterior;
@@ -67,6 +77,10 @@ Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned l
     return cabeca_lista;
 }
 
+//Função que recebe: a lista de nós de Huffman (preferencialmente vazia), como um ponteiro, apontada por cabeca_lista;
+//o texto a ser analizado, como uma String, que será apontada por txt;
+//o tamanho do texto recebido, armazenado no long long int tam, onde tam >= 0;
+//e devolve a lista de nós de Huffman, com elementos ordenados pela frequência do caractere, de acordo com o texto passado.
 Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam)
 {
     ///comandos para progresso:
@@ -133,6 +147,10 @@ Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned lo
     return atual;
 }
 
+//Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
+//e que não possui nenhuma devolução. FUNÇÃO RECURSIVA.
+//Sua ação é utilizar o printf para imprimir na tela o conteudo da Lista de Huffman. Se estiver vazia, não excuta ação.
+// Modelo:   [%c]
 void print_lista_Frequencia(Node *cabeca_lista)
 {
     if(cabeca_lista != NULL)
@@ -149,6 +167,9 @@ void print_lista_Frequencia(Node *cabeca_lista)
     }
 }
 
+//Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
+//e devolve a quantidade de elementos na lista no formato inteiro.
+//FUNÇÃO NÃO UTILIZADA
 int calcular_tam_lista(Node *cabeca_lista)
 {
     int tam = 0;
