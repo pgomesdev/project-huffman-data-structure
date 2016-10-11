@@ -78,7 +78,7 @@ void escrever_texto(FILE *arquivo, unsigned short int *array_texto, unsigned lon
         fputc(c, arquivo);
 }
 
-void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt, unsigned short *array_binario, unsigned long long int freq_x_profundidade)
+void criar_array_binarios(FILE *arquivo, Elemento *hash, unsigned short *array_binario, unsigned long long int freq_x_profundidade)
 {
     int c;
     unsigned long long int i, j, k = 0;

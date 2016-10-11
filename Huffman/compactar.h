@@ -54,5 +54,9 @@ void escrever_texto(FILE *arquivo, unsigned short int *array_texto, unsigned lon
 //o tamanho que a sequencia deverá ter, salvo em freq_x_profundidade, no formato long long int;
 //e que não possui nenhuma devolução.
 //Sua ação é escrever em array_binario, a String passada, de acordo com a codificação da tabela de dispersão.
+<<<<<<< HEAD
+void criar_array_binarios(FILE *arquivo, Elemento *hash, unsigned short *array_binario, unsigned long long int freq_x_profundidade);
+=======
 void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt,
                           unsigned short *array_binario, unsigned long long int freq_x_profundidade);
+>>>>>>> optimize

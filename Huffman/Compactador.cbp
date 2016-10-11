@@ -47,10 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="f_hashtable.h" />
-		<Unit filename="fila_prioridade.c">
+		<Unit filename="f_lista.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="fila_prioridade.h" />
+		<Unit filename="f_lista.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

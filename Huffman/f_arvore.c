@@ -103,32 +103,41 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
     }
 }
 
+<<<<<<< HEAD
+unsigned long long calcular_tamanho_texto(Node *cabeca_arvore, unsigned long long int tamanho_texto)
+=======
 unsigned long long int calcular_tamanho_texto(Node *cabeca_arvore, unsigned long long int lixo)
+>>>>>>> optimize
 {
     if(cabeca_arvore != NULL)
     {
         if(cabeca_arvore->letra != '*')
         {
-            lixo = lixo + (cabeca_arvore->profundidade * cabeca_arvore->num);
+            tamanho_texto = tamanho_texto + (cabeca_arvore->profundidade * cabeca_arvore->frequencia);
         }
         else
         {
+<<<<<<< HEAD
+            tamanho_texto = calcular_tamanho_texto(cabeca_arvore->filho_esquerda, tamanho_texto);
+            tamanho_texto = calcular_tamanho_texto(cabeca_arvore->filho_direita, tamanho_texto);
+=======
             lixo = calcular_tamanho_texto(cabeca_arvore->filho_esquerda, lixo);
             lixo = calcular_tamanho_texto(cabeca_arvore->filho_direita, lixo);
+>>>>>>> optimize
         }
     }
-    return lixo;
+    return tamanho_texto;
 }
 
-unsigned short calcular_tam_arvore(Node *cabeca_arvore, unsigned short tam)
+unsigned short calcular_tam_arvore(Node *cabeca_arvore, unsigned short tamanho)
 {
     if(cabeca_arvore != NULL)
     {
-        tam++;
-        tam = calcular_tam_arvore(cabeca_arvore->filho_esquerda, tam);
-        tam = calcular_tam_arvore(cabeca_arvore->filho_direita, tam);
+        tamanho++;
+        tamanho = calcular_tam_arvore(cabeca_arvore->filho_esquerda, tamanho);
+        tamanho = calcular_tam_arvore(cabeca_arvore->filho_direita, tamanho);
     }
-    return tam;
+    return tamanho;
 }
 
 Node *remove_arvore(Node *cabeca_arvore)
