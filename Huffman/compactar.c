@@ -48,7 +48,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 {
     if(cabeca != NULL)
     {
-        printf("[%c]", cabeca->letra);
+        //printf("[%c]", cabeca->letra);
         fputc(cabeca->letra, arquivo);
         escrever_arvore(cabeca->filho_esquerda, arquivo);
         escrever_arvore(cabeca->filho_direita, arquivo);
@@ -56,7 +56,7 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 }
 
 /* ESCREVE O TEXTO JÁ COMPACTADO NO ARQUIVO */
-void escrever_texto(unsigned short int *array_texto, unsigned long long int tamanho, FILE *arquivo)
+void escrever_texto(unsigned char *array_texto, unsigned long long int tamanho, FILE *arquivo)
 {
     unsigned long long int i;
     unsigned char c = 0;
@@ -79,18 +79,17 @@ void escrever_texto(unsigned short int *array_texto, unsigned long long int tama
         fputc(c, arquivo);
 }
 
-void criar_array_binarios(Hashtable *ht, unsigned char *txt, unsigned long long int tam_txt, unsigned short *array_binario, unsigned long long int freq_x_profundidade)
+void criar_array_binarios(Hashtable *ht, FILE *arquivo, unsigned char *array_binario, unsigned long long int freq_x_profundidade)
 {
     int c;
-    unsigned long long int i, j, k = 0;
+    unsigned long long int j, k = 0;
     unsigned short valor;
 
     Element *atual = criar_node_hash_null();
-    for(i = 0 ; i<tam_txt ; i++)
+    rewind(arquivo);
+    while((c = fgetc(arquivo)) != EOF)
     {
-        c = txt[i];
         atual = ht->table[c];
-
         if(atual != NULL)
         {
             for(j = k ; j<freq_x_profundidade ; j++)

@@ -32,7 +32,7 @@ Node *add_Node_pai_ordenado(Node *cabeca_arvore)
         else
         {
             newnode->num = (atual->num + atual->proximo_node->num);
-            newnode->letra = '*';
+            newnode->letra = '\\';
             newnode->profundidade = 0;
             newnode->filho_esquerda = atual;
             newnode->filho_direita = atual->proximo_node;
@@ -93,6 +93,7 @@ void print_pre_ordem_arvore(Node *cabeca_arvore)
     if(cabeca_arvore != NULL)
     {
         printf("[%c]", cabeca_arvore->letra);
+        //printf("LETRA: %d PROF: %d , FREQ: %lld\n", cabeca_arvore->letra,cabeca_arvore->profundidade,cabeca_arvore->num);
         print_pre_ordem_arvore(cabeca_arvore->filho_esquerda);
         print_pre_ordem_arvore(cabeca_arvore->filho_direita);
     }
@@ -102,7 +103,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
 {
     if(cabeca_arvore != NULL)
     {
-        if(cabeca_arvore->letra == '*')
+        if(cabeca_arvore->letra == '\\')
         {
             cabeca_arvore->profundidade = profundidade;
             calcular_profundidade_nodes(cabeca_arvore->filho_esquerda, ++profundidade);
@@ -115,18 +116,18 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
     }
 }
 
-unsigned long long calcular_lixo(Node *cabeca_arvore,unsigned long long int lixo)
+unsigned long long int calcular_array_b(Node *cabeca_arvore,unsigned long long int lixo)
 {
     if(cabeca_arvore != NULL)
     {
-        if(cabeca_arvore->letra != '*')
+        if(cabeca_arvore->letra != '\\')
         {
             lixo = lixo + (cabeca_arvore->profundidade * cabeca_arvore->num);
         }
         else
         {
-            lixo = calcular_lixo(cabeca_arvore->filho_esquerda, lixo);
-            lixo = calcular_lixo(cabeca_arvore->filho_direita, lixo);
+            lixo = calcular_array_b(cabeca_arvore->filho_esquerda, lixo);
+            lixo = calcular_array_b(cabeca_arvore->filho_direita, lixo);
         }
     }
     return lixo;

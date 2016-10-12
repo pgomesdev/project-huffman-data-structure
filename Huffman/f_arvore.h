@@ -44,7 +44,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade);
 //um long long int lixo, que DEVE SER INICIALIZADO COM 0, para ser utilizado na função;
 //e devolve um long long int com o número de bits a serem escritos no arquivo compactado,
 //de acordo com a Compactação utilizando a Árvore de Huffman. FUNÇÃO RECURSIVA.
-unsigned long long int calcular_lixo(Node *cabeca_arvore, unsigned long long int lixo);
+unsigned long long int calcular_array_b(Node *cabeca_arvore, unsigned long long int lixo);
 
 //Funcao que recebe: a Árvore de Huffman, como um ponteiro para o nó raiz, apontada por cabeca_arvore;
 //um short tam, que DEVE SER INICIALIZADO COM 0, para ser utilizado na função;

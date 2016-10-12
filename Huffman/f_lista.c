@@ -1,185 +1,180 @@
 #include "f_lista.h"
 
-//Função que não recebe variáveis;
-//e devolve um ponteiro para Nós, inicializado com NULL
+struct array_freq
+{
+    Node *freq[MAX_TABLE];
+};
+
+Node *add_node_lista(unsigned char letra);
+
 Node *criar_Node_NULL()
 {
     return NULL;
 }
 
-//Função que recebe: a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
-//e devolve 0, se a lista passada conter algum elemento,
-//ou devolve um inteiro, se a lista estiver vazia.
 int esta_Vazia(Node *cabeca_lista)
 {
     return (cabeca_lista==NULL);
 }
 
-//Função que recebe: a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista;
-//um caractere a ser inserido na lista, armazenado como unsigned char na variável letra;
-//a frequência desse caractere no texto, armazenado no long long int num;
-//o Nó progresso é apenas para print do loading, em progresso->num temos o progresso atual.
-//e devolve um ponteiro para Nós como o primeiro nó da nova lista, contendo o novo elemento.
-Node *add_Node_meio_ordenado(Node *cabeca_lista, unsigned char letra, unsigned long long int num, Node *progresso)
+Hash_Freq *criar_array_freq()
 {
-    Node *atual, *anterior;
-    Node *newnode = (Node*)malloc(sizeof(Node));
+    Hash_Freq *novo_hf = (Hash_Freq*)malloc(sizeof(Hash_Freq));
 
-    if(esta_Vazia(newnode) == 1)
+    int i;
+    for(i = 0 ; i <= MAX_TABLE ; i++)
     {
-        puts("Erro ao alocar memoria!\n");
+        novo_hf->freq[i] = criar_Node_NULL();
+    }
+    return novo_hf;
+}
+
+void contar_freq_char(FILE *arquivo, Hash_Freq *hf)
+{
+    char c;
+    rewind(arquivo);
+    while((c = fgetc(arquivo)) != EOF)
+    {
+        unsigned char letra = c;
+        if(hf->freq[letra] == NULL)
+            hf->freq[letra] = add_node_lista(letra);
+        else
+            hf->freq[letra]->num++;
+    }
+}
+
+Node *add_node_lista(unsigned char letra)
+{
+    Node *novo = (Node*)malloc(sizeof(Node));
+    novo->letra = letra;
+    novo->num = 1;
+    novo->profundidade = 0;
+    novo->proximo_node = NULL;
+    novo->filho_esquerda = NULL;
+    novo->filho_direita = NULL;
+
+    if(novo == NULL)
+    {
+        puts("Erro ao alocar memoria para lista!\n");
         exit(0);
     }
+    else
+        return novo;
+}
 
-    newnode->letra = letra;
-    newnode->num = num;
-    newnode->profundidade = 0;
-    newnode->proximo_node = NULL;
-    newnode->filho_esquerda = NULL;
-    newnode->filho_direita = NULL;
-
-    if(esta_Vazia(cabeca_lista) == 1)
+void print_hash_freq(Hash_Freq *hf)
+{
+    int i;
+    for(i = 0 ; i <= MAX_TABLE ; i++)
     {
-        return newnode;
+        if(hf->freq[i] != NULL)
+            printf("i:%d Letra:[%c] Freq[%lli]\n", i, hf->freq[i]->letra, hf->freq[i]->num);
+    }
+}
+
+short tam__novo_hf(Hash_Freq *hf)
+{
+    short i, cont = 0;
+    for(i = 0 ; i <= MAX_TABLE ; i++)
+    {
+        if(hf->freq[i] != NULL)
+            cont++;
+
+    }
+    return cont;
+}
+
+void Quick_Sort(Hash_Freq *hf, int inicio, int fim)
+{
+    Node *pivo, *aux;
+    int i, j, meio;
+
+    i = inicio;
+    j = fim;
+
+    meio = (int) ((i + j) / 2);
+    pivo = hf->freq[meio];
+
+
+    do
+    {
+        while (hf->freq[i]->num < pivo->num)
+            i++;
+        while (hf->freq[j]->num > pivo->num)
+            j--;
+
+        if(i <= j)
+        {
+            aux = hf->freq[i];
+            hf->freq[i] = hf->freq[j];
+            hf->freq[j] = aux;
+            i++;
+            j--;
+        }
+    }
+    while(j > i);
+
+    if(inicio < j)
+        Quick_Sort(hf, inicio, j);
+    if(i < fim)
+        Quick_Sort(hf, i, fim);
+}
+
+void criar_novo_hf(Hash_Freq *hf, Hash_Freq *novo_hf, short tam__novo_hf)
+{
+    int i, j = 0;
+    for(i = 0 ; i < MAX_TABLE ; i++)
+    {
+        if(hf->freq[i] != NULL)
+        {
+            novo_hf->freq[j] = hf->freq[i];
+            j++;
+        }
+    }
+}
+
+Node *criar_lista_huffman(Hash_Freq *hf, short tam_hf)
+{
+    int i;
+    for(i = 1 ; i < tam_hf ; i++)
+    {
+        hf->freq[i-1]->proximo_node = hf->freq[i];
+    }
+
+    return hf->freq[0];
+}
+
+
+void print_lista(Node *lista)
+{
+    Node *atual = lista;
+    while(atual != NULL)
+    {
+        printf("LETRA:[%d] PROF: %d FREQ: %lld\n", atual->letra, atual->profundidade, atual->num);
+        atual = atual->proximo_node;
+    }
+}
+
+
+Hash_Freq *remove_hash_Freq(Hash_Freq *hf)
+{
+    int i;
+
+    if(hf == NULL)
+    {
+        return NULL;
     }
     else
     {
-        atual = cabeca_lista;
-        anterior = atual;
-        while(atual != NULL)
+        for(i = 0; i<MAX_TABLE; i++)
         {
-            if(progresso->num > 100 && progresso->num/10 <101)
-                printf("ordenando_lista PROGRESSO: %lld%%\n", progresso->num/10);
-            progresso->num++;
-            if(newnode->num <= atual->num)
+            if(hf->freq[i] != NULL)
             {
-                newnode->proximo_node = atual;
-
-                if(atual == cabeca_lista)
-                {
-                    return newnode;
-                }
-                else
-                {
-                    anterior->proximo_node = newnode;
-                    return cabeca_lista;
-                }
-            }
-            anterior = atual;
-            atual = atual->proximo_node;
-            if(atual == NULL)
-            {
-                anterior->proximo_node = newnode;
-                return cabeca_lista;
+                free(hf->freq[i]);
+                hf->freq[i] = NULL;
             }
         }
-    }
-    return cabeca_lista;
-}
-
-//Função que recebe: a lista de nós de Huffman (preferencialmente vazia), como um ponteiro, apontada por cabeca_lista;
-//o texto a ser analizado, como uma String, que será apontada por txt;
-//o tamanho do texto recebido, armazenado no long long int tam, onde tam >= 0;
-//e devolve a lista de nós de Huffman, com elementos ordenados pela frequência do caractere, de acordo com o texto passado.
-Node *criar_lista_Frequencia(Node *cabeca_lista, unsigned char *txt, unsigned long long int tam)
-{
-    ///comandos para progresso:
-    Node *progresso = (Node*)malloc(sizeof(Node));
-    progresso->letra = 0;
-    progresso->num = 0;
-    progresso->profundidade = 0;
-    progresso->proximo_node = NULL;
-    progresso->filho_esquerda = NULL;
-    progresso->filho_direita = NULL;
-    
-    unsigned long long int i, j;
-    unsigned long long int num, aux;
-    unsigned char letra;
-    Node *atual = cabeca_lista;
-    for(i=0 ; i<tam ; i++)
-    {
-        ///VARIAVEL "LETRA" RECEBE O PROXIMO CARACTERE DO TEXTO PARA ANALIZAR.  OBS.: "txt[]" e´ UM BUFFER CONTENDO O TEXTO.
-        letra = txt[i];
-
-        ///CONTAGEM "num" É ZERADA PARA NOVA LETRA ANALIZADA!    OBS.: "num" == NUMERO DE VEZES QUE A LETRA ANALIZADA REPETE NO TEXTO!
-        num = 0;
-        aux = 0;
-        ///ESTE LOOP DECOBRE QUANTAS VEZES A LETRA ANALIZADA FOI REPETIDA NO TEXTO!
-        for(j=0 ; j<tam ; j++)
-        {
-            if(letra == txt[j])
-            {
-                num++;
-            }
-        }
-
-        if(cabeca_lista == NULL)
-        {
-            cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num, progresso);
-            atual = cabeca_lista;
-        }
-        else
-        {
-            while(atual != NULL)
-            {
-                if(atual->letra != letra)
-                {
-                        atual = atual->proximo_node;
-                }
-                else
-                {
-                    atual = NULL;
-                    aux++;
-                }
-            }
-            if(aux == 0)
-            {
-                cabeca_lista = add_Node_meio_ordenado(cabeca_lista, letra, num, progresso);
-            }
-            atual = cabeca_lista;
-        }
-        if(tam >= 100)
-        {
-            if(i%((((tam/2)/2)/5)/5) == 0)
-                printf("Criando lista_huffman PROGRESSO: [%lld%%]\n",(i*100/tam));
-        }
-    }
-    return atual;
-}
-
-//Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
-//e que não possui nenhuma devolução. FUNÇÃO RECURSIVA.
-//Sua ação é utilizar o printf para imprimir na tela o conteudo da Lista de Huffman. Se estiver vazia, não excuta ação.
-// Modelo:   [%c]
-void print_lista_Frequencia(Node *cabeca_lista)
-{
-    if(cabeca_lista != NULL)
-    {
-        if(cabeca_lista->letra == '\n')
-        {
-            printf("[\\n]\n");
-        }
-        else
-        {
-            printf("[%c]\n", cabeca_lista->letra);
-        }
-        print_lista_Frequencia(cabeca_lista->proximo_node);
+        free(hf);
+        return NULL;
     }
 }
-
-//Função que recebe a lista de nós de Huffman, como um ponteiro para nós, apontada por cabeca_lista
-//e devolve a quantidade de elementos na lista no formato inteiro.
-//FUNÇÃO NÃO UTILIZADA
-int calcular_tam_lista(Node *cabeca_lista)
-{
-    int tam = 0;
-    Node *atual = cabeca_lista;
-    while(atual != NULL)
-    {
-        tam++;
-        atual = atual->proximo_node;
-    }
-
-    return tam;
-}
-

@@ -65,7 +65,7 @@ unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo,
     return tam * 8;
 }
 
-void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho)
+void escrever_array_compactado(FILE *arquivo, unsigned char *array_binarios_descompactar, unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho)
 {
     unsigned char c;
     unsigned long long int i, tam = 0;
@@ -95,16 +95,16 @@ void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_des
     }
 }
 
-void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto)
+void descompactar_texto(Node *cabeca, unsigned char *array_binarios_descompactar, FILE *novo_arquivo, int tamanho_texto)
 {
     int i = 0;
     Node *auxiliar = cabeca;
 
     while(i < tamanho_texto)
     {
-        while(auxiliar->letra == '*')
+        while(auxiliar->letra == '\\')
         {
-            if(texto_compactado[i] == 0)
+            if(array_binarios_descompactar[i] == 0)
                 auxiliar = auxiliar->filho_esquerda;
             else
                 auxiliar = auxiliar->filho_direita;
@@ -139,10 +139,10 @@ Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arv
         newnode->filho_direita = NULL;
         arvore_huffman = newnode;
 
-        if(array_arvore[aux] == '*')
+        if(array_arvore[aux] == '\\')
         {
             array_arvore[aux] = 0;
-            arvore_huffman->letra = '*';
+            arvore_huffman->letra = '\\';
             arvore_huffman->filho_esquerda = criar_arvore_descompactacao(arvore_huffman->filho_esquerda, array_arvore, tam_array_arvore);
             arvore_huffman->filho_direita = criar_arvore_descompactacao(arvore_huffman->filho_direita, array_arvore, tam_array_arvore);
             return arvore_huffman;

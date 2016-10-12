@@ -41,7 +41,7 @@ Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arv
 //um short, sendo tam_cabecalho, a quatidade de caracteres iniciais a serem desconsiderados;
 //e que não possui nenhuma devolução.
 //Sua ação é escrever em array_binarios_descompactar, a sequencia de bits existente após os caracteres iniciais.
-void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_descompactar, 
+void escrever_array_compactado(FILE *arquivo, unsigned char *array_binarios_descompactar,
                                unsigned int tam_array_b_descompactar, unsigned short tam_cabecalho);
 
 //Função que recebe: um ponteiro para o nó raiz da Arvore, apontado por cabeca;
@@ -50,5 +50,5 @@ void escrever_array_compactado(FILE *arquivo, unsigned short *array_binarios_des
 //o tamanho da sequencia de bits passada, salvo em tamanho_texto;
 //e que não possui nenhuma devolução.
 //Sua ação é escrever em novo_arquivo, o texto descompactado de acordo com a arvore dada.
-void descompactar_texto(Node *cabeca, unsigned short *texto_compactado, FILE *novo_arquivo, int tamanho_texto);
+void descompactar_texto(Node *cabeca, unsigned char *array_binarios_descompactar, FILE *novo_arquivo, int tamanho_texto);
 

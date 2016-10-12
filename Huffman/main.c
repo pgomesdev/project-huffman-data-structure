@@ -11,11 +11,11 @@ int main()
 {
     /// FUNÇÃO QUE DETERMINA A REGIONALIZAÇÃO DO CÓDIGO PARA PADRÃO. ESSENCIAL PARA IMPRIMIR NA TELA CARACTERES ESPECIAIS
     //setlocale(LC_ALL,"");
-    
+
     /// ESPERA UMA AÇÃO DO USUÁRIO.
-    
+
     int compactador;
-    
+
     puts("\n\n\n");
     puts("---BEM VINDO AO COMPACTADOR DE TEXTOS---");
     puts("\n\n\n");
@@ -23,7 +23,7 @@ int main()
     puts("1 (para compactar)\n\n");
     puts("2 (para descompactar)\n\n");
     puts("0 (para SAIR)\n\n");
-    
+
 
     scanf("%d", &compactador);
 
@@ -41,11 +41,13 @@ int main()
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
-        char url[]="arquivos_txt_para_testes//eulaENU.txt";
+        char url[256];
+        puts("Digite a url do arquivo a ser lido:");
+        scanf("arquivos_txt_para_testes//%s",url);
+
 
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
         FILE *arq = abrir_Arquivo(url);
-
 
 
         /// -x- A PARTIR DESSE PONTO, JÁ TEMOS ACESSO AO ARQUIVO .txt -x-
@@ -55,38 +57,25 @@ int main()
         ///  SE "abrir_Arquivo()" RETORNAR DIFERENTE DE ZERO, ARQUIVO ABERTO COM SUCESSO.
         if(arq != 0)
         {
-            unsigned long long int tam = contar_tam_texto_char(arq);//Calculando o tamanho do texto
+            Hash_Freq *hf = criar_array_freq();
 
-            /// LEMBRAR QUE UNSIGNED SERVE PARA UTILIZAR TODOS OS BITS DO CHAR E NÃO PERDER O BIT DE SINAL
-            unsigned char txt[tam];//Declarando o array que possui o mesmo tamanho do texto.
+            Hash_Freq *novo_hf = criar_array_freq();
 
-            char letra;//Variável condicional da repetição
-            unsigned long long int i = 0;//Variável de indice do array txt
+            contar_freq_char(arq, hf);
 
-            /// OBS.: FOI NECESSARIO ULTILIZAR A FUNÇÃO "rewind()" == "FUNÇÃO QUE REAPONTA "fgetc()" PARA O INICIO DO ARQUIVO."
-            /// POIS NA CHAMADA DE "contar_tam_texto_char(arq)" , A FUNÇÃO "fgetc()" ESTAVA APONTANDO PARA O FINAL DO ARQUIVO.
-            rewind(arq);
+            short tam_novo_hf = tam__novo_hf(hf);
 
-            /// REPETIÇÃO FAZ COPIA DO CONTEUDO DE "arq" PARA BUFFER "txt[]".
-            while((letra = fgetc(arq)) != EOF)
-            {
-                txt[i] = letra;
-                i++;
-            }
-            /// NAO PRECISO MAIS DO ARQUIVO!
-            fclose(arq);
-            
-            
-            
-            /// -x- A PARTIR DESSE PONTO, JÁ TEMOS O TEXTO DO ARQUIVO .txt SALVO NO BUFFER -x-
+            criar_novo_hf(hf, novo_hf, tam_novo_hf);
 
+            Quick_Sort(novo_hf,0, tam_novo_hf-1);
 
+            Node *cabeca_lista = criar_lista_huffman(novo_hf, tam_novo_hf);
 
             // O ponteiro para Nós cabeca_lista é declarado e inicializado com NULL
-            Node *cabeca_lista = criar_Node_NULL();
+
 
             /// RECEBEMOS UMA LISTA DE ELEMENTOS QUE CONTEM OS CARACTERES DISTINTOS E A FREQUÊNCIA DELES NO TEXTO
-            cabeca_lista = criar_lista_Frequencia(cabeca_lista, txt, tam);
+
 
 
 
@@ -106,9 +95,10 @@ int main()
 
             /// CALCULA A PROFUNDIDADE DE CADA NÓ DA ARVORE E SALVA NA ESTRUTURA DO NÓ DE HUFFMAN
             calcular_profundidade_nodes(cabeca_arvore,cabeca_arvore->profundidade);
-            
+
             /// freq_x_profundidade E' O NUMERO DE BITS DO ARQUIVO COMPACTADO.
-            unsigned long long int freq_x_profundidade = calcular_lixo(cabeca_arvore, lixo);
+            unsigned long long int freq_x_profundidade = calcular_array_b(cabeca_arvore, lixo);
+
 
             /// LIXO RECEBE A QUANTIDADE DE BITS SIGNIFICATIVOS DO ULTIMO BYTE.
             lixo = freq_x_profundidade % 8;
@@ -120,10 +110,9 @@ int main()
             tamanho_arvore = calcular_tam_arvore(cabeca_arvore, tamanho_arvore);
 
 
-            
             /// -x- A PARTIR DESSE PONTO, JÁ TEMOS A ARVORE DE HUFFMAN E AS INFORMAÇÕES DO CABEÇALHO. -x-
 
-            
+
 
             Hashtable *ht = create_hashtable();//Cria a Tabela com a codificação, onde cada chave é inicializada com NULL
             Element *lista = criar_node_hash_null();//Cria um ponteiro para Element, inicializando com NULL.
@@ -140,18 +129,13 @@ int main()
             {
                 puts("construir_ht nao concluido\n");
             }
-            
-            unsigned short array_binario[freq_x_profundidade];//Declara o array que receberá os bits compactados.
+            unsigned char array_binario[freq_x_profundidade];//Declara o array que receberá os bits compactados.
 
             /// ESCREVE NO array_binario O TEXTO CODIFICADO DE ACORDO COM A ARVORE PASSADA
-            criar_array_binarios(ht, txt, tam, array_binario, freq_x_profundidade);
-            
-            
-            
+            criar_array_binarios(ht, arq, array_binario, freq_x_profundidade);
+
             ///-x- A PARTIR DESSE PONTO, JÁ TEMOS TODAS AS INFORMAÇÕES DO ARQUIVO .huff . -x-
 
-            
-            
             /// CRIA UM NOVO ARQUIVO PARA RECEBER A COMPACTAÇÃO
             FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
 
@@ -163,32 +147,33 @@ int main()
             escrever_arvore(cabeca_arvore, novo_arquivo);
             escrever_texto(array_binario, freq_x_profundidade, novo_arquivo);
 
+            fclose(arq);
             fclose(novo_arquivo);//Fecha o arquivo
-
             ht = remove_hashtable(ht);// Desaloca o espaço utilizado para Tabela de Dispersão.
             cabeca_arvore = remove_arvore(cabeca_arvore);// Desaloca o espaço utilizado para Arvore de Huffman.
+            free(hf);
+            free(novo_hf);
 
             puts("\n\nArquivo compactado com sucesso!\n");//Mensagem de Finalização
-
         }
-        main();// Retorna para o inicio da função, como uma função recursiva!
+        main();  // Retorna para o inicio da função, como uma função recursiva!
     }
     //Se o usuário digitar 2, escolhendo a descompressão:
     else if(compactador == 2)
     {
         /// ABRE O ARQUIVO .huff NA MESMA PASTA
-        FILE *arquivo_huff = fopen("arquivos_txt_para_testes//arquivo_compactado.huff","r");
+        FILE *arq_compac = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "r");
 
         /// SALVA EM lixo QUANTOS BITS DO ULTIMO BYTE NÃO SÃO SIGNIFICATIVOS
-        unsigned char lixo = obter_lixo(arquivo_huff);
-        
+        unsigned char lixo = obter_lixo(arq_compac);
+
         /// SALVA EM tam_array_arvore QUANTOS ELEMENTOS ESTÃO NA ARVORE DE HUFFMAN
-        unsigned short tam_array_arvore = obter_tamanho_arvore(arquivo_huff);
+        unsigned short tam_array_arvore = obter_tamanho_arvore(arq_compac);
 
         unsigned char array_arvore[tam_array_arvore];//Declara um array para receber os caracteres da arvore
 
         /// ESCREVE NO array_arvore OS CARACTERES DA ARVORE DE HUFFMAN
-        obter_arvore(array_arvore,arquivo_huff);
+        obter_arvore(array_arvore,arq_compac);
 
         Node *cabeca_arvore = criar_Node_NULL();// Cria um ponteiro inicializado com NULL
 
@@ -196,20 +181,21 @@ int main()
         cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
 
         /// CALCULA A QUANTIDADE DE BITS DO ARQUIVO TIRANDO O CABEÇALHO
-        unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arquivo_huff, (2+tam_array_arvore));
+        unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arq_compac, (2+tam_array_arvore));
 
-        unsigned short array_binarios_descompactar[tam_array_binarios_descompactar];//Declara o array de bits compactados
 
-        rewind(arquivo_huff);//Retorna ao começo do arquivo_huff
-        
+        unsigned char array_binarios_descompactar[tam_array_binarios_descompactar];//Declara o array de bits compactados
+
+        rewind(arq_compac);//Retorna ao começo do arquivo_huff
+
         /// O array_binarios_descompactar RECEBE EM CADA POSIÇÃO, UM BIT DO TEXTO COMPACTADO
-        escrever_array_compactado(arquivo_huff, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
+        escrever_array_compactado(arq_compac, array_binarios_descompactar, tam_array_binarios_descompactar, (2+tam_array_arvore));
 
         /// NÃO PRECISO MAIS DO ARQUIVO
-        fclose(arquivo_huff);
+        fclose(arq_compac);
 
         /// CRIA UM ARQUIVO .txt
-        FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w+");
+        FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w");
 
         /// ESCREVE O TEXTO CORRESPONDENTE AO ARQUIVO COMPACTADO
         descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);
@@ -219,7 +205,7 @@ int main()
 
         cabeca_arvore = remove_arvore(cabeca_arvore);// Desaloca a memória utilizada para Arvore
 
-        puts("\n\nArquivo descompactado com sucesso!");// Mensagem de Finalização
+        puts("\n\nArquivo descompactado com sucesso!");// Mensagem de Finalização*/
 
         main();// Retorna para o inicio da função, como uma função recursiva!
     }

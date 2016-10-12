@@ -112,7 +112,7 @@ void construir_ht(Node *cabeca_arvore, Element *lista, Hashtable *ht)
 {
     if(cabeca_arvore != NULL && ht != NULL)
     {
-        if(cabeca_arvore->letra == '*')
+        if(cabeca_arvore->letra == '\\')
         {
             lista = add_node_hash(lista, 0);
             construir_ht(cabeca_arvore->filho_esquerda, lista, ht);
