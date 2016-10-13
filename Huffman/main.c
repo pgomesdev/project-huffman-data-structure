@@ -41,9 +41,9 @@ int main()
     if(compactador == 1)
     {
         // String url salva a URL do arquivo texto que será lido
-        char url[256];
+        char url[1000];
         puts("Digite a url do arquivo a ser lido:");
-        scanf("arquivos_txt_para_testes//%s",url);
+        scanf("%s",url);
 
 
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
