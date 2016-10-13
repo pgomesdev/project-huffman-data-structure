@@ -68,7 +68,7 @@ void print_hash_freq(Hash_Freq *hf)
     for(i = 0 ; i <= MAX_TABLE ; i++)
     {
         if(hf->freq[i] != NULL)
-            printf("i:%d Letra:[%c] Freq[%lli]\n", i, hf->freq[i]->letra, hf->freq[i]->num);
+            printf("i:%d Letra:[%c] Freq[%lld]\n", i, hf->freq[i]->letra, hf->freq[i]->num);
     }
 }
 
