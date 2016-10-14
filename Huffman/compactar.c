@@ -88,8 +88,11 @@ void criar_array_binarios(Hashtable *ht, FILE *arquivo, unsigned char *array_bin
     rewind(arquivo);
     while((c = fgetc(arquivo)) != EOF)
     {
+        if(c == '*')
+            c = '\\';
+        
         atual = ht->table[c];
-
+        
         while(atual != NULL)
         {
             array_binario[k] = atual->value;
