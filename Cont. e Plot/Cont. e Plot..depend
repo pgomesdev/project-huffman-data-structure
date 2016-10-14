@@ -19,3 +19,43 @@
 	<stdlib.h>
 	"f_arvore_binaria.h"
 
+1476378677 source:/home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Cont. e Plot/f_arvore_binaria.c
+	"f_arvore_binaria.h"
+
+1476378677 /home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Cont. e Plot/f_arvore_binaria.h
+	<stdio.h>
+	<stdlib.h>
+
+1476378677 source:/home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Cont. e Plot/main.c
+	<time.h>
+	"f_lista.h"
+	"f_arvore_binaria.h"
+
+1476386886 /home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Cont. e Plot/f_lista.h
+	<stdio.h>
+	<stdlib.h>
+	"f_arvore_binaria.h"
+
+1476386785 source:/home/alunoic/Área de Trabalho/HuffmanDataStructure-master/Cont. e Plot/f_lista.c
+	"f_lista.h"
+
+1476378676 source:c:\users\datsu\documents\huffman_p2\cont. e plot\f_arvore_binaria.c
+	"f_arvore_binaria.h"
+
+1476378676 c:\users\datsu\documents\huffman_p2\cont. e plot\f_arvore_binaria.h
+	<stdio.h>
+	<stdlib.h>
+
+1476404696 source:c:\users\datsu\documents\huffman_p2\cont. e plot\f_lista.c
+	"f_lista.h"
+
+1476404037 c:\users\datsu\documents\huffman_p2\cont. e plot\f_lista.h
+	<stdio.h>
+	<stdlib.h>
+	"f_arvore_binaria.h"
+
+1476378676 source:c:\users\datsu\documents\huffman_p2\cont. e plot\main.c
+	<time.h>
+	"f_lista.h"
+	"f_arvore_binaria.h"
+

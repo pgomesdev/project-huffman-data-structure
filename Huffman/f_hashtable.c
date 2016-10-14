@@ -108,6 +108,7 @@ Element *clonar_lista(Element *lista)
         return lista_clonada;
     }
 }
+
 void construir_ht(Node *cabeca_arvore, Element *lista, Hashtable *ht)
 {
     if(cabeca_arvore != NULL && ht != NULL)

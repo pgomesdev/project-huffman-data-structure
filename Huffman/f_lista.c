@@ -46,7 +46,12 @@ void contar_freq_char(FILE *arquivo, Hash_Freq *hf)
 Node *add_node_lista(unsigned char letra)
 {
     Node *novo = (Node*)malloc(sizeof(Node));
-    novo->letra = letra;
+
+    if(letra == '*')
+        novo->letra = '\\';
+    else
+        novo->letra = letra;
+
     novo->num = 1;
     novo->profundidade = 0;
     novo->proximo_node = NULL;
@@ -60,16 +65,6 @@ Node *add_node_lista(unsigned char letra)
     }
     else
         return novo;
-}
-
-void print_hash_freq(Hash_Freq *hf)
-{
-    int i;
-    for(i = 0 ; i <= MAX_TABLE ; i++)
-    {
-        if(hf->freq[i] != NULL)
-            printf("i:%d Letra:[%c] Freq[%lld]\n", i, hf->freq[i]->letra, hf->freq[i]->num);
-    }
 }
 
 short tam__novo_hf(Hash_Freq *hf)
@@ -143,18 +138,6 @@ Node *criar_lista_huffman(Hash_Freq *hf, short tam_hf)
 
     return hf->freq[0];
 }
-
-
-void print_lista(Node *lista)
-{
-    Node *atual = lista;
-    while(atual != NULL)
-    {
-        printf("LETRA:[%d] PROF: %d FREQ: %lld\n", atual->letra, atual->profundidade, atual->num);
-        atual = atual->proximo_node;
-    }
-}
-
 
 Hash_Freq *remove_hash_Freq(Hash_Freq *hf)
 {

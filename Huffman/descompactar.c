@@ -102,7 +102,7 @@ void descompactar_texto(Node *cabeca, unsigned char *array_binarios_descompactar
 
     while(i < tamanho_texto)
     {
-        while(auxiliar->letra == '\\')
+        while(auxiliar->letra == '*')
         {
             if(array_binarios_descompactar[i] == 0)
                 auxiliar = auxiliar->filho_esquerda;
@@ -110,7 +110,11 @@ void descompactar_texto(Node *cabeca, unsigned char *array_binarios_descompactar
                 auxiliar = auxiliar->filho_direita;
             i++;
         }
-        fputc(auxiliar->letra, novo_arquivo);
+
+        if(auxiliar->letra == '\\')
+            fputc('*', novo_arquivo);
+        else
+            fputc(auxiliar->letra, novo_arquivo);
         auxiliar = cabeca;
     }
 }
@@ -139,10 +143,10 @@ Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arv
         newnode->filho_direita = NULL;
         arvore_huffman = newnode;
 
-        if(array_arvore[aux] == '\\')
+        if(array_arvore[aux] == '*')
         {
             array_arvore[aux] = 0;
-            arvore_huffman->letra = '\\';
+            arvore_huffman->letra = '*';
             arvore_huffman->filho_esquerda = criar_arvore_descompactacao(arvore_huffman->filho_esquerda, array_arvore, tam_array_arvore);
             arvore_huffman->filho_direita = criar_arvore_descompactacao(arvore_huffman->filho_direita, array_arvore, tam_array_arvore);
             return arvore_huffman;

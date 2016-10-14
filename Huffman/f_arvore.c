@@ -32,7 +32,7 @@ Node *add_Node_pai_ordenado(Node *cabeca_arvore)
         else
         {
             newnode->num = (atual->num + atual->proximo_node->num);
-            newnode->letra = '\\';
+            newnode->letra = '*';
             newnode->profundidade = 0;
             newnode->filho_esquerda = atual;
             newnode->filho_direita = atual->proximo_node;
@@ -103,7 +103,7 @@ void calcular_profundidade_nodes(Node *cabeca_arvore, int profundidade)
 {
     if(cabeca_arvore != NULL)
     {
-        if(cabeca_arvore->letra == '\\')
+        if(cabeca_arvore->letra == '*')
         {
             cabeca_arvore->profundidade = profundidade;
             calcular_profundidade_nodes(cabeca_arvore->filho_esquerda, ++profundidade);
@@ -120,7 +120,7 @@ unsigned long long int calcular_array_b(Node *cabeca_arvore,unsigned long long i
 {
     if(cabeca_arvore != NULL)
     {
-        if(cabeca_arvore->letra != '\\')
+        if(cabeca_arvore->letra != '*')
         {
             lixo = lixo + (cabeca_arvore->profundidade * cabeca_arvore->num);
         }

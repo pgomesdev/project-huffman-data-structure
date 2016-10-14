@@ -42,10 +42,15 @@ int main()
     {
         // String url salva a URL do arquivo texto que será lido
         char url[1000];
-        puts("Digite a url do arquivo a ser lido:");
+        puts("Digite a url do arquivo a ser compactado!:");
         scanf("%s",url);
 
+        //unsigned char tam_extencao = verifica_extencao(url);
 
+        /*if(tam_extencao == 0)
+        {
+            return 0;
+        }*/
         /// A FUNÇÃO "abrir_Arquivo()" RETORNA UM PONTEIRO DO TIPO "FILE", QUE APONTA PARA ARQUIVO.
         FILE *arq = abrir_Arquivo(url);
 
@@ -121,7 +126,7 @@ int main()
             construir_ht(cabeca_arvore,lista,ht);
 
             /// VERIFICAÇÃO DA FUNÇÃO ANTERIOR
-            if(lista == NULL)// Se lista == NULL , então a funcao construir_ht foi executada com sucesso.
+            if(lista == NULL)// Se list a == NULL , então a funcao construir_ht foi executada com sucesso.
             {
                 puts("construir_ht OK!!");
             }
@@ -134,10 +139,13 @@ int main()
             /// ESCREVE NO array_binario O TEXTO CODIFICADO DE ACORDO COM A ARVORE PASSADA
             criar_array_binarios(ht, arq, array_binario, freq_x_profundidade);
 
-            ///-x- A PARTIR DESSE PONTO, JÁ TEMOS TODAS AS INFORMAÇÕES DO ARQUIVO .huff . -x-
+            ///COMPACTAÇÃO
 
+            char url[1000];
+            puts("Digite o nome do NOVO arquivo COMPACTADO!:");
+            scanf("%s",url);
             /// CRIA UM NOVO ARQUIVO PARA RECEBER A COMPACTAÇÃO
-            FILE *novo_arquivo = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "w");
+            FILE *novo_arquivo = fopen(url, "w");
 
             /// CRIA OS DOIS PRIMEIROS BYTES, DE ACORDO COM A ESPECIFICAÇÃO DO CABEÇALHO
             unsigned short cabecalho_inicial = {(converter_lixo(lixo) + tamanho_arvore)};
@@ -162,7 +170,11 @@ int main()
     else if(compactador == 2)
     {
         /// ABRE O ARQUIVO .huff NA MESMA PASTA
-        FILE *arq_compac = fopen("arquivos_txt_para_testes//arquivo_compactado.huff", "r");
+        char url[1000];
+        puts("Digite a nome do arquivo a ser DESCOMPACTADO!:");
+        scanf("%s",url);
+
+        FILE *arq_compac = abrir_Arquivo(url);
 
         /// SALVA EM lixo QUANTOS BITS DO ULTIMO BYTE NÃO SÃO SIGNIFICATIVOS
         unsigned char lixo = obter_lixo(arq_compac);
@@ -195,7 +207,11 @@ int main()
         fclose(arq_compac);
 
         /// CRIA UM ARQUIVO .txt
-        FILE *arquivo_txt = fopen("arquivos_txt_para_testes//arquivo_descompactado.txt", "w");
+
+        char url2[1000];
+        puts("Digite o nome do NOVO arquivo DESCOMPACTADO!:");
+        scanf("%s",url2);
+        FILE *arquivo_txt = fopen(url2, "w");
 
         /// ESCREVE O TEXTO CORRESPONDENTE AO ARQUIVO COMPACTADO
         descompactar_texto(cabeca_arvore, array_binarios_descompactar, arquivo_txt, tam_array_binarios_descompactar-lixo);

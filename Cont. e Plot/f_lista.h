@@ -27,3 +27,5 @@ Node *remove_lista(Node *lista);
 void print_array(int *numeros);
 
 void escrever_contagem(FILE *arquivo, ArvB *cabeca, Node *lista, int *numeros);
+
+void quicksort(int *numeros, int inicio, int fim);

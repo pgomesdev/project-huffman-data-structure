@@ -82,37 +82,19 @@ void escrever_texto(unsigned char *array_texto, unsigned long long int tamanho, 
 void criar_array_binarios(Hashtable *ht, FILE *arquivo, unsigned char *array_binario, unsigned long long int freq_x_profundidade)
 {
     int c;
-    unsigned long long int j, k = 0;
-    unsigned short valor;
+    unsigned long long int k = 0;
 
     Element *atual = criar_node_hash_null();
     rewind(arquivo);
     while((c = fgetc(arquivo)) != EOF)
     {
         atual = ht->table[c];
-        if(atual != NULL)
-        {
-            for(j = k ; j<freq_x_profundidade ; j++)
-            {
-                if(atual != NULL)
-                {
-                    valor = atual->value;
-                    array_binario[j] = valor;
-                    atual = atual->next_element;
-                }
-                else
-                {
-                    k = j;
-                    break;
-                }
 
-            }
-        }
-
-        else
+        while(atual != NULL)
         {
-            puts("ERRO AO ACESSAR HASHTABLE, LETRA APONTANDO PRA NULO\n");
-            return;
+            array_binario[k] = atual->value;
+            k++;
+            atual = atual->next_element;
         }
     }
 }

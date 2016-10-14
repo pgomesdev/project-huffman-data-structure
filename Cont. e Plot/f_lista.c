@@ -92,13 +92,63 @@ void print_array(int *numeros)
 void escrever_contagem(FILE *arquivo, ArvB *cabeca, Node *lista, int *numeros)
 {
     int i;
-    for(i = 0 ; i<MAX ; i++)
+    int a = MAX;
+    int arvore[MAX];
+    int listas[MAX];
+
+    for(i = 0;i < a;i++)
     {
-        if(i<10)
-            fprintf(arquivo, "Numero: [%d] A:%d  L:%d\n", numeros[i], busca_elemento_cont(cabeca, numeros[i], 1), pesquisar_Node(lista, numeros[i]));
-        else if(i<100)
-            fprintf(arquivo, "Numero: [%d] A:%d  L:%d\n", numeros[i], busca_elemento_cont(cabeca, numeros[i], 1), pesquisar_Node(lista, numeros[i]));
-        else
-            fprintf(arquivo, "Numero: [%d] A:%d  L:%d\n", numeros[i], busca_elemento_cont(cabeca, numeros[i], 1), pesquisar_Node(lista, numeros[i]));
+        arvore[i] = busca_elemento_cont(cabeca, numeros[i], 1);
+        listas[i] = pesquisar_Node(lista, numeros[i]);
     }
+
+    printf("\n%d\n", arvore[0]);
+
+    quicksort(arvore, 0, a);
+    quicksort(listas, 0, a);
+
+    printf("%d\n", arvore[0]);
+
+    fprintf(arquivo, "Arvore,Lista\n");
+
+    for(i = 0 ; i < a ; i++)
+    {
+        fprintf(arquivo, "%d,%d\n", arvore[i], listas[i]);
+    }
+}
+
+void quicksort(int *numeros, int inicio, int fim)
+{
+    int pivo, aux;
+    int i, j, meio;
+
+    i = inicio;
+    j = fim;
+
+    meio = (int) ((i + j) / 2);
+    pivo = numeros[meio];
+
+
+    do
+    {
+        while (numeros[i] < pivo)
+            i++;
+        while (numeros[j] > pivo)
+            j--;
+
+        if(i <= j)
+        {
+            aux = numeros[i];
+            numeros[i] = numeros[j];
+            numeros[j] = aux;
+            i++;
+            j--;
+        }
+    }
+    while(j > i);
+
+    if(inicio < j)
+        quicksort(numeros, inicio, j);
+    if(i < fim)
+        quicksort(numeros, i, fim);
 }
