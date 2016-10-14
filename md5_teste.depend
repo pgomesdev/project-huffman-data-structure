@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1476390335 source:/home/alunoic/Área de Trabalho/md5 teste/main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<openssl/md5.h>
-
