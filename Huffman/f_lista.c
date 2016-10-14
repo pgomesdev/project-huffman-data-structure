@@ -48,7 +48,7 @@ Node *add_node_lista(unsigned char letra)
     Node *novo = (Node*)malloc(sizeof(Node));
 
     if(letra == '*')
-        novo->letra = '\\';
+        novo->letra = '\*';
     else
         novo->letra = letra;
 
