@@ -1,0 +1,339 @@
+Estes termos e condições criam um contrato entre o utilizador e a Apple (o “Acordo”). Por favor leia o Acordo cuidadosamente. Para confirmar o seu entendimento e aceitação do Acordo, carregue em “Aceito.”
+
+A. INTRODUÇÃO AOS NOSSOS SERVIÇOS
+
+Este Acordo rege a sua utilização dos serviços da Apple (“Serviços”), através dos quais pode comprar, obter, licenciar, alugar ou subscrever media, aplicações (“Apps”), e outros serviços dentro da aplicação (“in-app”) (“Conteúdo”). Os nossos Serviços são: iTunes Store, App Store, iBooks Store, Apple Music, e Apple News. Ao criar uma conta para utilização dos Serviços em Portugal estará a especificar tal país como o seu país de residência para efeitos fiscais (“País de Residência”), e os nossos Serviços estão disponíveis para a sua utilização no seu País Residência. Para utilizar os nossos Serviços, necessita de hardware, software (última versão recomendada e por vezes exigível) e acesso à Internet (poderão ser aplicadas taxas) compatíveis. O desempenho dos nossos Serviços poderá ser afetado por estes fatores.
+
+B. UTILIZAR OS NOSSOS SERVIÇOS
+
+PAGAMENTOS, IMPOSTOS E REEMBOLSOS
+
+Poderá adquirir Conteúdo nos nossos Serviços sem custos ou por um montante, sendo qualquer uma das duas aquisições referida como uma “Transação.” Mediante cada Transação adquire uma licença para utilizar apenas o Conteúdo. Cada Transação constitui um contrato eletrónico entre o utilizador e a Apple, e/ou entre o utilizador e a entidade que disponibiliza o Conteúdo nos nossos Serviços. Contudo, caso seja um cliente da Apple Distribution International e adquira uma App ou um livro, a Apple Distribution International será a comerciante de registo; isto significa que adquire o Conteúdo à Apple Distribution International, e que é licenciado pelo Fornecedor da App (conforme abaixo definido) ou pelo editor do livro. Quando efetua a sua primeira Transação, solicitaremos que escolha com que frequência devemos solicitar a sua palavra-passe para futuras Transações. Caso ative o Touch ID para Transações, solicitaremos que autentique todas as Transações com a sua impressão digital. Efetue a gestão das suas definições de palavra passe a qualquer momento seguindo estas instruções: https://support.apple.com/en-us/HT204030. A Apple cobrará o seu método de pagamento (tal como o seu cartão de crédito, débito, vales /código de oferta, ou outro método disponível no seu País de Residência) para quaisquer Transações pagas, incluindo quaisquer impostos aplicáveis. Caso efetue uma pré-encomenda de Conteúdo, ser-lhe-á efetuada a cobrança quando o Conteúdo lhe for entregue (exceto se cancelar antes da disponibilização do Conteúdo). Para detalhes sobre como as Transações são faturadas, por favor visite http://support.apple.com/kb/HT5582. Concorda com a receção de todas as faturas num formato eletrónico, o qual poderá incluir o correio eletrónico. Os preços do Conteúdo poderão ser alterados a qualquer momento. Caso problemas técnicos impeçam ou atrasem injustificadamente a entrega de Conteúdo, o seu exclusivo e único recurso será ou a substituição do Conteúdo ou o reembolso do preço pago, conforme determinado pela Apple. A cada momento, a Apple poderá recusar um pedido de reembolso caso encontremos uma prova de fraude, abuso de reembolso, ou outro comportamento manipulativo que dê o direito à Apple de uma correspondente reconvenção. Os termos relacionados com vales / códigos de oferta estão disponíveis aqui: http://www.apple.com/legal/internet-services/itunes/giftcards/.
+
+Direito de cancelamento: Se optar por cancelar a sua encomenda, poderá fazê-lo, sem apresentar qualquer motivo, no prazo de 14 dias após a data em que recebeu o recibo.
+
+Para cancelar a sua encomenda, terá de informar-nos da sua decisão. Para assegurar o processamento imediato recomendamos que utilize o Comunicar um Problema para cancelar todos os itens com exceção da Apple Music, iTunes Match, Passe de Temporada (“Season Pass”), Multi-Passe e Ofertas do iTunes adquiridas diretamente da Apple e ainda não resgatadas. Os itens excetuados podem ser cancelados contactando o Suporte iTunes. Também tem o direito de nos informar utilizando o formulário modelo de cancelamento abaixo, ou efetuando qualquer outra declaração inequívoca. Caso utilize o Comunicar um Problema nós confirmaremos a receção do seu cancelamento sem demora.
+
+Por forma a cumprir o prazo do cancelamento, tem de enviar a sua comunicação de cancelamento antes do período de 14 dias expirar.
+
+Efeitos do cancelamento: Efetuaremos o reembolso no prazo máximo de 14 dias após o dia em que recebermos o seu aviso de cancelamento. Utilizaremos os mesmos meios de pagamento que utilizou para a Transação, sendo que não irá incorrer em quaisquer custos por tal reembolso.
+
+Exceção ao direito de cancelamento: Não pode cancelar a sua encomenda de fornecimento de Conteúdo caso a entrega tenha sido iniciada após o seu pedido e aceitação de que perderá, por conseguinte, o direito de cancelamento.
+
+Formulário modelo de cancelamento:
+
+- Para Apple Distribution International, sucursal de Luxemburgo, 31-33, rue Sainte Zithe, L-2763 Luxemburgo:
+
+- Venho por este meio comunicar que pretendo resolver o meu contrato relativo ao seguinte: [INSERIR ID DE ENCOMENDA, ITEM, INTÉRPRETE E TIPO]
+
+- Encomendado em [INSERIR DATA]/recebido em [INSERIR DATA]
+
+- Nome do consumidor
+
+- Endereço do consumidor
+
+- Email do consumidor (opcional)
+
+- Data
+
+APPLE ID
+
+A utilização dos nossos Serviços e o acesso ao seu Conteúdo requer uma Apple ID. Uma Apple ID é a conta que utiliza em todo o ecossistema da Apple. A sua Apple ID é valiosa, e é responsável por manter a sua confidencialidade e segurança. A Apple não é responsável por quaisquer perdas resultantes da utilização não autorizada da sua Apple ID. Por favor contate a Apple caso suspeite que a sua Apple ID foi comprometida.
+
+Tem de ter 13 anos de idade (ou idade mínima equivalente no seu País de Residência, conforme definido no processo de registo) para criar uma Apple ID e utilizar os nossos Serviços. As Apple IDs para pessoas com idades inferiores a esta poderão ser criadas por um pai ou tutor legal utilizando a Partilha com a Família (“Family Sharing”) ou por uma instituição de educação aprovada.
+
+PRIVACIDADE
+
+A sua utilização dos nossos Serviços fica sujeita à Política de Privacidade da Apple, a qual está disponível em http://www.apple.com/legal/privacy/.
+
+REGRAS DE UTILIZAÇÃO DOS SERVIÇOS E DO CONTEÚDO
+
+A sua utilização dos Serviços e Conteúdo tem de seguir as regras estabelecidas nesta seção (“Regras de Utilização”). Qualquer outra utilização dos Serviços e Conteúdo constitui uma violação material deste Acordo. A Apple poderá monitorizar a sua utilização dos Serviços e Conteúdo para assegurar que está a seguir estas Regras de Utilização.
+
+Todos os Serviços:
+
+- Poderá utilizar os Serviços e Conteúdo apenas para fins pessoais, não comerciais (exceto conforme definido na seção do Conteúdo App Store abaixo).
+
+- A entrega de Conteúdo pela Apple não transfere para o utilizador quaisquer direitos de utilização promocional, e não constitui uma concessão ou exoneração de quaisquer direitos dos titulares do direito de autor / copyright.
+
+- Poderá utilizar Conteúdo de até cinco Apple IDs diferentes em cada dispositivo.
+
+- É da responsabilidade do utilizador não perder, destruir, ou danificar Conteúdo depois de descarregado. Encorajamo-lo a efetuar uma cópia de segurança do seu Conteúdo com regularidade.
+
+- Não poderá adulterar ou contornar qualquer tecnologia de segurança incluída com os Serviços.
+
+- Poderá aceder aos nossos Serviços apenas utilizando o software da Apple, e não poderá modificar ou utilizar versões modificadas de tal software.
+
+- O Conteúdo Vídeo requer uma conexão HDCP.
+
+Conteúdo da iTunes Store:
+
+- Poderá utilizar Conteúdo isento de Gestão de Direitos Digitais (“Digital Rights Management - DRM) num número razoável de dispositivos compatíveis que detenha ou controle. Conteúdo protegido por DRM poderá ser utilizado em até cinco computadores e em qualquer número de dispositivos com os quais sincronize a partir de tais computadores.
+
+- Os alugueres de Conteúdo poderão ser visualizados num único dispositivo de cada vez, e terão de ser reproduzidos dentro de 30 dias, e completados dentro de 24 a 48 horas a contar do início da reprodução dependendo do Conteúdo oferecido nos Serviços no seu País de Residência (parar, pausar ou recomeçar não prolonga este período).
+
+- Poderá gravar uma lista de reprodução áudio para um CD para fins de audição até sete vezes (esta limitação não é aplicável a Conteúdo isento de DRM). Poderá utilizar o CD de áudio no qual gravou o seu Conteúdo das mesmas formas em que pode utilizar um CD de áudio adquirido de uma loja de retalho, sujeito às leis de direito de autor / copyright.
+
+Conteúdo da App Store:
+
+- O termo “App” inclui aplicações, aplicações de iMessage e de Apple Watch, compras dentro da aplicação (“in-app”), extensões (tais como teclados), autocolantes, e Assinaturas disponibilizadas numa aplicação.
+
+- Poderá utilizar Apps em qualquer dispositivo que detenha ou controle.
+
+- Os indivíduos que estejam a atuar em representação de uma entidade comercial, organização governamental ou instituição de educação (uma “Empresa”) poderão descarregar e sincronizar as Apps para utilização ou por (i) um único indivíduo em um ou mais dispositivos detidos ou controlados por uma Empresa; ou (ii) múltiplos indivíduos num único dispositivo partilhado detido ou controlado por uma Empresa. Para efeitos de clarificação, cada dispositivo utilizado em série ou coletivamente por múltiplos utilizadores requer uma licença separada.
+
+Conteúdo da iBooks Store:
+
+- Poderá utilizar Conteúdo isento de DRM em qualquer dispositivo compatível que detenha ou controle. Conteúdo protegido por DRM poderá ser utilizado em até cinco computadores e em qualquer número de dispositivos que sincronize a partir desses computadores.
+
+- Não poderá gravar Conteúdo da iBooks Store para um disco.
+
+Apple Music:
+
+- Poderá utilizar uma assinatura Individual Apple Music em até 10 dispositivos (apenas cinco dos quais poderão ser computadores).
+
+- Uma assinatura Individual Apple Music permite-lhe efetuar o stream num único dispositivo de cada vez; uma assinatura de Família permite ao utilizador ou aos membros da sua Família efetuar o stream em até seis dispositivos de cada vez.
+
+RE-DESCARREGAMENTOS
+
+Poderá ser capaz de efetuar um novo descarregamento de Conteúdo previamente adquirido (“Re-descarregamento”) para os seus dispositivos que estejam autenticados com a mesma Apple ID (“Dispositivos Associados”). Poderá ver tipos de Conteúdo disponíveis para Re-Descarregamento no seu País de Residência em https://support.apple.com/en-us/HT204632. O Conteúdo poderá não estar disponível para Re-Descarregamento se esse Conteúdo já não estiver a ser oferecido nos nossos Serviços.
+
+Regras de Dispositivos Associados: Poderá ter 10 dispositivos (mas apenas um máximo de 5 computadores) autenticados com a sua Apple ID num determinado momento. Cada computador também terá de estar autorizado utilizado a mesma Apple ID (para aprender mais sobre a autorização de computadores, visite https://support.apple.com/en-us/HT201251). Os dispositivos poderão ser associados com uma Apple ID diferente a cada 90 dias.
+
+ASSINATURAS
+
+Os Serviços e determinadas Apps poderão permitir-lhe adquirir o acesso a Conteúdo ou serviços numa base de assinatura (“Assinaturas Pagas”). Assinaturas Pagas renovam-se automaticamente até serem canceladas na seção Gerir Assinaturas das definições da sua conta. Notificá-lo-emos caso o preço de uma Assinatura Paga seja aumentado e, se necessário, obteremos o seu consentimento para continuar a Assinatura. Ser-lhe-á cobrado não mais do que 24 horas antes do início do último período de Assinatura Paga. Determinadas Assinaturas Pagas poderão oferecer um período experimental grátis antes de cobrar o seu método de pagamento. Caso decida cancelar a Assinatura de uma Assinatura Paga antes de começarmos a cobrar o seu método de pagamento, cancele antes do período experimental grátis terminar.
+
+DISPONIBILIDADE DE CONTEÚDO E SERVIÇO
+
+Os termos que se podem encontrar neste Acordo que estão relacionados com Serviços, tipos de Conteúdo, características ou funcionalidade não disponível no seu País de Residência não lhe serão aplicáveis exceto e até os mesmos lhe serem disponibilizados. Para ver os tipos de Conteúdo que lhe são disponibilizados no seu País de Residência, vá até aos Serviços ou visite https://support.apple.com/en-us/HT204411.
+
+DISPOSITIVOS NÃO-APPLE
+
+Caso utilize os nossos Serviços num dispositivo de marca não-Apple, poderá não ser capaz de aceder a todas as funcionalidades ou tipos de Conteúdo. Os termos neste Acordo relativos a funcionalidades ou tipos de Conteúdo não disponíveis não lhe são aplicáveis. Caso escolha mais tarde aceder aos nossos Serviços a partir de um dispositivo de marca Apple, concorda que todos os termos deste Acordo serão aplicáveis à sua utilização em tal dispositivo.
+
+C. AS SUAS SUBMISSÕES PARA OS NOSSOS SERVIÇOS
+
+Os nossos Serviços poderão permitir-lhe submeter materiais tais como comentários, fotografias, vídeos e podcasts (incluindo metadados e ilustrações associados). A sua utilização de tais funcionalidades terá de cumprir com as Orientações de Submissões abaixo, as quais poderão ser ocasionalmente atualizadas. Caso veja materiais que não cumpram com as Orientações de Submissões, por favor utilize a funcionalidade de Reportar uma Preocupação. Pelo presente concede à Apple uma licença mundial, isenta de royalties, perpétua, não-exclusiva para utilizar os materiais que submete dentro dos Serviços e marketing relacionado. A Apple poderá monitorizar e decidir remover ou editar qualquer material submetido.
+
+Orientações de Submissões: Não poderá utilizar os Serviços para:
+
+- publicar quaisquer materiais para os quais não tenha permissão, direito ou licença para utilizar;
+
+- publicar conteúdo censurável, ofensivo, ilegal, enganoso ou nocivo;
+
+- publicar informações pessoais, particulares ou confidenciais pertencentes a outros;
+
+- solicitar informações pessoais de um menor;
+
+- fingir ou adulterar a sua afiliação com outra pessoa ou entidade;
+
+- publicar ou transmitir spam, incluindo mas não limitado a publicidade não solicitada ou não autorizada, materiais promocionais, ou anúncios informativos;
+
+- planear ou exercer qualquer atividade ilegal, fraudulenta ou manipuladora.
+
+D. PARTILHA COM A FAMÍLIA (“FAMILY SHARING”)
+
+A Partilha com a Família (“Family Sharing”) permite-lhe partilhar Conteúdo elegível com até seis membros de uma Família. O organizador de uma Família poderá convidar outros membros para participar, e concorda em pagar por todas as Transações iniciadas por membros da Família (o “Organizador”). O Organizador terá de ter 18 anos de idade e ser o pai ou tutor legal de qualquer membro da Família com idade inferior a 13 anos ou a idade mínima equivalente no seu País de Residência (conforme definido no processo de registo). Os dispositivos Apple são exigidos para acesso a todas as funcionalidades da Partilha com a Família (“Family Sharing”).
+
+O método de pagamento do Organizador é utilizado para pagar por qualquer Transação iniciada por um membro da Família (exceto quando a conta do membro da Família tenha crédito na loja, o qual é sempre utilizado primeiro). Os membros da Família estão a atuar como agentes para o Organizador quando o método de pagamento do Organizador é utilizado. O Organizador pelo presente concorda (1) pagar por tais transações, e (2) que as Transações iniciadas pelos membros da Família estão autorizadas. Os Organizadores são responsáveis por cumprir com o contrato do seu método de pagamento, e assumem todos os riscos relacionados com a partilha de acesso ao método de pagamento com os membros da Família. Um recibo ou fatura para qualquer Transação de um membro da Família é enviada ao membro da Família que a inicia e ao Organizador.
+
+Perguntar para Comprar (“Ask to Buy”): Perguntar para Comprar é uma funcionalidade conveniente que permite a um Organizador aprovar cada Transação iniciada por um membro da Família com idade inferior a 18 anos (ou a idade equivalente de maioridade no seu País de Residência). O Organizador tem de ser o pai ou o tutor legal de qualquer membro da Família para quem o Perguntar para Comprar (“Ask to Buy”) esteja ativado. O Conteúdo descarregado a partir de membros da Família ou adquirido através de códigos de redenção não está sujeito ao Perguntar para Comprar (“Ask to Buy”).
+
+Alterações aos Membros da Família: Quando um membro da Família deixa ou é removido da Família, os membros da Família remanescentes poderão já não ser capazes de aceder ao Conteúdo do anterior membro, incluindo Conteúdo adquirido com o método de pagamento do Organizador.
+
+Regras de Partilha com a Família: Apenas pode pertencer a uma Família a cada momento, e poderá juntar-se a qualquer Família não mais de duas vezes por ano. Poderá alterar a Apple ID que associa com uma Família não mais de uma vez a cada 90 dias. Todos os membros da Família têm de partilhar o mesmo País de Residência. Nem todo o Conteúdo, incluindo as Compras dentro da Aplicação (“In-App”), Assinaturas, e algumas Apps previamente adquiridas, são elegíveis para a Partilha com a Família (“Family Sharing”).
+
+E. FUNCIONALIDADES DE RECOMENDAÇÃO
+
+Os Serviços recomendar-lhe-ão Conteúdo com bases nos seus descarregamentos, aquisições e outras atividades. Poderá optar por ser excluído da receção de tais recomendações nas suas definições de conta.
+
+Algumas funcionalidades de recomendação poderão exigir a sua permissão antes de serem ativadas. Caso ative estas funcionalidades, ser-lhe-á solicitado que dê permissão à Apple para recolher e armazenar determinados dados, incluindo, mas não limitados, a dados sobre a atividade do seu dispositivo, localização, e utilização. Por favor leia cuidadosamente a informação apresentada quando ativa estas funcionalidades.
+
+F. TERMOS ADICIONAIS DA ITUNES STORE
+
+PASSE DE TEMPORADA (“SEASON PASS”) E MULTI-PASSE
+
+Um Passe permite-lhe adquirir e receber Conteúdo televisivo conforme este vai ficando disponível. Um Passe de Temporada (“Season Pass”) é aplicável a Conteúdo televisivo que tem um número limitado de episódios por temporada; um Multi-Passe é aplicável a um Conteúdo de televisivo que esteja disponível numa base recorrente. O preço completo de um Passe de Temporada (“Season Pass”) ou Multi-Passe é cobrada no momento da Transação. O Conteúdo de Passe de Temporada (“Season Pass”) ou Multi-Passe está disponível para descarregar até 90 dias após o último episódio ficar disponível. Caso a renovação automática estiver selecionada quando obtém um Multi-Passe, ser-lhe-á cobrado o preço total de cada ciclo Multi-Passe. Poderá desligar a renovação automática antes do início do próximo ciclo Multi-Passe nas suas definições de conta. Caso um fornecedor de Conteúdo entregar à Apple menos episódios de TV do que aqueles que estavam planeados quando comprou o Passe de Temporada (“Season Pass”), nós creditaremos a sua Apple ID o valor de retalho do número correspondente de episódios que não tiverem sido disponibilizados à Apple.
+
+G. TERMOS ADICIONAIS DA APP STORE
+
+LICENÇA DE CONTEÚDO DA APP STORE
+
+As licenças de aplicações (“Apps”) são-lhe fornecidas pela Apple ou por um terceiro programador (“Fornecedor de App”). Caso seja um cliente da Apple Distribution International, o comerciante de registo é a Apple Distribution International, o que significa que adquire a licença para a aplicação (“App”) Apple Distribution International, mas a aplicação (“App”) é licenciada pelo Fornecedor de App. Uma aplicação (“App”) licenciada pela Apple é uma “Apple App;” uma aplicação (“App”) licenciada por um Fornecedor de App é uma “App de Terceiro.” A Apple atua como um agente para os Fornecedores de App ao disponibilizar a App Store e não é parte no contrato de venda ou acordo de utilizador entre o utilizador e o Fornecedor de App. Qualquer App que adquira é regida pelo Acordo de Licença de Utilizador Final da Aplicação (“ALUF Standard”) definido abaixo, exceto se a Apple ou o Fornecedor de App disponibilizar um acordo de licença personalizado prevalente (“ALUF Personalizado”). O Fornecedor de App de qualquer App de Terceiro é exclusivamente responsável pelo seu conteúdo, garantias, e por eventuais reclamações que poderá vir a ter relacionadas com a App de Terceiro. Reconhece e concorda que a Apple é um terceiro beneficiário do EULA Standard ou EULA Personalizado aplicável a cada App de Terceiro e poderá como tal fazer aplicar tal acordo. Determinadas aplicações (“Apps”), tais como os autocolantes e apps do iMessage, poderão não aparecer no painel do dispositivo, mas poderão ser acedidas e utilizadas na gaveta da app Mensagens.
+
+COMPRAS NA APLICAÇÃO (“IN-APP”)
+
+As aplicações (“Apps”) poderão oferecer conteúdo, serviços ou funcionalidade para utilização dentro de tais Apps (“Compras na Aplicação – “In-App”). As Compras na Aplicação (“In-App”) que são consumidas durante a utilização da App (por exemplo, gemas virtuais) não podem ser transferidas entre dispositivos e apenas podem ser descarregadas uma vez. Tem de autenticar a sua conta antes de efetuar Compras na Aplicação (“In-App”) – separadamente de qualquer autenticação para obter outro Conteúdo – ao introduzir a sua palavra passe ou utilizar o Touch ID. Será capaz de efetuar Compras na Aplicação (“In-App”) por quinze minutos sem se autenticar novamente exceto se nos tiver solicitado que exigíssemos uma palavra passe para todas as compras ou se tiver ativado o Touch ID. Poderá desativar a capacidade de efetuar Compras na Aplicação (“In-App”) seguindo estas instruções: https://support.apple.com/en-us/HT201304.
+
+MANUTENÇÃO E SUPORTE DE APLICAÇÕES (“APP”)
+
+A Apple é responsável por disponibilizar manutenção e suporte apenas para Apple Apps, ou conforme exigível pela lei aplicável. Os Fornecedores de App
+
+são responsáveis por fornecerem a manutenção e suporte de Apps de Terceiros.
+
+ACORDO DE LICENÇA DE UTILIZADOR FINAL DE APLICAÇÃO LICENCIADA
+
+As Aplicações (“Apps”) disponibilizadas através da App Store são-lhe licenciadas, não vendidas. A sua licença para cada Aplicação (“App”) está sujeita à sua prévia aceitação de ou este Acordo de Licença de Utilizador Final de Aplicação Licenciada (“ALUF Standard”), o acordo de licença de utilizador final entre o utilizador e o Fornecedor da Aplicação (“ALUF Personalizado”), se um tiver sido disponibilizado. A sua licença para qualquer Apple App ao abrigo deste ALUF Standard ou do ALUF Personalizado é concedida pela Apple, e a sua licença para qualquer App de Terceiro ao abrigo deste ALUF Standard ou ALUF Personalizado é concedida pelo Fornecedor de Aplicação dessa App de Terceiros. Qualquer Aplicação (“App”) que esteja sujeita a este ALUF Standard é aqui referida como a “Aplicação Licenciada.” O Fornecedor da Aplicação ou a Apple conforme aplicável (“Licenciante”) reservam todos os direitos na e sobre a Aplicação Licenciada que não lhe são expressamente concedidos ao abrigo deste ALUF Standard.
+
+a. Âmbito da Licença: O Licenciador concede-lhe uma licença não transferível para utilizar a Aplicação Licenciada em quaisquer produtos de marca Apple que detenha ou controle e conforme permitido pelas Regras de Utilização. Os termos deste ALUF Standard regerão qualquer conteúdo, materiais, ou serviços acessíveis a partir de ou adquiridos dentro da Aplicação Licenciada bem como melhoramentos (“upgrades”) fornecidas pelo Licenciador que substituem ou suplementam a Aplicação Licenciada original, exceto se tal melhoramento (“upgrades”) for acompanhada por um EULA Personalizado. Exceto conforme disposto nas Regras de Utilização, não poderá distribuir ou disponibilizar a Aplicação Licenciada numa rede onde possa ser utilizada por múltiplos dispositivos ao mesmo tempo. Não poderá transferir, redistribuir ou sublicenciar a Aplicação Licenciada e, caso venda o seu Dispositivo Apple a um terceiro, terá de remover a Aplicação Licenciada do Dispositivo Apple antes de o fazer. Não poderá copiar (exceto conforme permitido por esta licença e pelas Regras de Utilização), fazer engenharia de reversão, desmontar, tentar obter o código fonte de, modificar, ou criar obras derivadas da Aplicação Licenciada, quaisquer atualizações, ou de qualquer parte da mesma (exceto se e apenas na medida em que quaisquer das restrições antecedentes seja proibida pela lei aplicável ou na medida em que possa ser permitido pelos termos de licenciamento que regem a utilização de quaisquer componentes de código livre – open-source – que estejam incluídos com a Aplicação Licenciada).
+
+b. Consentimento para a Utilização de Dados: Concorda que o Licenciador poderá recolher e utilizar dados técnicos e informação relacionada — incluindo mas não limitado a informação técnica sobre o seu dispositivo, sistema e software da aplicação, e periféricos — que é recolhida periodicamente para facilitar a disponibilização de atualizações de software, suporte de produto, e outros serviços prestados ao utilizador (se existentes) relacionados com a Aplicação Licenciada. O Licenciador poderá utilizar esta informação, desde que esteja num formato que não o identifique pessoalmente, para melhorar os seus produtos ou para lhe prestar serviços ou tecnologias.
+
+c. Cessação. Este ALUF Standard estará em vigor até ser resolvido pelo utilizador ou pelo Licenciante. Os seus direitos ao abrigo deste ALUF Standard cessarão de forma automática caso não cumpra com qualquer dos seus termos.
+
+d. Serviços Externos. A Aplicação Licenciada poderá permitir o acesso aos serviços e websites do Licenciador e/ou terceiros (coletivamente e individualmente, "Serviços Externos"). Concorda em utilizar os Serviços Externos por sua conta e risco exclusivo. O Licenciador não é responsável por examinar ou avaliar o conteúdo ou exatidão de quaisquer Serviços Externos de Terceiros, e não será responsável por qualquer desses Serviços Externos de Terceiros. Os dados exibidos por qualquer Aplicação ou Serviço Externo, incluindo mas não limitada a informação financeira, médica e de localização, é apenas para efeitos gerais de informação e não é garantida pelo Licenciador e seus agentes. Não utilizará os Serviços Externos por qualquer forma que seja inconsistente com os termos deste ALUF Standard ou que infrinja os direitos de propriedade intelectual do Licenciador ou de qualquer terceiro. Concorda em não utilizar os Serviços Externos para assediar, abusar, perseguir, ameaçar ou difamar qualquer pessoa ou entidade, e que o Licenciador não é responsável por qualquer dessas utilizações. Os Serviços Externos poderão não estar disponíveis em todas as línguas ou no seu País de Residência, e poderão não ser apropriados ou estar disponíveis para utilização em qualquer localização particular. Na medida em que escolha utilizar tais Serviços Externos, é exclusivamente responsável pelo cumprimento com quaisquer leis aplicáveis. O Licenciador reserva o direito de alterar, suspender, remover, desativar ou impor restrições ou limites de acesso sobre quaisquer Serviços Externos a qualquer momento sem aviso ou responsabilidade para consigo.
+
+e. RENÚNCIA DE GARANTIA:
+
+O Licenciador utilizará diligência e técnica razoáveis com respeito ao fornecimento da Aplicação Licenciada e a quaisquer Serviços Externos prestados ou disponibilizados pela Aplicação Licenciada ao utilizador. O Licenciador não faz quaisquer outras promessas ou concede qualquer outra garantia relativamente aos Serviços Externos e, em particular não garante:
+
+(i) Que a sua utilização dos Serviços Externos decorrerá de forma ininterrupta ou sem erros;
+
+(ii) Que os Serviços Externos serão fornecidos isentos de perda, corrupção, ataques, vírus, interferência, pirataria informática (“hacking”) ou outra intrusão de segurança e o Licenciador renuncia a qualquer responsabilidade relacionada com o supra descrito. O utilizador é responsável pelo arquivo de segurança (“backup”) do seu próprio sistema, incluindo qualquer Aplicação Licenciada que se encontre armazenada no seu sistema.
+
+f. LIMITAÇÃO DE RESPONSABILIDADE
+
+(i) Salvo o disposto na secção (ii) supra, em nenhum caso o Licenciador, os seus administradores, funcionários, trabalhadores, afiliadas, agentes, fornecedores, mandantes, ou licenciadores, serão responsáveis por quaisquer perdas ou danos causados pelo Licenciador, seus trabalhadores ou agentes, quando:
+
+(1) Não exista violação de dever legal de cuidado perante o utilizador por parte do Licenciador, ou por qualquer dos seus empregados ou agentes;
+
+(2) Não seja um resultado razoavelmente previsível de tal violação;
+
+(3) Qualquer aumento de perdas ou danos resulte da sua violação de qualquer das condições deste Acordo de Licenciamento de Utilizador Final (“Acordo”);
+
+(4) Resulte de uma decisão do Licenciador de o avisar, da suspensão ou da cessação do seu acesso aos Serviços Externos, ou a tomada de qualquer outra medida durante a investigação de uma suspeita violação, ou resulte da conclusão do Licenciador que ocorreu uma violação ao presente Acordo;
+
+(5) Esteja em causa qualquer perda de receita, negócio, ou lucros, ou qualquer perda ou corrupção de dados, relativamente ao uso da Aplicação Licenciada por parte do utilizador.
+
+(ii) Nada do disposto no presente Acordo impede ou limita a responsabilidade do Licenciador por fraude, negligência grosseira, infracção dolosa ou morte ou violação à integridade física provocados pela sua negligência.
+
+g. Não poderá utilizar ou de outra forma exportar ou re-exportar a Aplicação Licenciada exceto conforme autorizado pela lei dos Estados Unidos e as leis da jurisdição na qual a Aplicação Licenciada foi obtida. Em particular, mas sem limitação, a Aplicação Licenciada não poderá ser exportada ou re-exportada (a) para qualquer um dos países sujeitos a embargo pelos EUA ou (b) para qualquer pessoa constante da lista de Cidadãos Especialmente Indicados do Departamento do Tesouro dos Estados Unidos ou da Relação de Pessoas ou Entidades Recusadas do Departamento de Comércio dos Estados Unidos. Ao utilizar a Aplicação Licenciada, declara e garante que não está situado em nenhum dos países indicados nem consta das listas mencionadas. Aceita também que não utilizará estes produtos para qualquer fim que esteja proibido pelas leis dos Estados Unidos, incluindo, sem limitação, o desenvolvimento, a conceção, o fabrico ou a produção de armamento nuclear, mísseis, ou armas biológicas ou químicas.
+
+h. A Aplicação Licenciada e a documentação relacionada são “Artigos Comerciais”, de acordo com a definição deste termo no n.º 48 do C.F.R. (Code of Federal Rules) §2.101, constituído por “Software de Computador Comercial” e “Documentação de Software de Computador Comercial”, de acordo com a forma como estes termos são utilizados no n.º 48 do C.F.R. §12.212 ou o n.º 48 do C.F.R. §227.7202, consoante for aplicável. Em consonância com o n.º 48 do C.F.R. §12.212 ou o n.º 48 do C.F.R. §227.7202-1 à 227.7202-4, consoante for aplicável, o Software de Computador Comercial e a Documentação de Software de Computador Comercial são licenciados aos utilizadores finais do Governo dos Estados Unidos (a) somente como Artigos Comerciais e (b) apenas com os direitos que são oferecidos a outros utilizadores finais de acordo com os termos e condições aqui descritos. Os direitos não publicados estão protegidos pelas leis de direitos de autor dos Estados Unidos.
+
+i. Exceto na medida expressamente prevista no parágrafo seguinte, este Acordo e a relação entre o utilizador e a Apple reger-se-á pelas leis do Estado da Califórnia, excluindo as suas disposições de regras de conflitos. O Utilizador e a Apple concordam em submeter-se à jurisdição pessoal e exclusiva dos tribunais localizados dentro do Condado de Santa Clara, Califórnia, para resolver qualquer litígio ou reclamação que resulte deste Acordo. Se (a) não for um cidadão dos E.U.A.; (b) não residir nos E.U.A.; (c) não estiver a aceder ao Serviço a partir dos E.U.A..; e (d) for um cidadão de um dos países abaixo identificados, pelo presente concorda que qualquer litígio ou reclamação resultantes deste Acordo será regida pela lei aplicável abaixo definida, sem atenção a quaisquer disposições de regras de conflitos, e pelo presente irrevogavelmente submete-se à jurisdição não exclusiva dos tribunais localizados no estado, província ou país abaixo identificado cuja lei rege:
+
+Caso seja um residente de qualquer país da União Europeia ou da Suíça, Noruega ou Islândia, a lei aplicável e foro serão as leis e tribunais do seu local habitual de residência.
+
+Fica especificamente excluída de aplicação a este Acordo a lei que é conhecida como a Convenção das Nações Unidas sobre a Venda Internacional de Bens.
+
+H. TERMOS ADICIONAIS DA IBOOKS STORE
+
+Adquire Conteúdo da iBooks Store do terceiro fornecedor de tal Conteúdo (o “Editor”), não a Apple. A Apple atua como um agente para o Editor na disponibilização de Conteúdo da iBooks Store ao utilizador, e como tal a Apple não é parte na Transação entre o utilizador e o Editor. Caso seja um cliente da Apple Distribution International, o comerciante de registo será a Apple Distribution International, o que significa que adquire uma licença para utilizar o conteúdo da Apple Distribution International, mas o Conteúdo é licenciado pelo Editor. O Editor da iBooks Store reserva o direito de fazer aplicar os termos de utilização de tal iBooks Store. O Editor do Conteúdo da iBooks Store é exclusivamente responsável por tal Conteúdo, quaisquer garantias na medida em que tais garantias não tiverem sido renunciadas, e quaisquer reclamações que o utilizador ou qualquer outro terceiro possa ter com relação a tal Conteúdo.
+
+I. TERMOS ADICIONAIS DA APPLE MUSIC
+
+ASSINATURA APPLE MUSIC
+
+Apple Music é um serviço de música de assinatura. A sua assinatura da Apple Music renovar-se-á automaticamente até que desligue a renovação automática nas definições de conta. Veja a secção de “Assinaturas” para mais detalhes. Quando a sua assinatura Apple Music terminar, perderá acesso a qualquer funcionalidade da Apple Music que requeira a assinatura, incluindo mas não limitado a acesso às músicas Apple Music armazenadas no seu dispositivo, e à Biblioteca de Música em iCloud. A Apple reserva o direito de cancelar a sua assinatura Apple Music se não for capaz de cobrar com sucesso o seu método de pagamento para renovar a sua assinatura.
+
+Quando disponível, poderá ser-lhe oferecida uma assinatura Apple Music através da sua operadora móvel (uma “Assinatura de Operadora”). Caso adquira uma Assinatura de Operadora, a sua operadora cobrar-lhe-á o custo da sua assinatura Apple Music. A sua relação de faturação com a operadora rege-se pelos termos e condições da operadora, não por este Acordo, e quaisquer litígios de faturação relacionados com a Assinatura de Operadora deverão ser dirigidos à sua Operadora, não à Apple. Ao utilizar a Apple Music, concorda que a sua operadora poderá trocar a sua informação de conta de operadora, número de telefone e informação de assinatura com a Apple, e que a Apple poderá utilizar esta informação para determinar o estado da sua Assinatura de Operadora.
+
+BIBLIOTECA DE MÚSICA EM ICLOUD
+
+A Biblioteca de Música em iCloud é uma funcionalidade da Apple Music que lhe permite aceder às suas músicas correspondidas ou enviadas, listas de reprodução e vídeos de música adquiridos na Apple Music, na aStore ou de um terceiro (“Conteúdo da Biblioteca de Música em iCloud”) nos seus dispositivos ativados para Apple Music. A Biblioteca de Música em iCloud é ativada automaticamente quando configura a sua assinatura Apple Music. A Biblioteca de Música em iCloud recolhe informação sobre o seu Conteúdo de Biblioteca de Música em iCloud. Esta informação associada com a sua Apple ID, e comparada com o Conteúdo da Biblioteca de Música em iCloud atualmente disponível em Apple Music. O Conteúdo de Biblioteca de Música em iCloud que não for correspondido é enviado para os servidores da Biblioteca de Música em iCloud da Apple (num formato determinado pela Apple). Pode enviar até 100.000 músicas. As música adquiridas a partir da iTunes Store ou Apple Music não contam para este limite. Músicas que não cumprirem com determinados critérios (por exemplo, ficheiros excessivamente grandes) ou que não estejam autorizados para o seu dispositivo não são elegíveis para a Biblioteca de Música em iCloud. Quando utiliza a Biblioteca de Música em iCloud, a Apple regista informação tal como as faixas que reproduz, para ou passa, os dispositivos que utilizar, e o tempo e duração da reprodução. Concorda em utilizar a Biblioteca de Música em iCloud apenas para conteúdo adquirido legalmente. A Biblioteca de Música em iCloud é disponibilizada numa base “TAL COMO ESTÁ” (“AS IS”) e poderá conter erros ou inexatidões. Deverá efetuar uma cópia de segurança dos seus dados e informação antes de utilizar a Biblioteca de Música em iCloud. Caso não seja um membro da Apple Music, poderá adquirir uma assinatura iTunes Match, que fica sujeita aos termos definidos nesta seção.
+
+J. TERMOS VÁRIOS APLICÁVEIS A TODOS OS SERVIÇOS
+
+DEFINIÇÃO DA APPLE
+
+Dependendo do seu País de Residência, “Apple” significa:
+
+Apple Inc., localizada em 1 Infinite Loop, Cupertino, Califórnia, para utilizadores na América do Norte, América Central, e América do Sul (incluindo o Canadá para utilização da iTunes Store e Apple Music), bem como territórios e possessões dos Estados Unidos; e possessões Francesas e Britânicas na América do Norte, América do Sul, e nas Caraíbas;
+
+Apple Canada Inc., localizada em 120 Bremner Blvd., Suite 1600, Toronto ON M5J 0A8, Canada para os utilizadores da App Store e iBooks Store no Canadá ou seus territórios ou possessões;
+
+iTunes K.K., localizada em Roppongi Hills, 6-10-1 Roppongi, Minato-ku, Tokyo 106-6140, Tokyo para utilizadores no Japão;
+
+Apple Pty Limited, localizada em Level 3, 20 Martin Place, Sydney NSW 2000, Australia, para utilizadores na Australia, Nova Zelândia, incluindo possessões de ilha,, e jurisdições e
+
+Apple Distribution International, localizada na Hollyhill Industrial Estate, Hollyhill, Cork, República da Irlanda, para todos os outros utilizadores.
+
+ALTERAÇÕES AO CONTRATO
+
+A Apple reserva o direito de a qualquer momento modificar este Acordo e de adicionar termos e condições novos ou adicionais sobre a sua utilização dos Serviços. Tais modificações e termos e condições adicionais ser-lhe-ão comunicadas e se aceites, produzirão efeitos de imediato e serão incorporados neste Acordo. Na eventualidade de recusar aceitar tais alterações, a Apple terá o direito de fazer cessar o Acordo.
+
+MATERIAIS DE TERCEIROS
+
+A Apple não é responsável ou responde por materiais de terceiros incluídos dentro ou em ligação com os Serviço.
+
+PROPRIEDADE INTELECTUAL
+
+Concorda que os Serviços, incluindo mas não limitado a Conteúdo, gráficos, interface de utilizador, clips de áudio, clips de vídeo, conteúdo editorial, e aos scripts e software utilizado para implementar os Serviços, contém informações reservadas e material que é de propriedade da Apple e/ou os seus licenciadores, e está protegida por propriedade intelectual aplicável outras leis, incluindo mas não limitado a direito de autor / copyright. Concorda que não utilizará tal informação reservada ou materiais por qualquer forma exceto para utilização dos Serviços para utilizações pessoais, não comerciais em conformidade com este Acordo. Nenhuma parte dos Serviços pode ser reproduzida em qualquer formato ou por quaisquer meios, exceto conforme expressamente permitido nestes termos. Concorda em não modificar, alugar, locar, emprestar, vender, distribuir os Serviços ou Conteúdo por qualquer forma, e não explorará os Serviços por qualquer forma não autorizada.
+
+O nome Apple, o logo Apple, iTunes, iTunes Store, App Store, iBooks Store, Apple Music, e outras marcas Apple, marcas de serviço, gráficos, e logos utilizados em conexão com os Serviços são marcas ou marcas registadas da Apple nos E.U.A. e outros países em todo o mundo. Não lhe é concedido qualquer direito ou licença com respeito a qualquer das marcas antecedentes.
+
+AVISO DE DIREITO DE AUTOR / COPYRIGHT
+
+Caso acredite que qualquer Conteúdo disponível através dos Serviços infringe o direito de autor / copyright reclamado pelo utilizador, por favor contacte a Apple nos seguintes locais:
+
+- iTunes Store: http://www.apple.com/legal/internet-services/itunes/itunesstorenotices/
+
+- App Store: https://www.apple.com/legal/internet-services/itunes/appstorenotices/
+
+- iBooks Store: iBooks.Store.Notices@apple.com
+
+- Apple Music: http://www.apple.com/legal/trademark/claimsofcopyright.html
+
+CESSAÇÃO E SUSPENSÃO DOS SERVIÇOS
+
+Caso não cumpra, ou a Apple suspeitar que não cumpriu com quaisquer disposições deste Acordo, a Apple pode, sem o avisar: (i) cessar este Acordo e/ou a sua Apple ID, e permanecerá responsável por todos os montantes devidos ao abrigo da sua Apple ID até à e incluindo a data de cessação; e/ou (ii) cessar a sua licença para o software; e/ou (iii) impedir o seu acesso aos Serviços.
+
+A Apple reserva ainda o direito de modificar, suspender, ou descontinuar os Serviços (ou qualquer parte ou Conteúdo dos mesmos) a qualquer momento com ou sem aviso ao utilizador, e a Apple não será responsável perante o utilizador ou perante qualquer terceiro caso exerça tais direitos. Na medida do possível, a Apple avisá-lo-á antecipadamente de qualquer modificação, suspensão ou descontinuação do Serviço. A cessação do Serviço não afetará o Conteúdo que já tenha adquirido. Contudo, poderá ser incapaz de autorizar computadores adicionais para utilizar o Conteúdo.
+
+RENÚNCIA DE GARANTIAS; LIMITAÇÕES DE RESPONSABILIDADE
+
+a. A Apple prestará os Serviços com diligência e técnica razoáveis. A Apple não efetua quaisquer outras promessas ou garantias sobre os Serviços e em particular não garante que:
+
+(i) a sua utilização dos Serviços será ininterrupta ou isenta de erros. Concorda que ocasionalmente a Apple poderá suspender os Serviços por períodos de tempo indefinidos, ou cancelar os Serviços a qualquer momento por motivos técnicos ou operacionais e notificá-lo-á de tal facto, se possível;
+
+(ii) os Serviços serão isentos de perdas, corrupções, ataques, vírus, interferências, pirataria informática (“hacking”), ou outras intrusões de segurança os quais serão considerados eventos de Força Maior, e a Apple renuncia a qualquer responsabilidade relativa aos mesmos. Será responsável por efetuar o arquivo de segurança (“backup”) do seu próprio sistema, antes, durante e após utilização dos Serviços, incluindo quaisquer conteúdos ou dados utilizados em conexão com ou adquiridos dos Serviços.
+
+b. Excepto conforme disposto em (d) abaixo, ou na eventualidade de estar a exercer um direito de reembolso ou compensação legal aplicável, em nenhuma situação a Apple, os seus diretores, funcionários, trabalhadores, afiliadas, agentes, fornecedores, ou licenciadores serão responsáveis por qualquer perda ou dano causado pela Apple, os seus trabalhadores ou agentes quando:
+
+(i) não exista violação de um dever legal de cuidado para consigo exigível à Apple ou a qualquer dos nossos trabalhadores ou agentes;
+
+(ii) não seja um resultado razoavelmente previsível de qualquer dessas violações;
+
+(iii) qualquer aumento de perda ou dano resulte de violação pelo utilizador de qualquer termo ou condição deste Acordo;
+
+(iv) resulte de uma decisão por parte da Apple de remover ou recusar processar qualquer informação ou conteúdo, de o avisar, de suspender ou terminar o seu acesso aos Serviços, ou de efetuar qualquer outra acção no decorrer de uma suspeita de violação ou como resultado de uma conclusão por parte da Apple de que ocorreu uma violação deste Acordo; ou
+
+(v) esteja relacionada com perda de rendimento, negócio ou lucros, ou qualquer perda ou corrupção de dados relacionada com a sua utilização dos Serviços.
+
+c. A Apple utilizará esforços razoáveis para proteger a informação submetida pelo utilizador em conexão com os Serviços incluindo relativamente a utilização fraudulenta.
+
+d. Nada neste Acordo remove ou limita a responsabilidade da Apple por fraude, negligência grosseira, infração dolosa ou por morte ou por violação da integridade física.
+
+e. Caso viole este Acordo, será responsável perante a Apple, os seus administradores, funcionários, trabalhadores, afiliadas, agentes, fornecedores, e licenciadores por qualquer queixa resultante da sua violação. Também será responsável por qualquer acção tomada pela Apple como parte da sua investigação de uma violação suspeita deste Acordo, ou como resultado das suas descobertas ou decisão de que ocorreu uma violação deste Acordo.
+
+EXCEÇÕES IMPERATIVAS PARA INSTITUIÇÕES PÚBLICAS
+
+Caso seja uma instituição de educação ou governamental qualificada e qualquer parte deste Acordo, tal como, por exemplo, toda ou parte da secção de indemnização, for inválida ou não aplicável contra o utilizador por causa da lei local, nacional, estadual ou federal aplicável, então tal porção será considerada inválida ou não aplicável, conforme o caso, e ao invés interpretada de uma forma mais consistente com a lei aplicável que rege o acordo.
+
+LEI APLICÁVEL
+
+Exceto na medida expressamente prevista no seguinte parágrafo, este Acordo e a relação entre o utilizador e a Apple, e todas as Transações nos Serviços reger-se-ão pelas leis do Estado da Califórnia, excluindo as suas disposições de regras de conflitos. O utilizador e a Apple concordam em submeter-se à jurisdição pessoal e exclusiva dos tribunais localizados dentro do condado de Santa Clara, Califórnia, para resolver qualquer litígio ou reclamação resultante deste Acordo. Se (a) não for um cidadão dos E.U.A.; (b) não residir nos E.U.A.; (c) não estiver a aceder ao Serviço a partir dos E.U.A..; e (d) for um cidadão de um dos países abaixo identificados, pelo presente concorda que qualquer litígio ou reclamação resultantes deste Acordo será regida pela lei aplicável abaixo definida, sem atenção a quaisquer disposições de regras de conflitos, e pelo presente irrevogavelmente submete-se à jurisdição não exclusiva dos tribunais localizados no estado, província ou país abaixo identificado cuja lei rege:
+
+Caso seja um residente de qualquer país da União Europeia ou da Suíça, Noruega ou Islândia, a lei aplicável e foro serão as leis e tribunais do seu local habitual de residência.
+
+Fica especificamente excluído da aplicação a este Acordo a lei que é conhecida como a Convenção das Nações Unidas sobre a Venda Internacional de Bens.
+
+OUTRAS DISPOSIÇÕES
+
+Este Acordo constitui o acordo integral entre o utilizador e a Apple e rege a sua utilização dos Serviços, substituindo quaisquer acordos antecedentes com respeito ao mesmo assunto entre o utilizador e a Apple. Também poderá ficar sujeito a termos e condições adicionais que poderão ser aplicáveis quando utiliza serviços afiliados, conteúdo de terceiros, software de terceiros, ou serviços adicionais tais como o Programa de Compra em Volume. Caso qualquer parte deste Acordo for considerado inválido ou não aplicável, tal porção será interpretada de uma forma consistente com a lei aplicável para refletir, tão próximo quanto possível, as intenções originais das partes, e as porções remanescentes permanecerão em pleno vigor e efeitos. A falha da Apple em fazer aplicar qualquer direito ou disposições neste Acordo não constituirá uma renúncia de tal ou de qualquer outra disposição. A Apple não será responsável por quaisquer falhas em cumprir com quaisquer obrigações devido a causas para além do seu controle.
+
+Concorda em cumprir com todas as leis locais, estaduais, federais, e nacionais, estatutos, portarias, e regulamentos que sejam aplicáveis à sua utilização dos Serviços. A sua utilização dos Serviços também poderá ficar sujeita a outras leis. O risco de perda para todas as Transações eletronicamente entregues transfere-se para o adquirente aquando da transmissão eletrónica para o recipiente. Nenhum trabalhador ou agente Apple tem autoridade para alterar este Acordo.
+
+A Apple poderá notificá-lo com respeito aos Serviços mediante envio de uma mensagem de correio eletrónico para o seu endereço de correio eletrónico ou através de uma carta por via postal para o seu endereço postal, ou mediante publicação nos Serviços. Os avisos tornar-se-ão eficazes de imediato. A Apple também poderá contactá-lo por correio eletrónico ou notificações push para lhe enviar informação adicional sobre os Serviços.
+
+Resolução Alternativa de Litígios. A UE está a operar uma plataforma voluntária de Resolução de Litígios em linha acessível através do seguinte link: http://ec.europa.eu/consumers/odr, na qual a Apple Distribution International
+
+optou por não participar. Caso tenha um problema contate o Suporte iTunes http://www.apple.com/support/itunes/contact/.
+
+Pelo presente concede à Apple o direito de tomar medidas que a Apple considere serem razoavelmente necessárias ou apropriadas para fazer cumprir e/ou verificar o cumprimento com qualquer parte deste Acordo. Concorda que a Apple tem o direito, sem responsabilidade para consigo, de divulgar quaisquer dados e/ou informação a autoridades de aplicação da lei, funcionários do governo, e/ou um terceiro, conforme a Apple acredite ser razoavelmente necessário ou apropriado para fazer cumprir e/ou verificar o cumprimento de qualquer parte deste Acordo (incluindo mas não limitando ao direito da Apple de cooperar com qualquer processo legal relacionado com a sua utilização dos Serviços e/ou Conteúdo, e/ou a uma reclamação de um terceiro que a sua utilização dos Serviços e/ou Conteúdo é ilegal e/ou infringe os direitos de tal terceiro).
+
+Crianças com idade inferior à maioridade deverão rever este Acordo com os seus pais ou tutores legais para assegurar que a criança e pai ou tutor legal o entendem.
+
+Última Atualização: 13 de Setembro, 2016
