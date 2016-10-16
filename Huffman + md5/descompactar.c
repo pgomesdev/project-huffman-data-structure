@@ -32,7 +32,7 @@ unsigned short obter_tamanho_arvore(FILE *arquivo)
     return tamanho_arvore;
 }
 
-void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
+/*void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
 {
     rewind(arquivo);
     int i = 0;
@@ -41,7 +41,7 @@ void obter_arvore(unsigned char *array_arvore, FILE *arquivo)
     {
         array_arvore[i] = fgetc(arquivo);
     }
-}
+}*/
 
 /* CONTAGEM DA QUANTIDADE DE BITS NO TEXTO DO ARQUIVO COMPACTADO */
 unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo, unsigned short tam_cabecalho)
@@ -119,45 +119,61 @@ void descompactar_texto(Node *cabeca, unsigned char *array_binarios_descompactar
     }
 }
 
-Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arvore, unsigned short tam_array_arvore)
+Node *criar_arvore_descompactacao(FILE *arquivo, Node *arvore_huffman, unsigned short tam_arvore)
 {
-    int aux = 0;
-    while(array_arvore[aux] == 0)
+    char c;
+
+    Node *newnode = (Node*)malloc(sizeof(Node));
+
+    if(newnode == NULL)
     {
-        aux++;
+        puts("Erro ao Alocar Memoria para criar_arvore_descompactacao!\n");
+        exit(0);
     }
 
-    if(aux < tam_array_arvore)
-    {
-        Node *newnode = (Node*)malloc(sizeof(Node));
-        if(newnode == NULL)
-        {
-            puts("Erro ao Alocar Memoria para criar_arvore_descompactacao!\n");
-            exit(0);
-        }
-        newnode->letra = 0;
-        newnode->num = 0;
-        newnode->profundidade = 0;
-        newnode->proximo_node = NULL;
-        newnode->filho_esquerda = NULL;
-        newnode->filho_direita = NULL;
-        arvore_huffman = newnode;
+    newnode->letra = 0;
+    newnode->num = 0;
+    newnode->profundidade = 0;
+    newnode->proximo_node = NULL;
+    newnode->filho_esquerda = NULL;
+    newnode->filho_direita = NULL;
+    arvore_huffman = newnode;
 
-        if(array_arvore[aux] == '*')
-        {
-            array_arvore[aux] = 0;
-            arvore_huffman->letra = '*';
-            arvore_huffman->filho_esquerda = criar_arvore_descompactacao(arvore_huffman->filho_esquerda, array_arvore, tam_array_arvore);
-            arvore_huffman->filho_direita = criar_arvore_descompactacao(arvore_huffman->filho_direita, array_arvore, tam_array_arvore);
-            return arvore_huffman;
-        }
+    c = fgetc(arquivo);
+
+    if(c == '*')
+    {
+        arvore_huffman->letra = '*';
+        arvore_huffman->filho_esquerda = criar_arvore_descompactacao(arquivo, arvore_huffman->filho_esquerda, tam_arvore);
+        arvore_huffman->filho_direita = criar_arvore_descompactacao(arquivo, arvore_huffman->filho_direita, tam_arvore);
+
+        return arvore_huffman;
+    }
+
+    else if(c == '\\')
+    {
+        int i = ftell(arquivo);
+        c = fgetc(arquivo);
+
+        if(c == '*')
+            arvore_huffman->letra = c;
+
         else
         {
-            arvore_huffman->letra = array_arvore[aux];
-            array_arvore[aux] = 0;
-            return arvore_huffman;
+            arvore_huffman->letra = '\\';
+            fseek(arquivo, i, SEEK_SET);
         }
+
+        return arvore_huffman;
     }
+
+    else
+    {
+        arvore_huffman->letra = c;
+
+        return arvore_huffman;
+    }
+
     return arvore_huffman;
 }
 

@@ -48,7 +48,9 @@ void escrever_arvore(Node *cabeca, FILE *arquivo)
 {
     if(cabeca != NULL)
     {
-        //printf("[%c]", cabeca->letra);
+        if(cabeca->letra == '*' && cabeca->filho_direita == NULL)
+            fputc('\\', arquivo);
+
         fputc(cabeca->letra, arquivo);
         escrever_arvore(cabeca->filho_esquerda, arquivo);
         escrever_arvore(cabeca->filho_direita, arquivo);
@@ -88,11 +90,8 @@ void criar_array_binarios(Hashtable *ht, FILE *arquivo, unsigned char *array_bin
     rewind(arquivo);
     while((c = fgetc(arquivo)) != EOF)
     {
-        if(c == '*')
-            c = '\\';
-        
         atual = ht->table[c];
-        
+
         while(atual != NULL)
         {
             array_binario[k] = atual->value;

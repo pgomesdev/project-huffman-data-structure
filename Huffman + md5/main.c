@@ -192,12 +192,12 @@ int main()
         unsigned char lixo = obter_lixo(arq_compac);
 
         /// SALVA EM tam_array_arvore QUANTOS ELEMENTOS ESTÃO NA ARVORE DE HUFFMAN
-        unsigned short tam_array_arvore = obter_tamanho_arvore(arq_compac);
+        unsigned short tam_arvore = obter_tamanho_arvore(arq_compac);
 
-        unsigned char array_arvore[tam_array_arvore];//Declara um array para receber os caracteres da arvore
+        //unsigned char array_arvore[tam_array_arvore];//Declara um array para receber os caracteres da arvore
 
         /// ESCREVE NO array_arvore OS CARACTERES DA ARVORE DE HUFFMAN
-        obter_arvore(array_arvore,arq_compac);
+        //obter_arvore(array_arvore,arq_compac);
 
         unsigned char tam_extencao = obter_tam_ext_descomp(arq_compac);
 
@@ -212,11 +212,15 @@ int main()
         unsigned char tam_nome_arquivo = obter_tam_nome_arquivo_descomp(arq_compac);
         unsigned char nome_arquivo[tam_nome_arquivo];
         obter_nome_arquivo_descomp(arq_compac, nome_arquivo, tam_nome_arquivo);
-        unsigned short tam_cabecalho = (2 + tam_array_arvore + 1 + tam_extencao + 32 + 1 + tam_nome_arquivo);
+        unsigned short tam_cabecalho = (2 + tam_arvore + 1 + tam_extencao + 32 + 1 + tam_nome_arquivo);
         Node *cabeca_arvore = criar_Node_NULL();// Cria um ponteiro inicializado com NULL
 
+        rewind(arq_compac);
+        fgetc(arq_compac);
+        fgetc(arq_compac);
+
         /// cabeca_arvore APONTA PARA RAIZ DA ARVORE DE HUFFMAN NOVA
-        cabeca_arvore = criar_arvore_descompactacao(cabeca_arvore, array_arvore, tam_array_arvore);
+        cabeca_arvore = criar_arvore_descompactacao(arq_compac, cabeca_arvore, tam_arvore);
 
         /// CALCULA A QUANTIDADE DE BITS DO ARQUIVO TIRANDO O CABEÇALHO
         unsigned long long int tam_array_binarios_descompactar = contar_tamanho_array_binarios_descompactar(arq_compac, tam_cabecalho);

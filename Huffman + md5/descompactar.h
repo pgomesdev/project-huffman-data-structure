@@ -33,7 +33,7 @@ unsigned long long int contar_tamanho_array_binarios_descompactar(FILE *arquivo,
 //uma String, apontada por array_arvore, tendo os conteudos de cada nó;
 //a quantidade de nós a serem criados, armazenada por tam_array_arvore;
 //e devolve um ponteiro para nós, apontando para a raiz da arvore criada. FUNÇÃO RECURSIVA.
-Node *criar_arvore_descompactacao(Node *arvore_huffman, unsigned char *array_arvore, unsigned short tam_array_arvore);
+Node *criar_arvore_descompactacao(FILE *arquivo, Node *arvore_huffman, unsigned short tam_array_arvore);
 
 //Função que recebe: um ponteiro para um tipo FILE, representado o arquivo .huff, onde arquivo != NULL;
 //um array de Short, apontado por array_binarios_descompactar, com os elementos declarados;
